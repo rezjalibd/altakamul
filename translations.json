@@ -315,7 +315,12 @@
     "opt_budget_1": "أقل من 50,000 دولار",
     "opt_budget_2": "50,000 - 250,000 دولار",
     "opt_budget_3": "250,000 - 1,000,000 دولار",
-    "opt_budget_4": "أكثر من 1,000,000 دولار"
+    "opt_budget_4": "أكثر من 1,000,000 دولار",
+    "hub_sohar_title": "ميناء وصناعية صحار",
+    "hub_salalah_title": "ميناء صلالة الاستراتيجي",
+    "hub_duqm_title": "المنطقة الاقتصادية بالدقم (SEZAD)",
+    "nav_request": "طلب استشارة تجارية",
+    "form_submit": "إرسال الطلب التجاري الآن"
   },
   "fa": {
     "direction": "rtl",
@@ -633,7 +638,12 @@
     "opt_budget_1": "کمتر از ۵۰,۰۰۰ دلار",
     "opt_budget_2": "۵۰,۰۰۰ تا ۲۵۰,۰۰۰ دلار",
     "opt_budget_3": "۲۵۰,۰۰۰ تا ۱,۰۰۰,۰۰۰ دلار",
-    "opt_budget_4": "بیش از ۱,۰۰۰,۰۰۰ دلار"
+    "opt_budget_4": "بیش از ۱,۰۰۰,۰۰۰ دلار",
+    "hub_sohar_title": "بندر و منطقه آزاد صحار",
+    "hub_salalah_title": "بندر استراتژیک صلاله",
+    "hub_duqm_title": "منطقه ویژه اقتصادی دقم (SEZAD)",
+    "nav_request": "درخواست مشاوره تجاری",
+    "form_submit": "ثبت و ارسال درخواست تجاری"
   },
   "en": {
     "direction": "ltr",
@@ -951,6 +961,11 @@
     "opt_budget_1": "Under $50,000 USD",
     "opt_budget_2": "$50,000 - $250,000 USD",
     "opt_budget_3": "$250,000 - $1,000,000 USD",
-    "opt_budget_4": "Over $1,000,000 USD"
+    "opt_budget_4": "Over $1,000,000 USD",
+    "hub_sohar_title": "Sohar Port & Freezone",
+    "hub_salalah_title": "Salalah Deepwater Port",
+    "hub_duqm_title": "Duqm Special Economic Zone (SEZAD)",
+    "nav_request": "Request Trade Consultation",
+    "form_submit": "Submit Trade Request Now"
   }
 }

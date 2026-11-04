@@ -221,13 +221,22 @@
     }
   };
 
-  // 8. Synchronous Immediate Execution & DOM Setup
+  // 8. Robust Immediate Root Attributes & Hydration Boot
+  document.documentElement.setAttribute('lang', currentLang);
+  document.documentElement.setAttribute('dir', (currentLang === 'en' ? 'ltr' : 'rtl'));
   window.initTheme();
-  document.addEventListener('DOMContentLoaded', () => {
+
+  function boot() {
     window.initTheme();
     window.applyTranslations(currentLang);
     initStickyHeader();
     initBackToTop();
     ensureDrawerOverlay();
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
 })();
