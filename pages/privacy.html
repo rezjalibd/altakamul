@@ -30,7 +30,7 @@
   </div>
 
   <!-- Sticky Header -->
-    <!-- Site Header -->
+        <!-- Site Header -->
   <header class="site-header">
     <div class="header-container">
       <a href="../index.html" class="brand-link">
@@ -41,7 +41,7 @@
         </div>
       </a>
 
-      <!-- Desktop Nav -->
+      <!-- Desktop Nav (FAQ removed from header as requested) -->
       <nav class="main-nav">
         <a href="../index.html" class="nav-link" data-i18n="nav_home">الرئيسية</a>
         <a href="./about.html" class="nav-link" data-i18n="nav_about">من نحن</a>
@@ -85,10 +85,10 @@
           </div>
         </div>
 
-        <a href="../index.html#hubs" class="nav-link" data-i18n="nav_hubs">الموانئ والمناطق الحرة</a>
-        <a href="../index.html#process" class="nav-link" data-i18n="nav_process">آلية العمل</a>
+        <!-- Dedicated Hubs & Process Pages (No more anchor scrolling) -->
+        <a href="./hubs.html" class="nav-link" data-i18n="nav_hubs">الموانئ والمناطق الحرة</a>
+        <a href="./process.html" class="nav-link" data-i18n="nav_process">آلية العمل</a>
         <a href="./contact.html" class="nav-link" data-i18n="nav_contact">اتصل بنا</a>
-        <a href="./faq.html" class="nav-link" data-i18n="nav_faq">الأسئلة الشائعة</a>
       </nav>
 
       <!-- Header Controls -->
@@ -140,8 +140,7 @@
     </div>
   </header>
 
-  <!-- Mobile Drawer Overlay & Drawer -->
-    <!-- Mobile Drawer Overlay & Drawer with Nested Submenus -->
+  <!-- Mobile Drawer Overlay & Drawer with Nested Accordions -->
   <div class="mobile-drawer-overlay" id="mobileDrawerOverlay" onclick="closeMobileMenu()"></div>
   <aside class="mobile-drawer" id="mobileDrawer">
     <div class="mobile-drawer-header">
@@ -149,47 +148,49 @@
       <button class="mobile-close-btn" onclick="closeMobileMenu()" aria-label="Close">&times;</button>
     </div>
     <div class="mobile-nav-links">
-      <a href="../index.html" class="mobile-nav-link" data-i18n="nav_home">الرئيسية</a>
-      <a href="./about.html" class="mobile-nav-link" data-i18n="nav_about">من نحن</a>
-
-      <!-- Nested Services Accordion -->
-      <div class="mobile-accordion-group">
-        <button class="mobile-accordion-toggle" onclick="toggleMobileSubmenu(event, 'subServices')">
+      <a href="../index.html" class="mobile-nav-link" onclick="closeMobileMenu()" data-i18n="nav_home">الرئيسية</a>
+      <a href="./about.html" class="mobile-nav-link" onclick="closeMobileMenu()" data-i18n="nav_about">من نحن</a>
+      
+      <!-- Accordion 1: Services -->
+      <div class="mobile-accordion-group" id="groupServices">
+        <div class="mobile-accordion-toggle" onclick="toggleMobileSubmenu(event, 'subServices')">
           <span data-i18n="nav_services">دليل الخدمات</span>
-          <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
+          <svg class="accordion-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
         <div class="mobile-submenu" id="subServices">
-          <a href="./services.html" class="mobile-submenu-link" data-i18n="nav_all_services">← جميع الخدمات والحلول</a>
-          <a href="./international-trade.html" class="mobile-submenu-link" data-i18n="service_1_title">التجارة الدولية وبيت التجارة</a>
-          <a href="./import-export.html" class="mobile-submenu-link" data-i18n="service_2_title">الاستيراد والتصدير وإعادة التصدير</a>
-          <a href="./procurement.html" class="mobile-submenu-link" data-i18n="service_3_title">توريد وتأمين احتياجات المشاريع</a>
-          <a href="./financial-advisory.html" class="mobile-submenu-link" data-i18n="service_4_title">الاستشارات المالية والاعتمادات</a>
-          <a href="./made-in-oman.html" class="mobile-submenu-link" data-i18n="service_5_title">بنية التصنيع وهوية صُنع في عُمان</a>
+          <a href="./services.html" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="nav_services_all">جميع الخدمات التجارية</a>
+          <a href="./international-trade.html" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="service_1_title">التجارة الدولية</a>
+          <a href="./import-export.html" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="service_2_title">الاستيراد والتصدير</a>
+          <a href="./procurement.html" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="service_3_title">توريد المشاريع</a>
+          <a href="./financial-advisory.html" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="service_4_title">الاستشارات المالية</a>
+          <a href="./made-in-oman.html" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="service_5_title">صُنع في عُمان</a>
         </div>
       </div>
 
-      <!-- Nested Hubs Accordion -->
-      <div class="mobile-accordion-group">
-        <button class="mobile-accordion-toggle" onclick="toggleMobileSubmenu(event, 'subHubs')">
+      <!-- Accordion 2: Hubs (Links to Dedicated Page & Hubs) -->
+      <div class="mobile-accordion-group" id="groupHubs">
+        <div class="mobile-accordion-toggle" onclick="toggleMobileSubmenu(event, 'subHubs')">
           <span data-i18n="nav_hubs">الموانئ والمناطق الحرة</span>
-          <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
+          <svg class="accordion-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
         <div class="mobile-submenu" id="subHubs">
-          <a href="../index.html#hub-sohar" class="mobile-submenu-link" data-i18n="hub_sohar_title">ميناء ومنطقة صحار الحرة</a>
-          <a href="../index.html#hub-salalah" class="mobile-submenu-link" data-i18n="hub_salalah_title">ميناء ومنطقة صلالة الحرة</a>
-          <a href="../index.html#hub-duqm" class="mobile-submenu-link" data-i18n="hub_duqm_title">منطقة الدقم الاقتصادية (SEZAD)</a>
+          <a href="./hubs.html" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="nav_hubs_all">دليل الموانئ والمناطق الحرة</a>
+          <a href="./hubs.html#sohar" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="hub_sohar_title">ميناء وصناعية صحار</a>
+          <a href="./hubs.html#salalah" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="hub_salalah_title">ميناء صلالة الاستراتيجي</a>
+          <a href="./hubs.html#duqm" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="hub_duqm_title">المنطقة الاقتصادية بالدقم</a>
         </div>
       </div>
 
-      <a href="../index.html#process" class="mobile-nav-link" data-i18n="nav_process">آلية العمل</a>
-      <a href="./contact.html" class="mobile-nav-link" data-i18n="nav_contact">اتصل بنا</a>
-      <a href="./faq.html" class="mobile-nav-link" data-i18n="nav_faq">الأسئلة الشائعة</a>
-
+      <a href="./process.html" class="mobile-nav-link" onclick="closeMobileMenu()" data-i18n="nav_process">آلية العمل والمسار التنفيذي</a>
+      <a href="./contact.html" class="mobile-nav-link" onclick="closeMobileMenu()" data-i18n="nav_contact">اتصل بنا</a>
+      
       <div style="margin-top:20px;">
-        <a href="./request.html" class="btn-cta" style="width:100%; justify-content:center;" data-i18n="btn_request">طلب استشارة تجارية</a>
+        <a href="./request.html" class="btn-cta" style="width:100%; justify-content:center;" onclick="closeMobileMenu()" data-i18n="btn_request">طلب استشارة تجارية</a>
       </div>
     </div>
   </aside>
+
+
 
   <main class="main-wrapper">
 
@@ -231,8 +232,7 @@
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
   </button>
 
-    <!-- Mobile Sticky CTA Bar -->
-    <!-- Mobile Sticky CTA Bar -->
+        <!-- Mobile Sticky CTA Bar -->
   <div class="mobile-sticky-cta">
     <div class="mobile-sticky-info">
       <div class="mobile-sticky-title" data-i18n="brand_name">شركة تكامل للتجارة الدولية</div>
@@ -246,7 +246,7 @@
     </div>
   </div>
 
-  <!-- Corporate Footer -->
+  <!-- Corporate Footer (Light & Dark Mode Optimized) -->
   <footer class="site-footer">
     <div class="footer-grid">
       <div>
@@ -254,10 +254,10 @@
           <img src="../img/logo.png" alt="Al Takamul" style="height:36px; width:auto;">
           <span style="font-weight:800; font-size:1.1rem; color:var(--text-primary);" data-i18n="brand_name">شركة تكامل للتجارة الدولية</span>
         </div>
-        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.75; margin-bottom:16px;" data-i18n="footer_about">
+        <p style="font-size:0.88rem; line-height:1.75; margin-bottom:16px;" data-i18n="footer_about">
           بيت التجارة الدولية الرائد في مسقط لتقديم خدمات التجارة العابرة للحدود، سلاسل الإمداد المتطورة، وتوطين الصناعات.
         </p>
-        <div style="font-size:0.82rem; color:var(--primary-gold);" data-i18n="footer_cr">CR 1389420 / مسقط، سلطنة عُمان</div>
+        <div style="font-size:0.82rem; color:var(--primary-gold); font-weight:700;" data-i18n="footer_cr">CR 1389420 / مسقط، سلطنة عُمان</div>
       </div>
 
       <div>
@@ -272,42 +272,42 @@
       </div>
 
       <div>
-        <div class="footer-col-title" data-i18n="footer_col_company">الشركة والشفافية</div>
+        <div class="footer-col-title" data-i18n="footer_col_company">بوابات التجارة والمؤسسة</div>
         <ul class="footer-links-list">
           <li><a href="./about.html" class="footer-link" data-i18n="nav_about">من نحن ورؤيتنا</a></li>
-          <li><a href="./services.html" class="footer-link" data-i18n="nav_services">مصفوفة الخدمات</a></li>
+          <li><a href="./hubs.html" class="footer-link" data-i18n="nav_hubs">الموانئ والمناطق الحرة</a></li>
+          <li><a href="./process.html" class="footer-link" data-i18n="nav_process">آلية العمل والمسار التنفيذي</a></li>
+          <li><a href="./services.html" class="footer-link" data-i18n="nav_services">مصفوفة الخدمات الشاملة</a></li>
           <li><a href="./faq.html" class="footer-link" data-i18n="nav_faq">الأسئلة الشائعة</a></li>
-          <li><a href="./privacy.html" class="footer-link" data-i18n="footer_privacy">سياسة الخصوصية</a></li>
-          <li><a href="./terms.html" class="footer-link" data-i18n="footer_terms">الشروط والأحكام</a></li>
         </ul>
       </div>
 
       <div>
-        <div class="footer-col-title" data-i18n="footer_col_contact">معلومات الاتصال</div>
+        <div class="footer-col-title" data-i18n="footer_col_contact">التواصل والامتثال</div>
         <ul class="footer-links-list">
-          <li style="font-size:0.88rem; color:var(--text-secondary);" data-i18n="footer_hq_label">📍 مسقط، سلطنة عُمان - واحة المعرفة / مجمع الأعمال التجاري</li>
-          <li style="font-size:0.88rem; color:var(--text-secondary);">📞 +968 7108 1635 / +968 3153 6000</li>
-          <li style="font-size:0.88rem; color:var(--text-secondary);">✉️ info@omantakamul.com</li>
-          <li style="margin-top:10px;">
-            <a href="https://wa.me/96871081635" target="_blank" rel="noopener" class="btn-secondary" style="padding:6px 14px; font-size:0.82rem;">WhatsApp Desk</a>
-          </li>
+          <li><a href="./contact.html" class="footer-link" data-i18n="nav_contact">المكتب الرئيسي بمسقط</a></li>
+          <li><a href="./request.html" class="footer-link" data-i18n="btn_request">طلب استشارة تجارية</a></li>
+          <li><a href="./privacy.html" class="footer-link" data-i18n="footer_privacy">سياسة الخصوصية</a></li>
+          <li><a href="./terms.html" class="footer-link" data-i18n="footer_terms">الشروط والأحكام</a></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <div data-i18n="footer_copy">جميع الحقوق محفوظة © ٢٠٢٦ شركة تكامل للتجارة الدولية ش.م.م</div>
+      <div data-i18n="footer_copy">© 2026 شركة تكامل للتجارة الدولية ش.م.م. جميع الحقوق محفوظة.</div>
       <div style="display:flex; gap:16px;">
-        <a href="./privacy.html" class="footer-link" data-i18n="footer_privacy">الخصوصية</a>
-        <a href="./terms.html" class="footer-link" data-i18n="footer_terms">الشروط</a>
+        <span data-i18n="footer_tagline">بوابتك الموثوقة للتجارة العالمية عبر سلطنة عمان</span>
       </div>
     </div>
   </footer>
 
-  <!-- Floating Back to Top Button -->
-  <button id="backToTopBtn" class="back-to-top-btn" aria-label="Back to Top" title="إلى الأعلى">
+  <button class="back-to-top-btn" id="backToTopBtn" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Back to Top">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
   </button>
 
+  <script src="../js/translations_data.js?v=5.0"></script>
+  <script src="../js/main.js?v=5.0"></script>
 </body>
 </html>
+
+

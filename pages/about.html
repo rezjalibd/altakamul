@@ -2,35 +2,14 @@
 <html lang="ar" dir="rtl" data-theme="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>عن الشركة ورؤيتنا | About Us | Al Takamul International Trading LLC</title>
-  <meta name="description" content="Al Takamul International Trading LLC ، Premier International Trading House in Muscat, Sultanate of Oman. Import, Export, Project Procurement, Trade Finance Advisory & Made in Oman Industrialization.">
-  <link rel="icon" type="image/png" href="../img/favicon.png">
-  <link rel="apple-touch-icon" href="../img/favicon.png">
-
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="عن الشركة ورؤيتنا | About Us | Al Takamul International Trading LLC">
-  <meta property="og:description" content="بيت التجارة الدولية وحلول سلاسل الإمداد وتوطين الصناعة في سلطنة عُمان.">
-  <meta property="og:image" content="../img/logo.png">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css?v=4.6">
-  <!-- Synchronous In-Memory Locale & Theme Engine -->
-  <script src="../js/translations_data.js?v=4.6"></script>
-  <script src="../js/main.js?v=4.6"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>من نحن ورؤيتنا الاستراتيجية | شركة تكامل</title>
+  <link rel="icon" type="image/png" href="../img/logo.png">
+  <link rel="stylesheet" href="../css/style.css?v=5.0">
 </head>
 <body>
-  <!-- Ambient Backdrop -->
-  <div class="canvas-backdrop">
-    <div class="shape-blob shape-1"></div>
-    <div class="shape-blob shape-2"></div>
-    <div class="shape-blob shape-3"></div>
-  </div>
 
-  <!-- Sticky Header -->
-    <!-- Site Header -->
+  <!-- Site Header -->
   <header class="site-header">
     <div class="header-container">
       <a href="../index.html" class="brand-link">
@@ -41,7 +20,7 @@
         </div>
       </a>
 
-      <!-- Desktop Nav -->
+      <!-- Desktop Nav (FAQ removed from header as requested) -->
       <nav class="main-nav">
         <a href="../index.html" class="nav-link" data-i18n="nav_home">الرئيسية</a>
         <a href="./about.html" class="nav-link" data-i18n="nav_about">من نحن</a>
@@ -85,10 +64,10 @@
           </div>
         </div>
 
-        <a href="../index.html#hubs" class="nav-link" data-i18n="nav_hubs">الموانئ والمناطق الحرة</a>
-        <a href="../index.html#process" class="nav-link" data-i18n="nav_process">آلية العمل</a>
+        <!-- Dedicated Hubs & Process Pages (No more anchor scrolling) -->
+        <a href="./hubs.html" class="nav-link" data-i18n="nav_hubs">الموانئ والمناطق الحرة</a>
+        <a href="./process.html" class="nav-link" data-i18n="nav_process">آلية العمل</a>
         <a href="./contact.html" class="nav-link" data-i18n="nav_contact">اتصل بنا</a>
-        <a href="./faq.html" class="nav-link" data-i18n="nav_faq">الأسئلة الشائعة</a>
       </nav>
 
       <!-- Header Controls -->
@@ -140,8 +119,7 @@
     </div>
   </header>
 
-  <!-- Mobile Drawer Overlay & Drawer -->
-    <!-- Mobile Drawer Overlay & Drawer with Nested Submenus -->
+  <!-- Mobile Drawer Overlay & Drawer with Nested Accordions -->
   <div class="mobile-drawer-overlay" id="mobileDrawerOverlay" onclick="closeMobileMenu()"></div>
   <aside class="mobile-drawer" id="mobileDrawer">
     <div class="mobile-drawer-header">
@@ -149,120 +127,132 @@
       <button class="mobile-close-btn" onclick="closeMobileMenu()" aria-label="Close">&times;</button>
     </div>
     <div class="mobile-nav-links">
-      <a href="../index.html" class="mobile-nav-link" data-i18n="nav_home">الرئيسية</a>
-      <a href="./about.html" class="mobile-nav-link" data-i18n="nav_about">من نحن</a>
-
-      <!-- Nested Services Accordion -->
-      <div class="mobile-accordion-group">
-        <button class="mobile-accordion-toggle" onclick="toggleMobileSubmenu(event, 'subServices')">
+      <a href="../index.html" class="mobile-nav-link" onclick="closeMobileMenu()" data-i18n="nav_home">الرئيسية</a>
+      <a href="./about.html" class="mobile-nav-link" onclick="closeMobileMenu()" data-i18n="nav_about">من نحن</a>
+      
+      <!-- Accordion 1: Services -->
+      <div class="mobile-accordion-group" id="groupServices">
+        <div class="mobile-accordion-toggle" onclick="toggleMobileSubmenu(event, 'subServices')">
           <span data-i18n="nav_services">دليل الخدمات</span>
-          <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
+          <svg class="accordion-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
         <div class="mobile-submenu" id="subServices">
-          <a href="./services.html" class="mobile-submenu-link" data-i18n="nav_all_services">← جميع الخدمات والحلول</a>
-          <a href="./international-trade.html" class="mobile-submenu-link" data-i18n="service_1_title">التجارة الدولية وبيت التجارة</a>
-          <a href="./import-export.html" class="mobile-submenu-link" data-i18n="service_2_title">الاستيراد والتصدير وإعادة التصدير</a>
-          <a href="./procurement.html" class="mobile-submenu-link" data-i18n="service_3_title">توريد وتأمين احتياجات المشاريع</a>
-          <a href="./financial-advisory.html" class="mobile-submenu-link" data-i18n="service_4_title">الاستشارات المالية والاعتمادات</a>
-          <a href="./made-in-oman.html" class="mobile-submenu-link" data-i18n="service_5_title">بنية التصنيع وهوية صُنع في عُمان</a>
+          <a href="./services.html" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="nav_services_all">جميع الخدمات التجارية</a>
+          <a href="./international-trade.html" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="service_1_title">التجارة الدولية</a>
+          <a href="./import-export.html" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="service_2_title">الاستيراد والتصدير</a>
+          <a href="./procurement.html" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="service_3_title">توريد المشاريع</a>
+          <a href="./financial-advisory.html" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="service_4_title">الاستشارات المالية</a>
+          <a href="./made-in-oman.html" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="service_5_title">صُنع في عُمان</a>
         </div>
       </div>
 
-      <!-- Nested Hubs Accordion -->
-      <div class="mobile-accordion-group">
-        <button class="mobile-accordion-toggle" onclick="toggleMobileSubmenu(event, 'subHubs')">
+      <!-- Accordion 2: Hubs (Links to Dedicated Page & Hubs) -->
+      <div class="mobile-accordion-group" id="groupHubs">
+        <div class="mobile-accordion-toggle" onclick="toggleMobileSubmenu(event, 'subHubs')">
           <span data-i18n="nav_hubs">الموانئ والمناطق الحرة</span>
-          <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
+          <svg class="accordion-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
         <div class="mobile-submenu" id="subHubs">
-          <a href="../index.html#hub-sohar" class="mobile-submenu-link" data-i18n="hub_sohar_title">ميناء ومنطقة صحار الحرة</a>
-          <a href="../index.html#hub-salalah" class="mobile-submenu-link" data-i18n="hub_salalah_title">ميناء ومنطقة صلالة الحرة</a>
-          <a href="../index.html#hub-duqm" class="mobile-submenu-link" data-i18n="hub_duqm_title">منطقة الدقم الاقتصادية (SEZAD)</a>
+          <a href="./hubs.html" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="nav_hubs_all">دليل الموانئ والمناطق الحرة</a>
+          <a href="./hubs.html#sohar" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="hub_sohar_title">ميناء وصناعية صحار</a>
+          <a href="./hubs.html#salalah" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="hub_salalah_title">ميناء صلالة الاستراتيجي</a>
+          <a href="./hubs.html#duqm" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="hub_duqm_title">المنطقة الاقتصادية بالدقم</a>
         </div>
       </div>
 
-      <a href="../index.html#process" class="mobile-nav-link" data-i18n="nav_process">آلية العمل</a>
-      <a href="./contact.html" class="mobile-nav-link" data-i18n="nav_contact">اتصل بنا</a>
-      <a href="./faq.html" class="mobile-nav-link" data-i18n="nav_faq">الأسئلة الشائعة</a>
-
+      <a href="./process.html" class="mobile-nav-link" onclick="closeMobileMenu()" data-i18n="nav_process">آلية العمل والمسار التنفيذي</a>
+      <a href="./contact.html" class="mobile-nav-link" onclick="closeMobileMenu()" data-i18n="nav_contact">اتصل بنا</a>
+      
       <div style="margin-top:20px;">
-        <a href="./request.html" class="btn-cta" style="width:100%; justify-content:center;" data-i18n="btn_request">طلب استشارة تجارية</a>
+        <a href="./request.html" class="btn-cta" style="width:100%; justify-content:center;" onclick="closeMobileMenu()" data-i18n="btn_request">طلب استشارة تجارية</a>
       </div>
     </div>
   </aside>
 
-  <main class="main-wrapper">
+  <div class="breadcrumb" style="max-width:1280px; margin:20px auto 0; padding:0 24px; font-size:0.85rem; color:var(--text-muted);">
+    <a href="../index.html" style="color:var(--text-muted); text-decoration:none;" data-i18n="nav_home">الرئيسية</a>
+    <span style="margin:0 8px;">/</span>
+    <span style="color:var(--primary-gold);" data-i18n="nav_about">من نحن</span>
+  </div>
 
-  <section class="section-container" style="padding-top:40px;">
+<main class="main-wrapper">
+  <!-- Hero Section -->
+  <section class="section-container" style="padding-top:40px; padding-bottom:40px;">
     <div class="section-header">
-      <span class="section-tag" data-i18n="nav_about">عن الشركة</span>
-      <h1 class="section-title" data-i18n="page_ab_title"></h1>
-      <p class="section-sub" data-i18n="page_ab_sub"></p>
+      <span class="section-tag" data-i18n="page_about_tag">الهوية المؤسسية والترخيص</span>
+      <h1 class="section-title" data-i18n="page_about_title">ريادة في إدارة صفقات التجارة الدولية وتطوير سلاسل الإمداد</h1>
+      <p class="section-sub" data-i18n="page_about_sub">شركة تكامل للتجارة الدولية ش.م.م، بيت تجارة عُماني رائد يتخذ من العاصمة مسقط مقراً لربط الأسواق العالمية بمنطقة الخليج والشرق الأوسط.</p>
     </div>
 
-    <div class="cards-grid-3" style="margin-bottom:50px;">
+    <!-- Governance & Regulatory Highlights -->
+    <div class="section-header" style="margin-bottom:36px;">
+      <span class="section-tag" data-i18n="about_sec_gov_tag">الحوكمة والامتثال القانوني</span>
+      <h2 class="section-title" data-i18n="about_sec_gov_title">كيان تجاري مسجل وفق أرقى المعايير التنظيمية العمانية</h2>
+      <p class="section-sub" data-i18n="about_sec_gov_sub">تلتزم شركة تكامل للتجارة الدولية (سجل تجاري: 1389420) بأعلى معايير الشفافية المالية والامتثال لأنظمة التجارة الدولية ومكافحة غسيل الأموال.</p>
+    </div>
+
+    <div class="cards-grid-3" style="margin-bottom:70px;">
       <div class="service-card">
-        <h3 class="service-card-title"><span data-i18n="ab_c1_title">رؤيتنا الاستراتيجية</span></h3>
-        <p class="service-card-desc"><span data-i18n="ab_vision_desc">أن نكون بيت التجارة واللوجستيات المفضل والأكثر موثوقية في سلطنة عُمان والمنطقة، من خلال بناء تحالفات تجارية مستدامة وتمكين هوية المنتج الوطني.</span></p>
+        <h3 class="service-card-title" data-i18n="about_card_reg_title">السجل التجاري والترخيص الأساسي</h3>
+        <p class="service-card-desc" data-i18n="about_card_reg_desc">سجل تجاري رقم 1389420 مسجل لدى وزارة التجارة والصناعة وترويج الاستثمار، بعضوية معتمدة في غرفة تجارة وصناعة عمان لتمثيل التجارة العامة والتصدير والاستيراد.</p>
       </div>
 
       <div class="service-card">
-        <h3 class="service-card-title" data-i18n="ab_mission_title">رسالتنا التشغيلية</h3>
-        <p class="service-card-desc"><span data-i18n="ab_mission_desc">تقديم حلول متكاملة في التوريد، التصدير، الاستيراد، وتوطين خطوط التجميع بأعلى معايير الشفافية والحوكمة وضمان حقوق الأطراف المتعاقدة.</span></p>
+        <h3 class="service-card-title" data-i18n="about_card_v2040_title">التوافق مع رؤية عمان 2040</h3>
+        <p class="service-card-desc" data-i18n="about_card_v2040_desc">دعم أهداف التنويع الاقتصادي الوطني عبر ترسيخ سلطنة عمان كمركز لوجستي محوري يربط التجارة الإقليمية بالأسواق الدولية وتوطين الصناعات ذات القيمة المضافة.</p>
       </div>
 
       <div class="service-card">
-        <h3 class="service-card-title" data-i18n="ab_values_title">قيمنا الجوهرية</h3>
-        <p class="service-card-desc"><span data-i18n="ab_values_desc">الأمانة والسرية التجارية التامة (NDA)، الامتثال التنظيمي والتشريعي الكامل، الكفاءة في إدارة التكاليف، والسرعة في إنجاز العمليات الميدانية.</span></p>
+        <h3 class="service-card-title" data-i18n="about_card_risk_title">إدارة المخاطر والشفافية المصرفية</h3>
+        <p class="service-card-desc" data-i18n="about_card_risk_desc">معاملات خاضعة للتدقيق المستندي المستقل، مع قنوات مصرفية موثوقة وعقود تجارية تخضع لقوانين التحكيم التجاري المعتمدة دولياً ومحلياً.</p>
       </div>
     </div>
 
-    <div style="background:var(--bg-surface); border:1px solid var(--border-gold); border-radius:24px; padding:36px; margin-bottom:50px;">
-      <h3 style="font-size:1.3rem; font-weight:800; color:var(--primary-gold); margin-bottom:16px;"><span data-i18n="ab_official_info_title">المعلومات والبيانات الرسمية للشركة</span></h3>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:20px;">
-        <div>
-          <strong style="color:var(--text-muted); font-size:0.85rem;"><span data-i18n="lbl_legal_name">الاسم القانوني بالعربية:</span></strong>
-          <div style="font-size:1rem; font-weight:700; color:var(--text-primary); margin-top:4px;"><span data-i18n="val_legal_name">شركة تكامل للتجارة الدولية ش.م.م</span></div>
-        </div>
-        <div>
-          <strong style="color:var(--text-muted); font-size:0.85rem;">Legal Name (EN):</strong>
-          <div style="font-size:1rem; font-weight:700; color:var(--text-primary); margin-top:4px;">Al Takamul International Trading LLC</div>
-        </div>
-        <div>
-          <strong style="color:var(--text-muted); font-size:0.85rem;"><span data-i18n="lbl_cr_number">رقم السجل التجاري (CR):</span></strong>
-          <div style="font-size:1rem; font-weight:700; color:var(--primary-gold); margin-top:4px;">CR 1389420 / Sultanate of Oman</div>
-        </div>
-        <div>
-          <strong style="color:var(--text-muted); font-size:0.85rem;"><span data-i18n="lbl_headquarters">المقر الرئيسي:</span></strong>
-          <div style="font-size:1rem; font-weight:700; color:var(--text-primary); margin-top:4px;"><span data-i18n="val_headquarters">مسقط - واحة المعرفة (KOM)</span></div>
-        </div>
-        <div>
-          <strong style="color:var(--text-muted); font-size:0.85rem;"><span data-i18n="lbl_phone_wa">الهاتف المباشر والواتساب:</span></strong>
-          <div style="font-size:1rem; font-weight:700; color:var(--text-primary); margin-top:4px;">+968 7108 1635</div>
-        </div>
-        <div>
-          <strong style="color:var(--text-muted); font-size:0.85rem;"><span data-i18n="lbl_official_email">البريد الإلكتروني المعتمد:</span></strong>
-          <div style="font-size:1rem; font-weight:700; color:var(--text-primary); margin-top:4px;">info@omantakamul.com</div>
-        </div>
+    <!-- 4 Pillars Section -->
+    <div class="section-header" style="margin-bottom:36px;">
+      <span class="section-tag" data-i18n="about_sec_pillars_tag">الأركان المؤسسية</span>
+      <h2 class="section-title" data-i18n="about_sec_pillars_title">الركائز الأربع التي تبنى عليها صفقات تكامل</h2>
+    </div>
+
+    <div class="cards-grid-4" style="margin-bottom:70px;">
+      <div class="service-card">
+        <h3 class="service-card-title" data-i18n="about_pil_1_title">السرعة والدقة في التنفيذ اللوجستي</h3>
+        <p class="service-card-desc" data-i18n="about_pil_1_desc">تقليص زمن عبور الحاويات والتخليص الجمركي المسبق عبر نظام بيان الإلكتروني لتفادي أي غرامات تأخير أو رسوم تخزين.</p>
+      </div>
+
+      <div class="service-card">
+        <h3 class="service-card-title" data-i18n="about_pil_2_title">الأمان المالي والاعتمادات المستندية</h3>
+        <p class="service-card-desc" data-i18n="about_pil_2_desc">استخدام هياكل دفع بنكية متطورة واعتمادات مستندية معززة غير قابلة للإلغاء لحماية أموال المشترين والموردين.</p>
+      </div>
+
+      <div class="service-card">
+        <h3 class="service-card-title" data-i18n="about_pil_3_title">الجودة المطابقة للمواصفات العالمية</h3>
+        <p class="service-card-desc" data-i18n="about_pil_3_desc">فحص البضائع عبر وكالات تفتيش دولية مستقلة وإصدار شهادات المطابقة القياسية (CoC) قبل مغادرة موانئ الشحن.</p>
+      </div>
+
+      <div class="service-card">
+        <h3 class="service-card-title" data-i18n="about_pil_4_title">المرونة الجيوسياسية خارج المضائق</h3>
+        <p class="service-card-desc" data-i18n="about_pil_4_desc">تأمين تدفقات الإمداد عبر موانئ عمان المطلة على المحيط الهندي وبحر العرب بعيداً عن التوترات الإقليمية.</p>
       </div>
     </div>
   </section>
 
-  </main>
+    <section class="section-container" style="padding-top:20px; padding-bottom:80px;">
+    <div style="background:var(--brand-gradient); border:1px solid var(--border-gold); border-radius:28px; padding:50px 36px; text-align:center; position:relative; overflow:hidden; box-shadow:var(--shadow-lg);">
+      <div style="position:relative; z-index:2; max-width:760px; margin:0 auto;">
+        <span class="section-tag" style="background:rgba(255,255,255,0.1); color:#FDE68A; border-color:rgba(253,230,138,0.4);" data-i18n="cta_tag">بدء التعاون الاستراتيجي</span>
+        <h2 style="font-size:2.2rem; font-weight:800; color:#FFFFFF; margin:16px 0;" data-i18n="cta_title">هل تخطط لتوسيع تجارتك الدولية أو توريد شحناتك عبر عُمان؟</h2>
+        <p style="font-size:1.05rem; color:#E2E8F0; margin-bottom:32px; line-height:1.75;" data-i18n="cta_sub">فريقنا القانوني والتجاري واللوجستي جاهز لدراسة متطلباتك وتقديم حلول مخصصة لحماية رأس مالك وتسريع إنجاز الصفقات.</p>
+        <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+          <a href="./request.html" class="btn-cta" style="padding:14px 32px; font-size:1rem;" data-i18n="btn_request">طلب استشارة تجارية</a>
+          <a href="./contact.html" class="btn-secondary" style="padding:14px 32px; font-size:1rem;" data-i18n="nav_contact">اتصل بنا مباشرة</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
-  <!-- Floating Actions -->
-  <a href="https://wa.me/96871081635" target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn" title="WhatsApp Direct Line" aria-label="WhatsApp">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7.02 8.48 7.02 9.69C7.02 10.9 7.9 12.06 8.02 12.23C8.14 12.4 9.74 14.88 12.19 15.94C12.78 16.19 13.23 16.34 13.59 16.46C14.18 16.65 14.72 16.62 15.15 16.56C15.63 16.49 16.63 15.95 16.84 15.37C17.05 14.79 17.05 14.3 16.99 14.2C16.93 14.1 16.76 14.04 16.51 13.92C16.26 13.8 15.03 13.19 14.8 13.11C14.57 13.03 14.4 12.99 14.23 13.24C14.06 13.49 13.57 14.1 13.42 14.27C13.27 14.44 13.12 14.46 12.87 14.34C12.62 14.22 11.81 13.95 10.86 13.11C10.12 12.45 9.62 11.64 9.47 11.39C9.32 11.14 9.45 11 9.58 10.88C9.69 10.77 9.83 10.59 9.95 10.45C10.07 10.31 10.11 10.21 10.19 10.05C10.27 9.89 10.23 9.75 10.17 9.63C10.11 9.51 9.62 8.31 9.41 7.82C9.21 7.34 9.01 7.4 8.86 7.39C8.72 7.38 8.55 7.38 8.53 7.33Z"/>
-    </svg>
-  </a>
-
-  <button id="backToTopBtn" class="back-to-top-btn" aria-label="Back to top" title="إلى الأعلى">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
-  </button>
-
-    <!-- Mobile Sticky CTA Bar -->
-    <!-- Mobile Sticky CTA Bar -->
+  <!-- Mobile Sticky CTA Bar -->
   <div class="mobile-sticky-cta">
     <div class="mobile-sticky-info">
       <div class="mobile-sticky-title" data-i18n="brand_name">شركة تكامل للتجارة الدولية</div>
@@ -276,7 +266,7 @@
     </div>
   </div>
 
-  <!-- Corporate Footer -->
+  <!-- Corporate Footer (Light & Dark Mode Optimized) -->
   <footer class="site-footer">
     <div class="footer-grid">
       <div>
@@ -284,10 +274,10 @@
           <img src="../img/logo.png" alt="Al Takamul" style="height:36px; width:auto;">
           <span style="font-weight:800; font-size:1.1rem; color:var(--text-primary);" data-i18n="brand_name">شركة تكامل للتجارة الدولية</span>
         </div>
-        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.75; margin-bottom:16px;" data-i18n="footer_about">
+        <p style="font-size:0.88rem; line-height:1.75; margin-bottom:16px;" data-i18n="footer_about">
           بيت التجارة الدولية الرائد في مسقط لتقديم خدمات التجارة العابرة للحدود، سلاسل الإمداد المتطورة، وتوطين الصناعات.
         </p>
-        <div style="font-size:0.82rem; color:var(--primary-gold);" data-i18n="footer_cr">CR 1389420 / مسقط، سلطنة عُمان</div>
+        <div style="font-size:0.82rem; color:var(--primary-gold); font-weight:700;" data-i18n="footer_cr">CR 1389420 / مسقط، سلطنة عُمان</div>
       </div>
 
       <div>
@@ -302,42 +292,40 @@
       </div>
 
       <div>
-        <div class="footer-col-title" data-i18n="footer_col_company">الشركة والشفافية</div>
+        <div class="footer-col-title" data-i18n="footer_col_company">بوابات التجارة والمؤسسة</div>
         <ul class="footer-links-list">
           <li><a href="./about.html" class="footer-link" data-i18n="nav_about">من نحن ورؤيتنا</a></li>
-          <li><a href="./services.html" class="footer-link" data-i18n="nav_services">مصفوفة الخدمات</a></li>
+          <li><a href="./hubs.html" class="footer-link" data-i18n="nav_hubs">الموانئ والمناطق الحرة</a></li>
+          <li><a href="./process.html" class="footer-link" data-i18n="nav_process">آلية العمل والمسار التنفيذي</a></li>
+          <li><a href="./services.html" class="footer-link" data-i18n="nav_services">مصفوفة الخدمات الشاملة</a></li>
           <li><a href="./faq.html" class="footer-link" data-i18n="nav_faq">الأسئلة الشائعة</a></li>
-          <li><a href="./privacy.html" class="footer-link" data-i18n="footer_privacy">سياسة الخصوصية</a></li>
-          <li><a href="./terms.html" class="footer-link" data-i18n="footer_terms">الشروط والأحكام</a></li>
         </ul>
       </div>
 
       <div>
-        <div class="footer-col-title" data-i18n="footer_col_contact">معلومات الاتصال</div>
+        <div class="footer-col-title" data-i18n="footer_col_contact">التواصل والامتثال</div>
         <ul class="footer-links-list">
-          <li style="font-size:0.88rem; color:var(--text-secondary);" data-i18n="footer_hq_label">📍 مسقط، سلطنة عُمان - واحة المعرفة / مجمع الأعمال التجاري</li>
-          <li style="font-size:0.88rem; color:var(--text-secondary);">📞 +968 7108 1635 / +968 3153 6000</li>
-          <li style="font-size:0.88rem; color:var(--text-secondary);">✉️ info@omantakamul.com</li>
-          <li style="margin-top:10px;">
-            <a href="https://wa.me/96871081635" target="_blank" rel="noopener" class="btn-secondary" style="padding:6px 14px; font-size:0.82rem;">WhatsApp Desk</a>
-          </li>
+          <li><a href="./contact.html" class="footer-link" data-i18n="nav_contact">المكتب الرئيسي بمسقط</a></li>
+          <li><a href="./request.html" class="footer-link" data-i18n="btn_request">طلب استشارة تجارية</a></li>
+          <li><a href="./privacy.html" class="footer-link" data-i18n="footer_privacy">سياسة الخصوصية</a></li>
+          <li><a href="./terms.html" class="footer-link" data-i18n="footer_terms">الشروط والأحكام</a></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <div data-i18n="footer_copy">جميع الحقوق محفوظة © ٢٠٢٦ <span data-i18n="val_legal_name">شركة تكامل للتجارة الدولية ش.م.م</span></div>
+      <div data-i18n="footer_copy">© 2026 شركة تكامل للتجارة الدولية ش.م.م. جميع الحقوق محفوظة.</div>
       <div style="display:flex; gap:16px;">
-        <a href="./privacy.html" class="footer-link" data-i18n="footer_privacy">الخصوصية</a>
-        <a href="./terms.html" class="footer-link" data-i18n="footer_terms">الشروط</a>
+        <span data-i18n="footer_tagline">بوابتك الموثوقة للتجارة العالمية عبر سلطنة عمان</span>
       </div>
     </div>
   </footer>
 
-  <!-- Floating Back to Top Button -->
-  <button id="backToTopBtn" class="back-to-top-btn" aria-label="Back to Top" title="إلى الأعلى">
+  <button class="back-to-top-btn" id="backToTopBtn" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Back to Top">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
   </button>
 
+  <script src="../js/translations_data.js?v=5.0"></script>
+  <script src="../js/main.js?v=5.0"></script>
 </body>
 </html>

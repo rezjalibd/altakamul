@@ -1,0 +1,272 @@
+import json, os, re
+
+BASE_DIR = '/opt/data/cache/scratch/altakamul-site'
+
+with open(os.path.join(BASE_DIR, 'translations.json'), 'r', encoding='utf-8') as f:
+    t = json.load(f)
+
+def get_head(title, is_root=False):
+    root_prefix = './' if is_root else '../'
+    return f'''<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>{title}</title>
+  <link rel="icon" type="image/png" href="{root_prefix}img/logo.png">
+  <link rel="stylesheet" href="{root_prefix}css/style.css?v=5.0">
+</head>
+<body>
+'''
+
+def get_header(is_root=False):
+    page_prefix = './pages/' if is_root else './'
+    home_link = './index.html' if is_root else '../index.html'
+    root_prefix = './' if is_root else '../'
+    logo_src = f'{root_prefix}img/logo.png'
+
+    return f'''  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="{home_link}" class="brand-link">
+        <img src="{logo_src}" alt="Al Takamul" class="brand-logo" width="42" height="42">
+        <div class="brand-text-wrap">
+          <span class="brand-title" data-i18n="brand_name">شركة تكامل للتجارة الدولية</span>
+          <span class="brand-subtitle" data-i18n="brand_sub">Al Takamul International Trading LLC</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav (FAQ removed from header as requested) -->
+      <nav class="main-nav">
+        <a href="{home_link}" class="nav-link" data-i18n="nav_home">الرئيسية</a>
+        <a href="{page_prefix}about.html" class="nav-link" data-i18n="nav_about">من نحن</a>
+        
+        <div class="nav-dropdown-wrapper">
+          <a href="{page_prefix}services.html" class="nav-link nav-dropdown-trigger">
+            <span data-i18n="nav_services">خدماتنا</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="{page_prefix}international-trade.html" class="dropdown-item">
+              <div>
+                <span class="dropdown-item-title" data-i18n="service_1_title">التجارة الدولية وبيت التجارة</span>
+                <span class="dropdown-item-desc" data-i18n="service_1_desc">عقد الصفقات الكبرى والتمثيل التجاري</span>
+              </div>
+            </a>
+            <a href="{page_prefix}import-export.html" class="dropdown-item">
+              <div>
+                <span class="dropdown-item-title" data-i18n="service_2_title">الاستيراد والتصدير وإعادة التصدير</span>
+                <span class="dropdown-item-desc" data-i18n="service_2_desc">شحنات بحرية وجوية وتخليص جمركي</span>
+              </div>
+            </a>
+            <a href="{page_prefix}procurement.html" class="dropdown-item">
+              <div>
+                <span class="dropdown-item-title" data-i18n="service_3_title">توريد وتأمين احتياجات المشاريع</span>
+                <span class="dropdown-item-desc" data-i18n="service_3_desc">تأمين المواد الخام والآلات الكبرى</span>
+              </div>
+            </a>
+            <a href="{page_prefix}financial-advisory.html" class="dropdown-item">
+              <div>
+                <span class="dropdown-item-title" data-i18n="service_4_title">الاستشارات المالية والاعتمادات</span>
+                <span class="dropdown-item-desc" data-i18n="service_4_desc">هندسة الدفع والاعتمادات المستندية</span>
+              </div>
+            </a>
+            <a href="{page_prefix}made-in-oman.html" class="dropdown-item">
+              <div>
+                <span class="dropdown-item-title" data-i18n="service_5_title">بنية التصنيع وهوية صُنع في عُمان</span>
+                <span class="dropdown-item-desc" data-i18n="service_5_desc">شهادة المنشأ والاستفادة من اتفاقيات FTA</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Dedicated Hubs & Process Pages (No more anchor scrolling) -->
+        <a href="{page_prefix}hubs.html" class="nav-link" data-i18n="nav_hubs">الموانئ والمناطق الحرة</a>
+        <a href="{page_prefix}process.html" class="nav-link" data-i18n="nav_process">آلية العمل</a>
+        <a href="{page_prefix}contact.html" class="nav-link" data-i18n="nav_contact">اتصل بنا</a>
+      </nav>
+
+      <!-- Header Controls -->
+      <div class="header-actions">
+        <!-- 3-Language Selector -->
+        <div class="lang-dropdown-wrapper">
+          <button class="lang-dropdown-btn" onclick="toggleLangMenu(event)" aria-label="Language Selector">
+            <svg class="lang-globe-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span class="current-lang-code">AR</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="lang-dropdown-menu" id="langDropdownMenu">
+            <button class="lang-option active" data-lang="ar" onclick="setLanguage('ar')">العربية</button>
+            <button class="lang-option" data-lang="fa" onclick="setLanguage('fa')">فارسی</button>
+            <button class="lang-option" data-lang="en" onclick="setLanguage('en')">English</button>
+          </div>
+        </div>
+
+        <!-- Theme Toggle Button -->
+        <button class="btn-theme-toggle" onclick="toggleTheme()" aria-label="Toggle Theme" title="تبديل النمط">
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- CTA Header Button (Desktop) -->
+        <a href="{page_prefix}request.html" class="btn-cta" data-i18n="btn_request_short">طلب استشارة</a>
+
+        <!-- Mobile Drawer Toggle Hamburger -->
+        <button class="mobile-toggle" onclick="toggleMobileMenu(event)" aria-label="Menu Toggle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay & Drawer with Nested Accordions -->
+  <div class="mobile-drawer-overlay" id="mobileDrawerOverlay" onclick="closeMobileMenu()"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <span style="font-weight:800; font-size:1.05rem;" data-i18n="brand_name">شركة تكامل</span>
+      <button class="mobile-close-btn" onclick="closeMobileMenu()" aria-label="Close">&times;</button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="{home_link}" class="mobile-nav-link" onclick="closeMobileMenu()" data-i18n="nav_home">الرئيسية</a>
+      <a href="{page_prefix}about.html" class="mobile-nav-link" onclick="closeMobileMenu()" data-i18n="nav_about">من نحن</a>
+      
+      <!-- Accordion 1: Services -->
+      <div class="mobile-accordion-group" id="groupServices">
+        <div class="mobile-accordion-toggle" onclick="toggleMobileSubmenu(event, 'subServices')">
+          <span data-i18n="nav_services">دليل الخدمات</span>
+          <svg class="accordion-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+        <div class="mobile-submenu" id="subServices">
+          <a href="{page_prefix}services.html" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="nav_services_all">جميع الخدمات التجارية</a>
+          <a href="{page_prefix}international-trade.html" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="service_1_title">التجارة الدولية</a>
+          <a href="{page_prefix}import-export.html" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="service_2_title">الاستيراد والتصدير</a>
+          <a href="{page_prefix}procurement.html" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="service_3_title">توريد المشاريع</a>
+          <a href="{page_prefix}financial-advisory.html" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="service_4_title">الاستشارات المالية</a>
+          <a href="{page_prefix}made-in-oman.html" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="service_5_title">صُنع في عُمان</a>
+        </div>
+      </div>
+
+      <!-- Accordion 2: Hubs (Links to Dedicated Page & Hubs) -->
+      <div class="mobile-accordion-group" id="groupHubs">
+        <div class="mobile-accordion-toggle" onclick="toggleMobileSubmenu(event, 'subHubs')">
+          <span data-i18n="nav_hubs">الموانئ والمناطق الحرة</span>
+          <svg class="accordion-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+        <div class="mobile-submenu" id="subHubs">
+          <a href="{page_prefix}hubs.html" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="nav_hubs_all">دليل الموانئ والمناطق الحرة</a>
+          <a href="{page_prefix}hubs.html#sohar" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="hub_sohar_title">ميناء وصناعية صحار</a>
+          <a href="{page_prefix}hubs.html#salalah" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="hub_salalah_title">ميناء صلالة الاستراتيجي</a>
+          <a href="{page_prefix}hubs.html#duqm" class="mobile-submenu-link" onclick="closeMobileMenu()" data-i18n="hub_duqm_title">المنطقة الاقتصادية بالدقم</a>
+        </div>
+      </div>
+
+      <a href="{page_prefix}process.html" class="mobile-nav-link" onclick="closeMobileMenu()" data-i18n="nav_process">آلية العمل والمسار التنفيذي</a>
+      <a href="{page_prefix}contact.html" class="mobile-nav-link" onclick="closeMobileMenu()" data-i18n="nav_contact">اتصل بنا</a>
+      
+      <div style="margin-top:20px;">
+        <a href="{page_prefix}request.html" class="btn-cta" style="width:100%; justify-content:center;" onclick="closeMobileMenu()" data-i18n="btn_request">طلب استشارة تجارية</a>
+      </div>
+    </div>
+  </aside>
+'''
+
+def get_footer(is_root=False):
+    page_prefix = './pages/' if is_root else './'
+    home_link = './index.html' if is_root else '../index.html'
+    root_prefix = './' if is_root else '../'
+    logo_src = f'{root_prefix}img/logo.png'
+
+    return f'''  <!-- Mobile Sticky CTA Bar -->
+  <div class="mobile-sticky-cta">
+    <div class="mobile-sticky-info">
+      <div class="mobile-sticky-title" data-i18n="brand_name">شركة تكامل للتجارة الدولية</div>
+      <div class="mobile-sticky-tag" data-i18n="hero_badge_clean">مسقط • سلطنة عمان</div>
+    </div>
+    <div class="mobile-sticky-actions">
+      <a href="https://wa.me/96871081635" target="_blank" rel="noopener" class="mobile-sticky-wa-btn" aria-label="WhatsApp">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+      </a>
+      <a href="{page_prefix}request.html" class="btn-cta btn-compact" data-i18n="btn_request_short">طلب استشارة</a>
+    </div>
+  </div>
+
+  <!-- Corporate Footer (Light & Dark Mode Optimized) -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+          <img src="{logo_src}" alt="Al Takamul" style="height:36px; width:auto;">
+          <span style="font-weight:800; font-size:1.1rem; color:var(--text-primary);" data-i18n="brand_name">شركة تكامل للتجارة الدولية</span>
+        </div>
+        <p style="font-size:0.88rem; line-height:1.75; margin-bottom:16px;" data-i18n="footer_about">
+          بيت التجارة الدولية الرائد في مسقط لتقديم خدمات التجارة العابرة للحدود، سلاسل الإمداد المتطورة، وتوطين الصناعات.
+        </p>
+        <div style="font-size:0.82rem; color:var(--primary-gold); font-weight:700;" data-i18n="footer_cr">CR 1389420 / مسقط، سلطنة عُمان</div>
+      </div>
+
+      <div>
+        <div class="footer-col-title" data-i18n="footer_col_services">خدماتنا الأساسية</div>
+        <ul class="footer-links-list">
+          <li><a href="{page_prefix}international-trade.html" class="footer-link" data-i18n="service_1_title">التجارة الدولية</a></li>
+          <li><a href="{page_prefix}import-export.html" class="footer-link" data-i18n="service_2_title">الاستيراد والتصدير</a></li>
+          <li><a href="{page_prefix}procurement.html" class="footer-link" data-i18n="service_3_title">توريد المشاريع</a></li>
+          <li><a href="{page_prefix}financial-advisory.html" class="footer-link" data-i18n="service_4_title">الاستشارات المالية</a></li>
+          <li><a href="{page_prefix}made-in-oman.html" class="footer-link" data-i18n="service_5_title">صُنع في عُمان</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title" data-i18n="footer_col_company">بوابات التجارة والمؤسسة</div>
+        <ul class="footer-links-list">
+          <li><a href="{page_prefix}about.html" class="footer-link" data-i18n="nav_about">من نحن ورؤيتنا</a></li>
+          <li><a href="{page_prefix}hubs.html" class="footer-link" data-i18n="nav_hubs">الموانئ والمناطق الحرة</a></li>
+          <li><a href="{page_prefix}process.html" class="footer-link" data-i18n="nav_process">آلية العمل والمسار التنفيذي</a></li>
+          <li><a href="{page_prefix}services.html" class="footer-link" data-i18n="nav_services">مصفوفة الخدمات الشاملة</a></li>
+          <li><a href="{page_prefix}faq.html" class="footer-link" data-i18n="nav_faq">الأسئلة الشائعة</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title" data-i18n="footer_col_contact">التواصل والامتثال</div>
+        <ul class="footer-links-list">
+          <li><a href="{page_prefix}contact.html" class="footer-link" data-i18n="nav_contact">المكتب الرئيسي بمسقط</a></li>
+          <li><a href="{page_prefix}request.html" class="footer-link" data-i18n="btn_request">طلب استشارة تجارية</a></li>
+          <li><a href="{page_prefix}privacy.html" class="footer-link" data-i18n="footer_privacy">سياسة الخصوصية</a></li>
+          <li><a href="{page_prefix}terms.html" class="footer-link" data-i18n="footer_terms">الشروط والأحكام</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div data-i18n="footer_copy">© 2026 شركة تكامل للتجارة الدولية ش.م.م. جميع الحقوق محفوظة.</div>
+      <div style="display:flex; gap:16px;">
+        <span data-i18n="footer_tagline">بوابتك الموثوقة للتجارة العالمية عبر سلطنة عمان</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top-btn" id="backToTopBtn" onclick="window.scrollTo({{top:0, behavior:'smooth'}})" aria-label="Back to Top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
+  <script src="{root_prefix}js/translations_data.js?v=5.0"></script>
+  <script src="{root_prefix}js/main.js?v=5.0"></script>
+</body>
+</html>
+'''
