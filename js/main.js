@@ -114,6 +114,24 @@
     return overlay;
   }
 
+  window.toggleMobileSubmenu = function (e, id) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    const group = e.currentTarget.closest('.mobile-accordion-group');
+    if (!group) return;
+
+    // Optional: close other accordion groups
+    document.querySelectorAll('.mobile-accordion-group').forEach(other => {
+      if (other !== group) {
+        other.classList.remove('active');
+      }
+    });
+
+    group.classList.toggle('active');
+  };
+
   window.toggleMobileMenu = function (e) {
     if (e) {
       e.preventDefault();

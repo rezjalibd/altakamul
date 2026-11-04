@@ -16,10 +16,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css?v=4.3">
+  <link rel="stylesheet" href="../css/style.css?v=4.5">
   <!-- Synchronous In-Memory Locale & Theme Engine -->
   <script src="../js/translations_data.js"></script>
-  <script src="../js/main.js?v=4.1"></script>
+  <script src="../js/main.js?v=4.5"></script>
 </head>
 <body>
   <!-- Ambient Backdrop -->
@@ -141,25 +141,50 @@
   </header>
 
   <!-- Mobile Drawer Overlay & Drawer -->
+    <!-- Mobile Drawer Overlay & Drawer with Nested Submenus -->
   <div class="mobile-drawer-overlay" id="mobileDrawerOverlay" onclick="closeMobileMenu()"></div>
   <aside class="mobile-drawer" id="mobileDrawer">
     <div class="mobile-drawer-header">
-      <span style="font-weight:800; font-size:1.05rem;" data-i18n="brand_name">شركة تکامل</span>
+      <span style="font-weight:800; font-size:1.05rem;" data-i18n="brand_name">شركة تكامل</span>
       <button class="mobile-close-btn" onclick="closeMobileMenu()" aria-label="Close">&times;</button>
     </div>
     <div class="mobile-nav-links">
       <a href="../index.html" class="mobile-nav-link" data-i18n="nav_home">الرئيسية</a>
       <a href="./about.html" class="mobile-nav-link" data-i18n="nav_about">من نحن</a>
-      <a href="./services.html" class="mobile-nav-link" data-i18n="nav_services">دليل الخدمات</a>
-      <a href="./international-trade.html" class="mobile-nav-link" style="padding-right:24px;" data-i18n="service_1_title">التجارة الدولية</a>
-      <a href="./import-export.html" class="mobile-nav-link" style="padding-right:24px;" data-i18n="service_2_title">الاستيراد والتصدير</a>
-      <a href="./procurement.html" class="mobile-nav-link" style="padding-right:24px;" data-i18n="service_3_title">توريد المشاريع</a>
-      <a href="./financial-advisory.html" class="mobile-nav-link" style="padding-right:24px;" data-i18n="service_4_title">الاستشارات المالية</a>
-      <a href="./made-in-oman.html" class="mobile-nav-link" style="padding-right:24px;" data-i18n="service_5_title">صُنع في عُمان</a>
-      <a href="../index.html#hubs" class="mobile-nav-link" data-i18n="nav_hubs">الموانئ والمناطق الحرة</a>
+
+      <!-- Nested Services Accordion -->
+      <div class="mobile-accordion-group">
+        <button class="mobile-accordion-toggle" onclick="toggleMobileSubmenu(event, 'subServices')">
+          <span data-i18n="nav_services">دليل الخدمات</span>
+          <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="mobile-submenu" id="subServices">
+          <a href="./services.html" class="mobile-submenu-link" data-i18n="nav_all_services">← جميع الخدمات والحلول</a>
+          <a href="./international-trade.html" class="mobile-submenu-link" data-i18n="service_1_title">التجارة الدولية وبيت التجارة</a>
+          <a href="./import-export.html" class="mobile-submenu-link" data-i18n="service_2_title">الاستيراد والتصدير وإعادة التصدير</a>
+          <a href="./procurement.html" class="mobile-submenu-link" data-i18n="service_3_title">توريد وتأمين احتياجات المشاريع</a>
+          <a href="./financial-advisory.html" class="mobile-submenu-link" data-i18n="service_4_title">الاستشارات المالية والاعتمادات</a>
+          <a href="./made-in-oman.html" class="mobile-submenu-link" data-i18n="service_5_title">بنية التصنيع وهوية صُنع في عُمان</a>
+        </div>
+      </div>
+
+      <!-- Nested Hubs Accordion -->
+      <div class="mobile-accordion-group">
+        <button class="mobile-accordion-toggle" onclick="toggleMobileSubmenu(event, 'subHubs')">
+          <span data-i18n="nav_hubs">الموانئ والمناطق الحرة</span>
+          <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="mobile-submenu" id="subHubs">
+          <a href="../index.html#hub-sohar" class="mobile-submenu-link" data-i18n="hub_sohar_title">ميناء ومنطقة صحار الحرة</a>
+          <a href="../index.html#hub-salalah" class="mobile-submenu-link" data-i18n="hub_salalah_title">ميناء ومنطقة صلالة الحرة</a>
+          <a href="../index.html#hub-duqm" class="mobile-submenu-link" data-i18n="hub_duqm_title">منطقة الدقم الاقتصادية (SEZAD)</a>
+        </div>
+      </div>
+
       <a href="../index.html#process" class="mobile-nav-link" data-i18n="nav_process">آلية العمل</a>
       <a href="./contact.html" class="mobile-nav-link" data-i18n="nav_contact">اتصل بنا</a>
       <a href="./faq.html" class="mobile-nav-link" data-i18n="nav_faq">الأسئلة الشائعة</a>
+
       <div style="margin-top:20px;">
         <a href="./request.html" class="btn-cta" style="width:100%; justify-content:center;" data-i18n="btn_request">طلب استشارة تجارية</a>
       </div>
@@ -176,31 +201,31 @@
     </div>
 
     <div style="background:rgba(197,160,89,0.1); border:1px solid var(--border-gold); border-radius:18px; padding:20px 24px; margin-bottom:40px;">
-      <strong style="color:var(--primary-gold); font-size:1rem;">إشعار الحوكمة والامتثال المصرفي:</strong>
-      <p style="color:var(--text-secondary); font-size:0.9rem; line-height:1.65; margin-top:6px;">
+      <strong style="color:var(--primary-gold); font-size:1rem;"><span data-i18n="fa_compliance_notice_lbl">إشعار الحوكمة والامتثال المصرفي:</span></strong>
+      <p style="color:var(--text-secondary); font-size:0.9rem; line-height:1.65; margin-top:6px;" data-i18n="fa_compliance_notice_desc">
         شركة تكامل للتجارة الدولية ش.م.م شركة بازرگانی بین‌المللی است و نهاد بانکی، اعطاکننده وام یا صرافی محسوب نمی‌شود. خدمات ما منحصراً در چارچوب مشاوره ساختار پرداخت، تحلیل ریسک اعتباری، آماده‌سازی شروط اعتبارات اسنادی (L/C) و هماهنگی با بانک‌ها و نهادهای مالی دارای مجوز ارائه می‌گردد.
       </p>
     </div>
 
     <div class="cards-grid-3" style="margin-bottom:50px;">
       <div class="service-card">
-        <h3 class="service-card-title">هيكلة الدفع والاعتمادات المستندية</h3>
-        <p class="service-card-desc">المشورة الفنية في إعداد شروط L/C المعززة، خطابات الضمان المصرفية (Bank Guarantees / Performance Bonds) وشروط الدفع مقابل المستندات (CAD/DP).</p>
+        <h3 class="service-card-title"><span data-i18n="fa_sub1_title">هيكلة الدفع والاعتمادات المستندية</span></h3>
+        <p class="service-card-desc"><span data-i18n="fa_sub1_desc">المشورة الفنية في إعداد شروط L/C المعززة، خطابات الضمان المصرفية (Bank Guarantees / Performance Bonds) وشروط الدفع مقابل المستندات (CAD/DP).</span></p>
       </div>
 
       <div class="service-card">
-        <h3 class="service-card-title">فحص الجدارة والملاءة الائتمانية</h3>
-        <p class="service-card-desc">تقييم الوضع المالي وسجل المعاملات للموردين والمشترين الجدد قبل إبرام الصفقات لتجنب حالات التخلف عن السداد أو النزاعات التجارية.</p>
+        <h3 class="service-card-title"><span data-i18n="fa_sub2_title">فحص الجدارة والملاءة الائتمانية</span></h3>
+        <p class="service-card-desc"><span data-i18n="fa_sub2_desc">تقييم الوضع المالي وسجل المعاملات للموردين والمشترين الجدد قبل إبرام الصفقات لتجنب حالات التخلف عن السداد أو النزاعات التجارية.</span></p>
       </div>
 
       <div class="service-card">
-        <h3 class="service-card-title">تحليل تكاليف الاستيراد ورأس المال</h3>
-        <p class="service-card-desc">حساب دقيق لـ Landed Cost متضمناً الرسوم الجمركية، نولون الشحن، التأمين البحري، ونفقات التمويل ورأس المال العامل المطلوب لتنفيذ الصفقة.</p>
+        <h3 class="service-card-title"><span data-i18n="fa_sub3_title">تحليل تكاليف الاستيراد ورأس المال</span></h3>
+        <p class="service-card-desc"><span data-i18n="fa_sub3_desc">حساب دقيق لـ Landed Cost متضمناً الرسوم الجمركية، نولون الشحن، التأمين البحري، ونفقات التمويل ورأس المال العامل المطلوب لتنفيذ الصفقة.</span></p>
       </div>
     </div>
 
     <div style="text-align:center;">
-      <a href="./request.html" class="btn-cta" style="padding:14px 32px; font-size:1rem;">طلب استشارة ائتمانية وتجارية &larr;</a>
+      <a href="./request.html" class="btn-cta" style="padding:14px 32px; font-size:1rem;"><span data-i18n="btn_advisory_request">طلب استشارة ائتمانية وتجارية</span> &larr;</a>
     </div>
   </section>
 

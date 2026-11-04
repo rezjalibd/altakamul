@@ -16,10 +16,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css?v=4.3">
+  <link rel="stylesheet" href="../css/style.css?v=4.5">
   <!-- Synchronous In-Memory Locale & Theme Engine -->
   <script src="../js/translations_data.js"></script>
-  <script src="../js/main.js?v=4.1"></script>
+  <script src="../js/main.js?v=4.5"></script>
 </head>
 <body>
   <!-- Ambient Backdrop -->
@@ -141,25 +141,50 @@
   </header>
 
   <!-- Mobile Drawer Overlay & Drawer -->
+    <!-- Mobile Drawer Overlay & Drawer with Nested Submenus -->
   <div class="mobile-drawer-overlay" id="mobileDrawerOverlay" onclick="closeMobileMenu()"></div>
   <aside class="mobile-drawer" id="mobileDrawer">
     <div class="mobile-drawer-header">
-      <span style="font-weight:800; font-size:1.05rem;" data-i18n="brand_name">شركة تکامل</span>
+      <span style="font-weight:800; font-size:1.05rem;" data-i18n="brand_name">شركة تكامل</span>
       <button class="mobile-close-btn" onclick="closeMobileMenu()" aria-label="Close">&times;</button>
     </div>
     <div class="mobile-nav-links">
       <a href="../index.html" class="mobile-nav-link" data-i18n="nav_home">الرئيسية</a>
       <a href="./about.html" class="mobile-nav-link" data-i18n="nav_about">من نحن</a>
-      <a href="./services.html" class="mobile-nav-link" data-i18n="nav_services">دليل الخدمات</a>
-      <a href="./international-trade.html" class="mobile-nav-link" style="padding-right:24px;" data-i18n="service_1_title">التجارة الدولية</a>
-      <a href="./import-export.html" class="mobile-nav-link" style="padding-right:24px;" data-i18n="service_2_title">الاستيراد والتصدير</a>
-      <a href="./procurement.html" class="mobile-nav-link" style="padding-right:24px;" data-i18n="service_3_title">توريد المشاريع</a>
-      <a href="./financial-advisory.html" class="mobile-nav-link" style="padding-right:24px;" data-i18n="service_4_title">الاستشارات المالية</a>
-      <a href="./made-in-oman.html" class="mobile-nav-link" style="padding-right:24px;" data-i18n="service_5_title">صُنع في عُمان</a>
-      <a href="../index.html#hubs" class="mobile-nav-link" data-i18n="nav_hubs">الموانئ والمناطق الحرة</a>
+
+      <!-- Nested Services Accordion -->
+      <div class="mobile-accordion-group">
+        <button class="mobile-accordion-toggle" onclick="toggleMobileSubmenu(event, 'subServices')">
+          <span data-i18n="nav_services">دليل الخدمات</span>
+          <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="mobile-submenu" id="subServices">
+          <a href="./services.html" class="mobile-submenu-link" data-i18n="nav_all_services">← جميع الخدمات والحلول</a>
+          <a href="./international-trade.html" class="mobile-submenu-link" data-i18n="service_1_title">التجارة الدولية وبيت التجارة</a>
+          <a href="./import-export.html" class="mobile-submenu-link" data-i18n="service_2_title">الاستيراد والتصدير وإعادة التصدير</a>
+          <a href="./procurement.html" class="mobile-submenu-link" data-i18n="service_3_title">توريد وتأمين احتياجات المشاريع</a>
+          <a href="./financial-advisory.html" class="mobile-submenu-link" data-i18n="service_4_title">الاستشارات المالية والاعتمادات</a>
+          <a href="./made-in-oman.html" class="mobile-submenu-link" data-i18n="service_5_title">بنية التصنيع وهوية صُنع في عُمان</a>
+        </div>
+      </div>
+
+      <!-- Nested Hubs Accordion -->
+      <div class="mobile-accordion-group">
+        <button class="mobile-accordion-toggle" onclick="toggleMobileSubmenu(event, 'subHubs')">
+          <span data-i18n="nav_hubs">الموانئ والمناطق الحرة</span>
+          <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="mobile-submenu" id="subHubs">
+          <a href="../index.html#hub-sohar" class="mobile-submenu-link" data-i18n="hub_sohar_title">ميناء ومنطقة صحار الحرة</a>
+          <a href="../index.html#hub-salalah" class="mobile-submenu-link" data-i18n="hub_salalah_title">ميناء ومنطقة صلالة الحرة</a>
+          <a href="../index.html#hub-duqm" class="mobile-submenu-link" data-i18n="hub_duqm_title">منطقة الدقم الاقتصادية (SEZAD)</a>
+        </div>
+      </div>
+
       <a href="../index.html#process" class="mobile-nav-link" data-i18n="nav_process">آلية العمل</a>
       <a href="./contact.html" class="mobile-nav-link" data-i18n="nav_contact">اتصل بنا</a>
       <a href="./faq.html" class="mobile-nav-link" data-i18n="nav_faq">الأسئلة الشائعة</a>
+
       <div style="margin-top:20px;">
         <a href="./request.html" class="btn-cta" style="width:100%; justify-content:center;" data-i18n="btn_request">طلب استشارة تجارية</a>
       </div>
@@ -177,33 +202,33 @@
 
     <div class="faq-grid" style="margin-bottom:60px;">
       <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">ما هي المزايا الاستراتيجية للتجارة عبر سلطنة عُمان؟</div>
-        <div class="faq-a">تتمتع سلطنة عُمان بموقع استراتيجي خارج مضيق هرمز مفتوح على المحيط الهندي، وترتبط باتفاقيات تجارة حرة (FTA) مع الولايات المتحدة وسنغافورة ودول EFTA، بالإضافة إلى منظومة موانئ ومناطق حرة حديثة بإعفاءات ضريبية وجمركية تصل إلى 100%.</div>
+        <div class="faq-q"><span data-i18n="faq_q1">ما هي المزايا الاستراتيجية للتجارة عبر سلطنة عُمان؟</span></div>
+        <div class="faq-a"><span data-i18n="faq_a1">تتمتع سلطنة عُمان بموقع استراتيجي خارج مضيق هرمز مفتوح على المحيط الهندي، وترتبط باتفاقيات تجارة حرة (FTA) مع الولايات المتحدة وسنغافورة ودول EFTA، بالإضافة إلى منظومة موانئ ومناطق حرة حديثة بإعفاءات ضريبية وجمركية تصل إلى 100%.</span></div>
       </div>
 
       <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">كيف تدعم شركة تكامل مشاريع وسم «صُنع في عُمان»؟</div>
-        <div class="faq-a">نساعد الشركات في تقييم الجدوى الصناعية، التعاقد مع مصانع وورش معتمدة في عُمان (التصنيع التعاقدي)، استيراد المواد الخام والآلات، وتحقيق نسب القيمة المحلية المضافة (ICV) المطلوبة للحصول على الهوية الوطنية العمانية.</div>
+        <div class="faq-q"><span data-i18n="faq_q2">كيف تدعم شركة تكامل مشاريع وسم «صُنع في عُمان»؟</span></div>
+        <div class="faq-a"><span data-i18n="faq_a2">نساعد الشركات في تقييم الجدوى الصناعية، التعاقد مع مصانع وورش معتمدة في عُمان (التصنيع التعاقدي)، استيراد المواد الخام والآلات، وتحقيق نسب القيمة المحلية المضافة (ICV) المطلوبة للحصول على الهوية الوطنية العمانية.</span></div>
       </div>
 
       <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">هل تقدم شركة تكامل تمويلاً مباشراً أو قروضاً؟</div>
-        <div class="faq-a">لا. شركة تكامل ليست مؤسسة مصرفية أو مانحة للقروض؛ نحن نقدم استشارات تجارية ومالية متخصصة لهيكلة شروط الدفع، فحص الجدارة الائتمانية للأطراف، صياغة شروط الاعتمادات المستندية (L/C) والتنسيق مع المؤسسات المالية المرخصة.</div>
+        <div class="faq-q"><span data-i18n="faq_q3">هل تقدم شركة تكامل تمويلاً مباشراً أو قروضاً؟</span></div>
+        <div class="faq-a"><span data-i18n="faq_a3">لا. شركة تكامل ليست مؤسسة مصرفية أو مانحة للقروض؛ نحن نقدم استشارات تجارية ومالية متخصصة لهيكلة شروط الدفع، فحص الجدارة الائتمانية للأطراف، صياغة شروط الاعتمادات المستندية (L/C) والتنسيق مع المؤسسات المالية المرخصة.</span></div>
       </div>
 
       <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">ما هي شروط الإنكوترمز التي تديرونها في صفقات التوريد؟</div>
-        <div class="faq-a">ندير كافة شروط التسليم الدولية بما في ذلك EXW, FOB, CFR, CIF, DAP و DDP بحسب الاتفاق التجاري وطبيعة المنشأ والوجهة النهائية.</div>
+        <div class="faq-q"><span data-i18n="faq_q4">ما هي شروط الإنكوترمز التي تديرونها في صفقات التوريد؟</span></div>
+        <div class="faq-a"><span data-i18n="faq_a4">ندير كافة شروط التسليم الدولية بما في ذلك EXW, FOB, CFR, CIF, DAP و DDP بحسب الاتفاق التجاري وطبيعة المنشأ والوجهة النهائية.</span></div>
       </div>
 
       <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">هل تشترطون نوعاً محدداً من البضائع أو المنتجات؟</div>
-        <div class="faq-a">نطاق عملنا كبيت تجارة دولية يغطي معظم السلع التجارية والصناعية؛ مع الالتزام التام بالقوانين العمانية والحصول على الموافقات الخاصة بالسلع المقيدة مثل الأغذية والأدوية والمواد الكيميائية.</div>
+        <div class="faq-q"><span data-i18n="faq_q5">هل تشترطون نوعاً محدداً من البضائع أو المنتجات؟</span></div>
+        <div class="faq-a"><span data-i18n="faq_a5">نطاق عملنا كبيت تجارة دولية يغطي معظم السلع التجارية والصناعية؛ مع الالتزام التام بالقوانين العمانية والحصول على الموافقات الخاصة بالسلع المقيدة مثل الأغذية والأدوية والمواد الكيميائية.</span></div>
       </div>
 
       <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">كيف تضمنون سرية معلومات الشركاء والموردين؟</div>
-        <div class="faq-a">نوقع اتفاقيات سرية معلومات ملزمة قانوناً (Non-Disclosure Agreements - NDA) قبل بدء تبادل البيانات التسعيرية أو قوائم الموردين والعملاء.</div>
+        <div class="faq-q"><span data-i18n="faq_q6">كيف تضمنون سرية معلومات الشركاء والموردين؟</span></div>
+        <div class="faq-a"><span data-i18n="faq_a6">نوقع اتفاقيات سرية معلومات ملزمة قانوناً (Non-Disclosure Agreements - NDA) قبل بدء تبادل البيانات التسعيرية أو قوائم الموردين والعملاء.</span></div>
       </div>
     </div>
   </section>

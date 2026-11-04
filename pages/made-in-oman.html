@@ -16,10 +16,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css?v=4.3">
+  <link rel="stylesheet" href="../css/style.css?v=4.5">
   <!-- Synchronous In-Memory Locale & Theme Engine -->
   <script src="../js/translations_data.js"></script>
-  <script src="../js/main.js?v=4.1"></script>
+  <script src="../js/main.js?v=4.5"></script>
 </head>
 <body>
   <!-- Ambient Backdrop -->
@@ -141,25 +141,50 @@
   </header>
 
   <!-- Mobile Drawer Overlay & Drawer -->
+    <!-- Mobile Drawer Overlay & Drawer with Nested Submenus -->
   <div class="mobile-drawer-overlay" id="mobileDrawerOverlay" onclick="closeMobileMenu()"></div>
   <aside class="mobile-drawer" id="mobileDrawer">
     <div class="mobile-drawer-header">
-      <span style="font-weight:800; font-size:1.05rem;" data-i18n="brand_name">شركة تکامل</span>
+      <span style="font-weight:800; font-size:1.05rem;" data-i18n="brand_name">شركة تكامل</span>
       <button class="mobile-close-btn" onclick="closeMobileMenu()" aria-label="Close">&times;</button>
     </div>
     <div class="mobile-nav-links">
       <a href="../index.html" class="mobile-nav-link" data-i18n="nav_home">الرئيسية</a>
       <a href="./about.html" class="mobile-nav-link" data-i18n="nav_about">من نحن</a>
-      <a href="./services.html" class="mobile-nav-link" data-i18n="nav_services">دليل الخدمات</a>
-      <a href="./international-trade.html" class="mobile-nav-link" style="padding-right:24px;" data-i18n="service_1_title">التجارة الدولية</a>
-      <a href="./import-export.html" class="mobile-nav-link" style="padding-right:24px;" data-i18n="service_2_title">الاستيراد والتصدير</a>
-      <a href="./procurement.html" class="mobile-nav-link" style="padding-right:24px;" data-i18n="service_3_title">توريد المشاريع</a>
-      <a href="./financial-advisory.html" class="mobile-nav-link" style="padding-right:24px;" data-i18n="service_4_title">الاستشارات المالية</a>
-      <a href="./made-in-oman.html" class="mobile-nav-link" style="padding-right:24px;" data-i18n="service_5_title">صُنع في عُمان</a>
-      <a href="../index.html#hubs" class="mobile-nav-link" data-i18n="nav_hubs">الموانئ والمناطق الحرة</a>
+
+      <!-- Nested Services Accordion -->
+      <div class="mobile-accordion-group">
+        <button class="mobile-accordion-toggle" onclick="toggleMobileSubmenu(event, 'subServices')">
+          <span data-i18n="nav_services">دليل الخدمات</span>
+          <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="mobile-submenu" id="subServices">
+          <a href="./services.html" class="mobile-submenu-link" data-i18n="nav_all_services">← جميع الخدمات والحلول</a>
+          <a href="./international-trade.html" class="mobile-submenu-link" data-i18n="service_1_title">التجارة الدولية وبيت التجارة</a>
+          <a href="./import-export.html" class="mobile-submenu-link" data-i18n="service_2_title">الاستيراد والتصدير وإعادة التصدير</a>
+          <a href="./procurement.html" class="mobile-submenu-link" data-i18n="service_3_title">توريد وتأمين احتياجات المشاريع</a>
+          <a href="./financial-advisory.html" class="mobile-submenu-link" data-i18n="service_4_title">الاستشارات المالية والاعتمادات</a>
+          <a href="./made-in-oman.html" class="mobile-submenu-link" data-i18n="service_5_title">بنية التصنيع وهوية صُنع في عُمان</a>
+        </div>
+      </div>
+
+      <!-- Nested Hubs Accordion -->
+      <div class="mobile-accordion-group">
+        <button class="mobile-accordion-toggle" onclick="toggleMobileSubmenu(event, 'subHubs')">
+          <span data-i18n="nav_hubs">الموانئ والمناطق الحرة</span>
+          <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="mobile-submenu" id="subHubs">
+          <a href="../index.html#hub-sohar" class="mobile-submenu-link" data-i18n="hub_sohar_title">ميناء ومنطقة صحار الحرة</a>
+          <a href="../index.html#hub-salalah" class="mobile-submenu-link" data-i18n="hub_salalah_title">ميناء ومنطقة صلالة الحرة</a>
+          <a href="../index.html#hub-duqm" class="mobile-submenu-link" data-i18n="hub_duqm_title">منطقة الدقم الاقتصادية (SEZAD)</a>
+        </div>
+      </div>
+
       <a href="../index.html#process" class="mobile-nav-link" data-i18n="nav_process">آلية العمل</a>
       <a href="./contact.html" class="mobile-nav-link" data-i18n="nav_contact">اتصل بنا</a>
       <a href="./faq.html" class="mobile-nav-link" data-i18n="nav_faq">الأسئلة الشائعة</a>
+
       <div style="margin-top:20px;">
         <a href="./request.html" class="btn-cta" style="width:100%; justify-content:center;" data-i18n="btn_request">طلب استشارة تجارية</a>
       </div>
@@ -177,36 +202,36 @@
 
     <div class="cards-grid-3" style="margin-bottom:50px;">
       <div class="service-card">
-        <h3 class="service-card-title">التصنيع التعاقدي (Contract Mfg)</h3>
-        <p class="service-card-desc">الربط مع مصانع وورش معتمدة في سلطنة عمان لتصنيع وتجميع منتجاتكم مع الحفاظ الكامل على ملكية علامتكم التجارية وتركيبتكم السرية.</p>
+        <h3 class="service-card-title"><span data-i18n="mo_sub1_title">التصنيع التعاقدي (Contract Mfg)</span></h3>
+        <p class="service-card-desc"><span data-i18n="mo_sub1_desc">الربط مع مصانع وورش معتمدة في سلطنة عمان لتصنيع وتجميع منتجاتكم مع الحفاظ الكامل على ملكية علامتكم التجارية وتركيبتكم السرية.</span></p>
       </div>
 
       <div class="service-card">
-        <h3 class="service-card-title">خطوط التجميع والتعبئة النهائية</h3>
-        <p class="service-card-desc">استيراد المكونات والمواد النصف مصنعة وإجراء التجميع والاختبار والتعبئة داخل عمان لتحقيق معايير المنشأ الوطني العماني.</p>
+        <h3 class="service-card-title"><span data-i18n="mo_sub2_title">خطوط التجميع والتعبئة النهائية</span></h3>
+        <p class="service-card-desc"><span data-i18n="mo_sub2_desc">استيراد المكونات والمواد النصف مصنعة وإجراء التجميع والاختبار والتعبئة داخل عمان لتحقيق معايير المنشأ الوطني العماني.</span></p>
       </div>
 
       <div class="service-card">
-        <h3 class="service-card-title">ملف ترخيص هوية المنتج الوطني</h3>
-        <p class="service-card-desc">إعداد ملف الحسابات والوثائق الخاصة بنسبة القيمة المحلية المضافة (ICV) وتقديمها للجهات المعنية لنيل حق استخدام شعار «صُنع في عُمان».</p>
+        <h3 class="service-card-title"><span data-i18n="mo_sub3_title">ملف ترخيص هوية المنتج الوطني</span></h3>
+        <p class="service-card-desc"><span data-i18n="mo_sub3_desc">إعداد ملف الحسابات والوثائق الخاصة بنسبة القيمة المحلية المضافة (ICV) وتقديمها للجهات المعنية لنيل حق استخدام شعار «صُنع في عُمان».</span></p>
       </div>
     </div>
 
     <div style="background:var(--bg-surface); border:1px solid var(--border-gold); border-radius:24px; padding:36px; margin-bottom:50px;">
-      <h3 style="font-size:1.3rem; font-weight:800; color:var(--primary-gold); margin-bottom:16px;">المزايا التصديرية لشعار صُنع في عُمان</h3>
+      <h3 style="font-size:1.3rem; font-weight:800; color:var(--primary-gold); margin-bottom:16px;"><span data-i18n="mo_sub4_title">المزايا التصديرية لشعار صُنع في عُمان</span></h3>
       <p style="font-size:0.92rem; color:var(--text-secondary); line-height:1.7; margin-bottom:20px;">
-        المنتج الحاصل على شهادة المنشأ العمانية المعتمدة يستفيد مباشرة من:
+        <span data-i18n="mo_sub4_desc">المنتج الحاصل على شهادة المنشأ العمانية المعتمدة يستفيد مباشرة من:</span>
       </p>
       <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px;">
-        <div style="font-size:0.9rem; color:var(--text-primary);">• دخول بدون رسوم جمركية لكافة دول مجلس التعاون (GCC)</div>
-        <div style="font-size:0.9rem; color:var(--text-primary);">• معافاة جمركية تامة للسوق الأمريكي عبر اتفاقية (US-Oman FTA)</div>
-        <div style="font-size:0.9rem; color:var(--text-primary);">• أفضلية إلزامية بنسبة 10% في المشتريات والمناقصات الحكومية العمانية</div>
-        <div style="font-size:0.9rem; color:var(--text-primary);">• نفاذ تفضيلي للدول العربية عبر اتفاقية تيسير وتنمية التبادل التجاري</div>
+        <div style="font-size:0.9rem; color:var(--text-primary);"><span data-i18n="mo_feat_gcc">• دخول بدون رسوم جمركية لكافة دول مجلس التعاون (GCC)</span></div>
+        <div style="font-size:0.9rem; color:var(--text-primary);"><span data-i18n="mo_feat_fta">• معافاة جمركية تامة للسوق الأمريكي عبر اتفاقية (US-Oman FTA)</span></div>
+        <div style="font-size:0.9rem; color:var(--text-primary);"><span data-i18n="mo_feat_tender">• أفضلية إلزامية بنسبة 10% في المشتريات والمناقصات الحكومية العمانية</span></div>
+        <div style="font-size:0.9rem; color:var(--text-primary);"><span data-i18n="mo_feat_arab">• نفاذ تفضيلي للدول العربية عبر اتفاقية تيسير وتنمية التبادل التجاري</span></div>
       </div>
     </div>
 
     <div style="text-align:center;">
-      <a href="./request.html" class="btn-cta" style="padding:14px 32px; font-size:1rem;">بدء دراسة توطين منتج في عُمان &larr;</a>
+      <a href="./request.html" class="btn-cta" style="padding:14px 32px; font-size:1rem;"><span data-i18n="btn_start_localization">بدء دراسة توطين منتج في عُمان</span> &larr;</a>
     </div>
   </section>
 

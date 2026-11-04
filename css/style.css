@@ -1864,3 +1864,71 @@ main {
     margin: 10px auto !important;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Nested Accordion Submenus for Mobile Navigation Drawer
+   -------------------------------------------------------------------------- */
+.mobile-accordion-group {
+  border-bottom: 1px solid var(--border-color);
+  width: 100%;
+}
+
+.mobile-accordion-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 13px 4px;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  cursor: pointer;
+  text-align: inherit;
+}
+
+.mobile-accordion-toggle .accordion-chevron {
+  transition: transform 0.3s ease;
+  color: var(--primary-gold);
+}
+
+.mobile-accordion-group.active .mobile-accordion-toggle .accordion-chevron {
+  transform: rotate(180deg);
+}
+
+.mobile-submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0 10px;
+  background: var(--bg-surface-elevated);
+  border-radius: 8px;
+  margin-bottom: 0;
+}
+
+.mobile-accordion-group.active .mobile-submenu {
+  max-height: 420px;
+  padding: 8px 12px 10px;
+  margin-bottom: 10px;
+}
+
+.mobile-submenu-link {
+  display: block;
+  padding: 9px 4px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--border-color);
+  transition: color 0.2s, padding 0.2s;
+}
+
+.mobile-submenu-link:last-child {
+  border-bottom: none;
+}
+
+.mobile-submenu-link:hover,
+.mobile-submenu-link:active {
+  color: var(--primary-gold);
+}
