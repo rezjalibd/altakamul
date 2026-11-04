@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>بوابات عمان البحرية والمناطق الاقتصادية الخاصة | شركة تكامل</title>
   <link rel="icon" type="image/png" href="../img/logo.png">
-  <link rel="stylesheet" href="../css/style.css?v=5.0">
+  <link rel="stylesheet" href="../css/style.css?v=5.1">
 </head>
 <body>
 
@@ -177,7 +177,7 @@
 
 <main class="main-wrapper">
   <!-- Hero Section -->
-  <section class="section-container" style="padding-top:40px; padding-bottom:40px;">
+  <section class="section-container subpage-hero">
     <div class="section-header">
       <span class="section-tag" data-i18n="hubs_page_tag">البنية اللوجستية الاستراتيجية</span>
       <h1 class="section-title" data-i18n="hubs_page_title">بوابات عمان البحرية والمناطق الاقتصادية الخاصة</h1>
@@ -185,7 +185,7 @@
     </div>
 
     <!-- Stat Highlights -->
-    <div class="stats-grid" style="margin-bottom:60px;">
+    <div class="stats-grid">
       <div class="stat-card">
         <div class="stat-val" data-i18n="hubs_stat_1_val">خارج هرمز</div>
         <div class="stat-label" data-i18n="hubs_stat_1_lbl">ممر بحري مفتوح 100%</div>
@@ -203,92 +203,93 @@
         <div class="stat-label" data-i18n="hubs_stat_4_lbl">تجارة حرة مع أمريكا ودول الخليج</div>
       </div>
     </div>
+  </section>
 
-    <!-- Hubs Detailed Cards -->
+  <!-- Hubs Detailed Cards Stack -->
+  <section class="section-container" style="padding-top:20px; padding-bottom:40px;">
     <div class="section-header" style="margin-bottom:36px;">
       <span class="section-tag" data-i18n="hubs_sec1_tag">المراكز اللوجستية المحورية</span>
       <h2 class="section-title" data-i18n="hubs_sec1_title">أربعة مراكز عالمية تدير تدفقات التجارة الدولية</h2>
       <p class="section-sub" data-i18n="hubs_sec1_sub">تتكامل الموانئ والمناطق الحرة في سلطنة عمان لتقديم حلول شاملة للتخزين، التوزيع، وإعادة التصدير.</p>
     </div>
 
-    <div style="display:flex; flex-direction:column; gap:36px; margin-bottom:70px;">
+    <div class="vertical-cards-stack">
       <!-- Sohar -->
-      <div id="sohar" class="service-card" style="padding:40px;">
+      <div id="sohar" class="service-card" style="padding:36px;">
         <div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">
-          <div style="width:52px; height:52px; border-radius:14px; background:rgba(197,160,89,0.15); display:flex; align-items:center; justify-content:center; color:var(--primary-gold); font-size:1.5rem;">⚓</div>
+          <div style="width:54px; height:54px; border-radius:14px; background:rgba(197,160,89,0.15); display:flex; align-items:center; justify-content:center; color:var(--primary-gold); font-size:1.6rem; flex-shrink:0;">⚓</div>
           <div>
-            <h3 class="service-card-title" style="font-size:1.45rem;" data-i18n="hub_sohar_full_title">ميناء ومنطقة صحار الحرة (Sohar Port & Freezone)</h3>
-            <span style="font-size:0.85rem; color:var(--primary-gold); font-weight:700;">بوابة الخليج الشمالية • عمق بحري 25 متراً</span>
+            <h3 class="service-card-title" style="font-size:1.45rem; margin-bottom:4px;" data-i18n="hub_sohar_full_title">ميناء ومنطقة صحار الحرة (Sohar Port & Freezone)</h3>
+            <span style="font-size:0.85rem; color:var(--primary-gold); font-weight:700;" data-i18n="hub_sohar_badge">بوابة الخليج الشمالية • عمق بحري 25 متراً</span>
           </div>
         </div>
-        <p class="service-card-desc" style="font-size:1rem; line-height:1.8; margin-bottom:24px;" data-i18n="hub_sohar_full_desc">المركز الصناعي واللوجستي الأسرع نمواً في الشرق الأوسط. يتميز برباط مباشر مع شبكة الطرق السريعة لدولة الإمارات العربية المتحدة ودول الخليج، مع محطات مخصصة للبتروكيماويات، المعادن، والمواد الغذائية السائبة وغاطس بحري يصل إلى 25 متراً.</p>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
-          <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-color); border-radius:12px; padding:14px 18px; font-size:0.92rem; color:var(--text-secondary);">✔ <span data-i18n="hub_sohar_f1">غاطس بحري عميق لاستقبال أضخم سفن الحاويات والصب الجاف</span></div>
-          <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-color); border-radius:12px; padding:14px 18px; font-size:0.92rem; color:var(--text-secondary);">✔ <span data-i18n="hub_sohar_f2">مجمع غذائي وصناعي متكامل مع صوامع ومخازن تحت المظلة الجمركية</span></div>
-          <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-color); border-radius:12px; padding:14px 18px; font-size:0.92rem; color:var(--text-secondary);">✔ <span data-i18n="hub_sohar_f3">بوابة مباشرة وسريعة للسوق الإماراتي والخليجي عبر المنافذ البرية</span></div>
+        <p class="service-card-desc" style="font-size:1rem; line-height:1.8; margin-bottom:20px;" data-i18n="hub_sohar_full_desc">المركز الصناعي واللوجستي الأسرع نمواً في الشرق الأوسط. يتميز برباط مباشر مع شبكة الطرق السريعة لدولة الإمارات العربية المتحدة ودول الخليج، مع محطات مخصصة للبتروكيماويات، المعادن، والمواد الغذائية السائبة وغاطس بحري يصل إلى 25 متراً.</p>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:12px;">
+          <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-color); border-radius:12px; padding:12px 16px; font-size:0.9rem; color:var(--text-secondary);">✔ <span data-i18n="hub_sohar_f1">غاطس بحري عميق لاستقبال أضخم سفن الحاويات والصب الجاف</span></div>
+          <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-color); border-radius:12px; padding:12px 16px; font-size:0.9rem; color:var(--text-secondary);">✔ <span data-i18n="hub_sohar_f2">مجمع غذائي وصناعي متكامل مع صوامع ومخازن تحت المظلة الجمركية</span></div>
+          <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-color); border-radius:12px; padding:12px 16px; font-size:0.9rem; color:var(--text-secondary);">✔ <span data-i18n="hub_sohar_f3">بوابة مباشرة وسريعة للسوق الإماراتي والخليجي عبر المنافذ البرية</span></div>
         </div>
       </div>
 
       <!-- Salalah -->
-      <div id="salalah" class="service-card" style="padding:40px;">
+      <div id="salalah" class="service-card" style="padding:36px;">
         <div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">
-          <div style="width:52px; height:52px; border-radius:14px; background:rgba(197,160,89,0.15); display:flex; align-items:center; justify-content:center; color:var(--primary-gold); font-size:1.5rem;">🌊</div>
+          <div style="width:54px; height:54px; border-radius:14px; background:rgba(197,160,89,0.15); display:flex; align-items:center; justify-content:center; color:var(--primary-gold); font-size:1.6rem; flex-shrink:0;">🌊</div>
           <div>
-            <h3 class="service-card-title" style="font-size:1.45rem;" data-i18n="hub_salalah_full_title">ميناء ومنطقة صلالة الحرة (Salalah Port & Freezone)</h3>
-            <span style="font-size:0.85rem; color:var(--primary-gold); font-weight:700;">المحيط الهندي • محطة الترانشیب العالمية</span>
+            <h3 class="service-card-title" style="font-size:1.45rem; margin-bottom:4px;" data-i18n="hub_salalah_full_title">ميناء ومنطقة صلالة الحرة (Salalah Port & Freezone)</h3>
+            <span style="font-size:0.85rem; color:var(--primary-gold); font-weight:700;" data-i18n="hub_salalah_badge">المحيط الهندي • محطة الترانزيت العالمية</span>
           </div>
         </div>
-        <p class="service-card-desc" style="font-size:1rem; line-height:1.8; margin-bottom:24px;" data-i18n="hub_salalah_full_desc">أكبر ميناء لمناولة الحاويات العابرة في سلطنة عُمان على المحيط الهندي مباشرة. يختصر زمن الإبحار إلى أوروبا وأمريكا وأفريقيا بنحو أسبوعين مقارنة بموانئ الخليج العربي الداخلية، مع ممر شحن جوي-بحري يربطه بمطار صلالة الدولي في أقل من ساعتين.</p>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
-          <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-color); border-radius:12px; padding:14px 18px; font-size:0.92rem; color:var(--text-secondary);">✔ <span data-i18n="hub_salalah_f1">موقع محيطي مباشر يتجاوز كافة مضائق التوتر الجيوسياسي الإقليمي</span></div>
-          <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-color); border-radius:12px; padding:14px 18px; font-size:0.92rem; color:var(--text-secondary);">✔ <span data-i18n="hub_salalah_f2">محطات حاويات عالمية بمناولة تتجاوز 4.5 مليون حاوية نمطية سنوياً</span></div>
-          <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-color); border-radius:12px; padding:14px 18px; font-size:0.92rem; color:var(--text-secondary);">✔ <span data-i18n="hub_salalah_f3">بنية لوجستية متطورة للأدوية والأغذية المبردة وسلاسل التبريد العميقة</span></div>
+        <p class="service-card-desc" style="font-size:1rem; line-height:1.8; margin-bottom:20px;" data-i18n="hub_salalah_full_desc">أكبر ميناء لمناولة الحاويات العابرة في سلطنة عُمان على المحيط الهندي مباشرة. يختصر زمن الإبحار إلى أوروبا وأمريكا وأفريقيا بنحو أسبوعين مقارنة بموانئ الخليج العربي الداخلية، مع ممر شحن جوي-بحري يربطه بمطار صلالة الدولي في أقل من ساعتين.</p>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:12px;">
+          <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-color); border-radius:12px; padding:12px 16px; font-size:0.9rem; color:var(--text-secondary);">✔ <span data-i18n="hub_salalah_f1">موقع جغرافي مفتوح على خطوط التجارة العالمية بين الشرق والغرب</span></div>
+          <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-color); border-radius:12px; padding:12px 16px; font-size:0.9rem; color:var(--text-secondary);">✔ <span data-i18n="hub_salalah_f2">خدمات الربط البحري الجوي السريع عبر مطار صلالة للشحنات المستعجلة</span></div>
+          <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-color); border-radius:12px; padding:12px 16px; font-size:0.9rem; color:var(--text-secondary);">✔ <span data-i18n="hub_salalah_f3">مركز متقدم لمعالجة وتوزيع السلع لأسواق شرق ووسط أفريقيا</span></div>
         </div>
       </div>
 
       <!-- Duqm -->
-      <div id="duqm" class="service-card" style="padding:40px;">
+      <div id="duqm" class="service-card" style="padding:36px;">
         <div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">
-          <div style="width:52px; height:52px; border-radius:14px; background:rgba(197,160,89,0.15); display:flex; align-items:center; justify-content:center; color:var(--primary-gold); font-size:1.5rem;">🏗️</div>
+          <div style="width:54px; height:54px; border-radius:14px; background:rgba(197,160,89,0.15); display:flex; align-items:center; justify-content:center; color:var(--primary-gold); font-size:1.6rem; flex-shrink:0;">🏗</div>
           <div>
-            <h3 class="service-card-title" style="font-size:1.45rem;" data-i18n="hub_duqm_full_title">المنطقة الاقتصادية الخاصة بالدقم (SEZAD)</h3>
-            <span style="font-size:0.85rem; color:var(--primary-gold); font-weight:700;">أكبر منطقة اقتصادية • 2,000 كم² • الحوض الجاف العالمي</span>
+            <h3 class="service-card-title" style="font-size:1.45rem; margin-bottom:4px;" data-i18n="hub_duqm_full_title">المنطقة الاقتصادية الخاصة بالدقم (SEZAD)</h3>
+            <span style="font-size:0.85rem; color:var(--primary-gold); font-weight:700;" data-i18n="hub_duqm_badge">أضخم مدينة اقتصادية متكاملة (2,000 كم²)</span>
           </div>
         </div>
-        <p class="service-card-desc" style="font-size:1rem; line-height:1.8; margin-bottom:24px;" data-i18n="hub_duqm_full_desc">أضخم مشروع اقتصادي متكامل في الشرق الأوسط بمساحة 2,000 كم². يضم ميناء الدقم التجاري المتعدد الأغراض، الحوض الجاف لإصلاح السفن العملاقة، مصفاة الدقم، ومجمعات الهيدروجين الأخضر والصناعات الثقيلة ومستودعات التخزين الاستراتيجي للنفط والغاز والبضائع.</p>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
-          <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-color); border-radius:12px; padding:14px 18px; font-size:0.92rem; color:var(--text-secondary);">✔ <span data-i18n="hub_duqm_f1">حوض جاف عالمي متقدم لصيانة وإصلاح ناقلات النفط وسفن الصب</span></div>
-          <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-color); border-radius:12px; padding:14px 18px; font-size:0.92rem; color:var(--text-secondary);">✔ <span data-i18n="hub_duqm_f2">أراضي صناعية ولوجستية بمساحات غير محدودة وعقود انتفاع طويلة الأمد</span></div>
-          <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-color); border-radius:12px; padding:14px 18px; font-size:0.92rem; color:var(--text-secondary);">✔ <span data-i18n="hub_duqm_f3">منظومة إعفاءات ضريبية وحوافز استثمارية ملكية بنسبة 100%</span></div>
+        <p class="service-card-desc" style="font-size:1rem; line-height:1.8; margin-bottom:20px;" data-i18n="hub_duqm_full_desc">أضخم مشروع اقتصادي متكامل في الشرق الأوسط بمساحة 2,000 كم². يضم ميناء الدقم التجاري المتعدد الأغراض، الحوض الجاف لإصلاح السفن العملاقة، مصفاة الدقم، ومجمعات الهيدروجين الأخضر والصناعات الثقيلة ومستودعات التخزين الاستراتيجي للنفط والغاز والبضائع.</p>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:12px;">
+          <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-color); border-radius:12px; padding:12px 16px; font-size:0.9rem; color:var(--text-secondary);">✔ <span data-i18n="hub_duqm_f1">مساحات صناعية وتخزينية ضخمة بعقود انتفاع طويلة الأمد</span></div>
+          <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-color); border-radius:12px; padding:12px 16px; font-size:0.9rem; color:var(--text-secondary);">✔ <span data-i18n="hub_duqm_f2">حوض جاف عالمي ومرافق تصدير المواد البتروكيماوية والمعادن</span></div>
+          <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-color); border-radius:12px; padding:12px 16px; font-size:0.9rem; color:var(--text-secondary);">✔ <span data-i18n="hub_duqm_f3">إعفاءات ضريبية وحوافز استثمارية حصرية تصل إلى 30 عاماً</span></div>
         </div>
       </div>
 
       <!-- Khazaen & Mazunah -->
-      <div id="khazaen" class="service-card" style="padding:40px;">
+      <div id="khazaen" class="service-card" style="padding:36px;">
         <div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">
-          <div style="width:52px; height:52px; border-radius:14px; background:rgba(197,160,89,0.15); display:flex; align-items:center; justify-content:center; color:var(--primary-gold); font-size:1.5rem;">🚚</div>
+          <div style="width:54px; height:54px; border-radius:14px; background:rgba(197,160,89,0.15); display:flex; align-items:center; justify-content:center; color:var(--primary-gold); font-size:1.6rem; flex-shrink:0;">🏢</div>
           <div>
-            <h3 class="service-card-title" style="font-size:1.45rem;" data-i18n="hub_khazaen_full_title">مدينة خزائن الاقتصادية والمنطقة الحرة بالمزيونة</h3>
-            <span style="font-size:0.85rem; color:var(--primary-gold); font-weight:700;">الميناء الجاف بمسقط • بوابة الترانزيت البري لليمن وأفريقيا</span>
+            <h3 class="service-card-title" style="font-size:1.45rem; margin-bottom:4px;" data-i18n="hub_khazaen_full_title">مدينة خزائن الاقتصادية والمنطقة الحرة بالمزيونة</h3>
+            <span style="font-size:0.85rem; color:var(--primary-gold); font-weight:700;" data-i18n="hub_khazaen_badge">الميناء الجاف الأوسط وبوابة التجارة لليمن</span>
           </div>
         </div>
-        <p class="service-card-desc" style="font-size:1rem; line-height:1.8; margin-bottom:24px;" data-i18n="hub_khazaen_full_desc">خزائن هي الميناء الجاف والمركز اللوجستي الأوسط الرابط بين مسقط وصحار، بينما المزيونة تمثل المنفذ البري الاستراتيجي لتجارة الترانزيت نحو الجمهورية اليمنية وأسواق شرق أفريقيا مع مزايا تجارة تفضيلية للمصدرين والمستوردين.</p>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
-          <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-color); border-radius:12px; padding:14px 18px; font-size:0.92rem; color:var(--text-secondary);">✔ <span data-i18n="hub_khazaen_f1">ميناء جاف ذكي يربط محطات الحاويات البحرية بالعاصمة مسقط</span></div>
-          <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-color); border-radius:12px; padding:14px 18px; font-size:0.92rem; color:var(--text-secondary);">✔ <span data-i18n="hub_khazaen_f2">منفذ بري متكامل لتجارة إعادة التصدير والترانزيت إلى الأسواق المجاورة</span></div>
-          <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-color); border-radius:12px; padding:14px 18px; font-size:0.92rem; color:var(--text-secondary);">✔ <span data-i18n="hub_khazaen_f3">مستودعات مكيفة وحلول تخزين ذكية قصيرة وطويلة الأجل</span></div>
+        <p class="service-card-desc" style="font-size:1rem; line-height:1.8; margin-bottom:20px;" data-i18n="hub_khazaen_full_desc">خزائن هي الميناء الجاف والمركز اللوجستي الأوسط الرابط بين مسقط وصحار، بينما المزيونة تمثل المنفذ البري الاستراتيجي لتجارة الترانزيت نحو الجمهورية اليمنية وأسواق شرق أفريقيا مع مزايا تجارة تفضيلية للمصدرين والمستوردين.</p>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:12px;">
+          <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-color); border-radius:12px; padding:12px 16px; font-size:0.9rem; color:var(--text-secondary);">✔ <span data-i18n="hub_khazaen_f1">ميناء جاف وسوق مركزي للخضار والفواكه ومستودعات الأدوية</span></div>
+          <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-color); border-radius:12px; padding:12px 16px; font-size:0.9rem; color:var(--text-secondary);">✔ <span data-i18n="hub_khazaen_f2">معبر المزيونة التجاري لترانزيت السلع والبضائع نحو الأسواق اليمنية</span></div>
+          <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-color); border-radius:12px; padding:12px 16px; font-size:0.9rem; color:var(--text-secondary);">✔ <span data-i18n="hub_khazaen_f3">إجراءات جمركية مسرعة ومراكز لوجستية مبردة لإعادة التصدير</span></div>
         </div>
       </div>
     </div>
 
-    <!-- On-Site Al Takamul Services -->
-    <div class="section-header" style="margin-bottom:36px;">
-      <span class="section-tag" data-i18n="hubs_services_tag">خدمات تكامل الميدانية</span>
-      <h2 class="section-title" data-i18n="hubs_services_title">كيف تمكنك تكامل من استثمار مزايا المناطق الحرة؟</h2>
-      <p class="section-sub" data-i18n="hubs_services_sub">نوفر المظلة التجارية، القانونية، واللوجستية الكاملة للشركات الدولية الراغبة في تأسيس أعمالها أو عبور شحناتها عبر عُمان.</p>
+    <!-- On-Ground Services -->
+    <div class="section-header" style="margin-top:50px; margin-bottom:36px;">
+      <span class="section-tag" data-i18n="hubs_sec2_tag">خدمات تكامل الميدانية</span>
+      <h2 class="section-title" data-i18n="hubs_sec2_title">حلول عملياتية متكاملة داخل الموانئ والمناطق الحرة</h2>
     </div>
 
-    <div class="cards-grid-4" style="margin-bottom:70px;">
+    <div class="cards-grid-4">
       <div class="service-card">
         <h3 class="service-card-title" data-i18n="hubs_serv1_title">التخليص الجمركي الذكي عبر نظام بيان (Bayan)</h3>
         <p class="service-card-desc" data-i18n="hubs_serv1_desc">تسجيل وتخليص الشحنات مسبقاً قبل وصول السفن، وإصدار المعاملات الجمركية تحت بند الإعفاءات المعمول بها في المناطق الحرة دون تأخير.</p>
@@ -314,7 +315,7 @@
     <section class="section-container" style="padding-top:20px; padding-bottom:80px;">
     <div style="background:var(--brand-gradient); border:1px solid var(--border-gold); border-radius:28px; padding:50px 36px; text-align:center; position:relative; overflow:hidden; box-shadow:var(--shadow-lg);">
       <div style="position:relative; z-index:2; max-width:760px; margin:0 auto;">
-        <span class="section-tag" style="background:rgba(255,255,255,0.1); color:#FDE68A; border-color:rgba(253,230,138,0.4);" data-i18n="cta_tag">بدء التعاون الاستراتيجي</span>
+        <span class="section-tag" style="background:rgba(255,255,255,0.12); color:#FDE68A; border-color:rgba(253,230,138,0.4);" data-i18n="cta_tag">بدء التعاون الاستراتيجي</span>
         <h2 style="font-size:2.2rem; font-weight:800; color:#FFFFFF; margin:16px 0;" data-i18n="cta_title">هل تخطط لتوسيع تجارتك الدولية أو توريد شحناتك عبر عُمان؟</h2>
         <p style="font-size:1.05rem; color:#E2E8F0; margin-bottom:32px; line-height:1.75;" data-i18n="cta_sub">فريقنا القانوني والتجاري واللوجستي جاهز لدراسة متطلباتك وتقديم حلول مخصصة لحماية رأس مالك وتسريع إنجاز الصفقات.</p>
         <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
@@ -399,7 +400,7 @@
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
   </button>
 
-  <script src="../js/translations_data.js?v=5.0"></script>
-  <script src="../js/main.js?v=5.0"></script>
+  <script src="../js/translations_data.js?v=5.1"></script>
+  <script src="../js/main.js?v=5.1"></script>
 </body>
 </html>

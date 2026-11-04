@@ -39,7 +39,7 @@ def build_hubs_page():
 
 <main class="main-wrapper">
   <!-- Hero Section -->
-  <section class="section-container" style="padding-top:40px; padding-bottom:40px;">
+  <section class="section-container subpage-hero">
     <div class="section-header">
       <span class="section-tag" data-i18n="hubs_page_tag">البنية اللوجستية الاستراتيجية</span>
       <h1 class="section-title" data-i18n="hubs_page_title">بوابات عمان البحرية والمناطق الاقتصادية الخاصة</h1>
@@ -189,7 +189,7 @@ def build_process_page():
 
 <main class="main-wrapper">
   <!-- Hero Section -->
-  <section class="section-container" style="padding-top:40px; padding-bottom:40px;">
+  <section class="section-container subpage-hero">
     <div class="section-header">
       <span class="section-tag" data-i18n="proc_page_tag">حوكمة العمليات التجارية</span>
       <h1 class="section-title" data-i18n="proc_page_title">آلية العمل والمسار التنفيذي الشامل للصفقات</h1>
@@ -342,7 +342,7 @@ def build_about_page():
 
 <main class="main-wrapper">
   <!-- Hero Section -->
-  <section class="section-container" style="padding-top:40px; padding-bottom:40px;">
+  <section class="section-container subpage-hero">
     <div class="section-header">
       <span class="section-tag" data-i18n="page_about_tag">الهوية المؤسسية والترخيص</span>
       <h1 class="section-title" data-i18n="page_about_title">ريادة في إدارة صفقات التجارة الدولية وتطوير سلاسل الإمداد</h1>
@@ -418,7 +418,7 @@ def build_international_trade_page():
 
 <main class="main-wrapper">
   <!-- Hero Section -->
-  <section class="section-container" style="padding-top:40px; padding-bottom:40px;">
+  <section class="section-container subpage-hero">
     <div class="section-header">
       <span class="section-tag" data-i18n="page_it_tag">الركن الأول • الترخيص الأساسي</span>
       <h1 class="section-title" data-i18n="page_it_title">التجارة الدولية وبيت التجارة (International Trading House)</h1>
@@ -488,7 +488,7 @@ def build_import_export_page():
 
 <main class="main-wrapper">
   <!-- Hero Section -->
-  <section class="section-container" style="padding-top:40px; padding-bottom:40px;">
+  <section class="section-container subpage-hero">
     <div class="section-header">
       <span class="section-tag" data-i18n="page_ie_tag">الركن الثاني • العمليات اللوجستية</span>
       <h1 class="section-title" data-i18n="page_ie_title">الاستيراد والتصدير وإعادة التصدير (Import, Export & Re-Export)</h1>
@@ -558,7 +558,7 @@ def build_procurement_page():
 
 <main class="main-wrapper">
   <!-- Hero Section -->
-  <section class="section-container" style="padding-top:40px; padding-bottom:40px;">
+  <section class="section-container subpage-hero">
     <div class="section-header">
       <span class="section-tag" data-i18n="page_proc_tag">الركن الثالث • التوريد الاستراتيجي</span>
       <h1 class="section-title" data-i18n="page_proc_title">توريد وتأمين احتياجات المشاريع (Procurement Services)</h1>
@@ -628,7 +628,7 @@ def build_financial_advisory_page():
 
 <main class="main-wrapper">
   <!-- Hero Section -->
-  <section class="section-container" style="padding-top:40px; padding-bottom:40px;">
+  <section class="section-container subpage-hero">
     <div class="section-header">
       <span class="section-tag" data-i18n="page_fa_tag">الركن الرابع • الأمان المالي</span>
       <h1 class="section-title" data-i18n="page_fa_title">الاستشارات المالية وهندسة الدفع التجاري (Trade Finance & Payment Structuring)</h1>
@@ -698,7 +698,7 @@ def build_made_in_oman_page():
 
 <main class="main-wrapper">
   <!-- Hero Section -->
-  <section class="section-container" style="padding-top:40px; padding-bottom:40px;">
+  <section class="section-container subpage-hero">
     <div class="section-header">
       <span class="section-tag" data-i18n="page_mio_tag">الركن الخامس • القيمة المضافة</span>
       <h1 class="section-title" data-i18n="page_mio_title">بنية التصنيع وهوية صُنع في عُمان (Contract Manufacturing & Made in Oman)</h1>
@@ -768,7 +768,7 @@ def build_services_page():
 
 <main class="main-wrapper">
   <!-- Hero Section -->
-  <section class="section-container" style="padding-top:40px; padding-bottom:40px;">
+  <section class="section-container subpage-hero">
     <div class="section-header">
       <span class="section-tag" data-i18n="page_serv_tag">المصفوفة التشغيلية المعتمدة</span>
       <h1 class="section-title" data-i18n="page_serv_title">مصفوفة الخدمات ونماذج الشراكة التجارية</h1>
@@ -855,7 +855,7 @@ def build_contact_page():
 
 <main class="main-wrapper">
   <!-- Hero Section -->
-  <section class="section-container" style="padding-top:40px; padding-bottom:40px;">
+  <section class="section-container subpage-hero">
     <div class="section-header">
       <span class="section-tag" data-i18n="page_contact_tag">المكتب الرئيسي وقنوات التواصل</span>
       <h1 class="section-title" data-i18n="page_contact_title">المكتب الرئيسي وقنوات التواصل المباشر</h1>
@@ -925,7 +925,7 @@ def build_faq_page():
 
 <main class="main-wrapper">
   <!-- Hero Section -->
-  <section class="section-container" style="padding-top:40px; padding-bottom:40px;">
+  <section class="section-container subpage-hero">
     <div class="section-header">
       <span class="section-tag" data-i18n="page_faq_tag">مركز المعلومات والإجابات</span>
       <h1 class="section-title" data-i18n="page_faq_title">الأسئلة الشائعة حول خدمات تكامل والتجارة في عُمان</h1>
@@ -977,7 +977,7 @@ def build_request_page():
 
 <main class="main-wrapper">
   <!-- Hero Section -->
-  <section class="section-container" style="padding-top:40px; padding-bottom:40px;">
+  <section class="section-container subpage-hero">
     <div class="section-header">
       <span class="section-tag" data-i18n="page_req_tag">بوابة الطلبات الرسمية</span>
       <h1 class="section-title" data-i18n="page_req_title">طلب استشارة تجارية أو دراسة صفقة دولية</h1>
