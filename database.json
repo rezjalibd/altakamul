@@ -1,0 +1,105 @@
+{
+  "company": {
+    "legal_name_ar": "شركة تكامل للتجارة الدولية ش.م.م",
+    "legal_name_en": "Al Takamul International Trading LLC",
+    "legal_name_fa": "شرکت بازرگانی بین‌المللی تکامل (با مسئولیت محدود)",
+    "commercial_reg": "CR 1389420 / Sultanate of Oman",
+    "country": "Sultanate of Oman",
+    "headquarters_city": "Muscat",
+    "address_ar": "مسقط، سلطنة عمان - واحة المعرفة / مجمع الأعمال التجاري",
+    "address_en": "Muscat, Sultanate of Oman — Knowledge Oasis Muscat (KOM) / Business District",
+    "address_fa": "مسقط، سلطنت عمان - پارک فناوری و مجتمع تجارت بین‌الملل مسقط",
+    "phone": "+968 7108 1635",
+    "phone_alt": "+968 3153 6000",
+    "whatsapp": "+968 7108 1635",
+    "whatsapp_link": "https://wa.me/96871081635",
+    "email": "info@omantakamul.com",
+    "website": "https://omantakamul.com",
+    "working_hours_ar": "الأحد - الخميس: 08:30 صباحاً - 05:30 مساءً (توقيت مسقط)",
+    "working_hours_en": "Sunday - Thursday: 08:30 AM - 05:30 PM (GST / Muscat Time)",
+    "working_hours_fa": "یکشنبه تا پنجشنبه: ۰۸:۳۰ الی ۱۷:۳۰ (به وقت مسقط)"
+  },
+  "service_pillars": [
+    {
+      "id": "international-trade",
+      "slug": "international-trade.html",
+      "title_ar": "التجارة الدولية وبيت التجارة",
+      "title_en": "International Trading House",
+      "title_fa": "بازرگانی بین‌المللی و خانه تجارت",
+      "icon": "🌐",
+      "short_ar": "عقد الصفقات الكبرى، التمثيل التجاري الحصري، وإدارة المعاملات وفق شروط الإنكوترمز الدولية.",
+      "short_en": "Global cross-border trading, exclusive commercial representation, and incoterms transaction management.",
+      "short_fa": "خرید و فروش فرامرزی، نمایندگی انحصاری برندها، و مدیریت معاملات تحت قواعد اینکوترمز."
+    },
+    {
+      "id": "import-export",
+      "slug": "import-export.html",
+      "title_ar": "الاستيراد والتصدير وإعادة التصدير",
+      "title_en": "Import, Export & Re-Export",
+      "title_fa": "واردات، صادرات و صادرات مجدد",
+      "icon": "🚢",
+      "short_ar": "عمليات الشحن الجمركي عبر موانئ صحار وصلالة والدقم والاستفادة من اتفاقيات الإعفاء الجمركي.",
+      "short_en": "End-to-end customs clearance via Sohar, Salalah, and Duqm ports leveraging bilateral FTAs.",
+      "short_fa": "مدیریت گمرکی و ترانزیت کالا از بنادر صحار، صلاله و دقم با استفاده از معافیت‌های تعرفه‌ای."
+    },
+    {
+      "id": "procurement",
+      "slug": "procurement.html",
+      "title_ar": "توريد وتأمين احتياجات المشاريع",
+      "title_en": "Project Procurement & Supply",
+      "title_fa": "تأمین و تدارکات کالا و پروژه‌ها",
+      "icon": "⚙️",
+      "short_ar": "تأمين المواد الخام، المعدات، خطوط الإنتاج وقطع الغيار للقطاعات الصناعية والإنشائية.",
+      "short_en": "Strategic sourcing of raw materials, machinery, industrial equipment, and turnkey project supply.",
+      "short_fa": "تأمین مواد اولیه، ماشین‌آلات صنعتی، قطعات یدکی و تجهیزات پروژه‌های زیرساختی و انرژی."
+    },
+    {
+      "id": "financial-advisory",
+      "slug": "financial-advisory.html",
+      "title_ar": "الاستشارات المالية والاعتمادات التجارية",
+      "title_en": "Trade & Financial Advisory",
+      "title_fa": "مشاوره مالی، اعتباری و پرداخت‌های تجاری",
+      "icon": "💼",
+      "short_ar": "هندسة هياكل الدفع الآمن، تقييم الجدارة الائتمانية للموردين، واستشارات الاعتمادات المستندية (LC).",
+      "short_en": "Trade payment structuring, partner solvency vetting, letters of credit (L/C), and financial risk mitigation.",
+      "short_fa": "مهندسی ساختارهای پرداخت امن، اعتبارسنجی خریداران و فروشندگان، و تحلیل ریسک اعتبارات اسنادی."
+    },
+    {
+      "id": "made-in-oman",
+      "slug": "made-in-oman.html",
+      "title_ar": "بنية التصنيع وهوية صُنع في عُمان",
+      "title_en": "Made in Oman Infrastructure",
+      "title_fa": "زیرساخت تولید و نشان ساخت عمان",
+      "icon": "🏷️",
+      "short_ar": "التصنيع التعاقدي، خطوط التجميع، التعبئة والتغليف، وتحقيق معايير القيمة المحلية المضافة (ICV).",
+      "short_en": "Contract manufacturing, assembly lines, value-add packaging, and In-Country Value (ICV) licensing.",
+      "short_fa": "تولید قراردادی، راه‌اندازی خطوط مونتاژ، فرآوری ارزش‌افزوده و آماده‌سازی الزامات هویت محصول ملی عمان."
+    }
+  ],
+  "strategic_hubs": [
+    {
+      "name_ar": "ميناء صحار والمنطقة الحرة",
+      "name_en": "Sohar Port & Freezone",
+      "name_fa": "بندر و منطقه آزاد صحار",
+      "desc_ar": "بوابة صناعية وبحرية كبرى متصلة مباشرة بالخطوط الملاحية العالمية وشبكة النقل البري الخليجية.",
+      "desc_en": "Deep-sea port and premier industrial hub directly linked to major international maritime lanes.",
+      "desc_fa": "هاب صنعتی و دریایی تراز اول عمان با اتصال مستقیم به کریدورهای حمل و نقل خلیج فارس."
+    },
+    {
+      "name_ar": "ميناء صلالة الاستراتيجي",
+      "name_en": "Port of Salalah",
+      "name_fa": "بندر استراتژیک صلاله",
+      "desc_ar": "مركز إعادة الشحن الأسرع نمواً المطل على المحيط الهندي وبوابة التجارة نحو أسواق شرق أفريقيا وجنوب آسيا.",
+      "desc_en": "Indian Ocean transshipment hub offering rapid access to high-growth East African and South Asian markets.",
+      "desc_fa": "هاب اقیانوس هند با دسترسی ویژه به بازارهای پررونق شرق آفریقا، هند و جنوب آسیا."
+    },
+    {
+      "name_ar": "المنطقة الاقتصادية الخاصة بالدقم (SEZAD)",
+      "name_en": "Duqm Special Economic Zone (SEZAD)",
+      "name_fa": "منطقه ویژه اقتصادی دقم (SEZAD)",
+      "desc_ar": "أكبر منطقة اقتصادية متكاملة في الشرق الأوسط تجمع بين الصناعات الثقيلة، البتروكيماويات، واللوجستيات العالمية.",
+      "desc_en": "The largest multi-sector economic zone in the Middle East supporting mega-refineries, heavy industry, and logistics.",
+      "desc_fa": "بزرگ‌ترین منطقه ویژه اقتصادی خاورمیانه با زیرساخت‌های کلان پتروشیمی، انبارداری و صنعت سنگین."
+    }
+  ]
+}
