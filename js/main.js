@@ -1,16 +1,21 @@
 /**
  * Al Takamul International Trading LLC — Main Controller
  * Three-Language Engine (Arabic default RTL, English LTR, Persian RTL)
- * Theme Switcher (Dark default, Light)
- * Mobile Drawer, Sticky Header, FAQ Accordion, Forms
+ * Complete Persistent State & DOM Synchronization
+ * Mobile Drawer, Sticky Header, Spaced FAQ Accordion, Forms
  */
 
 (function () {
   'use strict';
 
+  // Read current language & theme from localStorage with safe defaults
   let currentLang = localStorage.getItem('altakamul_lang') || 'ar';
   let currentTheme = localStorage.getItem('altakamul_theme') || 'dark';
   let translations = {};
+
+  function getBasePath() {
+    return (window.location.pathname.match(/\/pages\//) ? '../' : './');
+  }
 
   // Theme Initializer
   function initTheme() {
@@ -33,11 +38,7 @@
     initTheme();
   };
 
-  // Language Engine
-  function getBasePath() {
-    return (window.location.pathname.match(/\/pages\//) ? '../' : './');
-  }
-
+  // Translations Loader & Engine
   async function loadTranslations() {
     try {
       const res = await fetch(getBasePath() + 'translations.json');
@@ -51,16 +52,18 @@
   }
 
   function applyTranslations(lang) {
-    if (!translations[lang]) return;
+    if (!translations || !translations[lang]) return;
     const dict = translations[lang];
 
     // Direction & HTML Lang Attribute
     const dir = dict.direction || (lang === 'en' ? 'ltr' : 'rtl');
     document.documentElement.setAttribute('lang', lang);
     document.documentElement.setAttribute('dir', dir);
-    document.body.setAttribute('dir', dir);
+    if (document.body) {
+      document.body.setAttribute('dir', dir);
+    }
 
-    // Replace data-i18n text
+    // Apply translations to all data-i18n elements
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (dict[key]) {
@@ -72,12 +75,13 @@
       }
     });
 
-    // Update Language Switcher UI
+    // Update Language Dropdown Selector in Header
     const flagEl = document.querySelector('.current-lang-flag');
     const codeEl = document.querySelector('.current-lang-code');
-    if (flagEl) flagEl.textContent = dict.lang_flag || '🇴🇲';
-    if (codeEl) codeEl.textContent = (lang.toUpperCase());
+    if (flagEl) flagEl.textContent = dict.lang_flag || (lang === 'en' ? '🇬🇧' : (lang === 'fa' ? '🇮🇷' : '🇴🇲'));
+    if (codeEl) codeEl.textContent = lang.toUpperCase();
 
+    // Mark active in dropdown
     document.querySelectorAll('.lang-option').forEach(btn => {
       btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
     });
@@ -116,8 +120,14 @@
     const drawer = document.getElementById('mobileDrawer');
     const overlay = document.getElementById('mobileOverlay');
     if (drawer && overlay) {
-      drawer.classList.toggle('active');
-      overlay.classList.toggle('active');
+      const isCurrentlyActive = drawer.classList.contains('active');
+      if (isCurrentlyActive) {
+        drawer.classList.remove('active');
+        overlay.classList.remove('active');
+      } else {
+        drawer.classList.add('active');
+        overlay.classList.add('active');
+      }
     }
   };
 
@@ -140,7 +150,7 @@
     const btn = document.getElementById('backToTopBtn');
     if (!btn) return;
     window.addEventListener('scroll', () => {
-      btn.classList.toggle('active', window.scrollY > 300);
+      btn.classList.toggle('active', window.scrollY > 250);
     });
     btn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -152,13 +162,14 @@
     e.preventDefault();
     const form = e.target;
     const btn = form.querySelector('button[type="submit"]');
-    const orig = btn.innerText;
-    btn.innerText = '...';
-    btn.disabled = true;
+    if (btn) {
+      btn.innerText = '...';
+      btn.disabled = true;
+    }
 
     setTimeout(() => {
       window.location.href = getBasePath() + 'pages/thank-you.html';
-    }, 700);
+    }, 600);
   };
 
   // Bootstrap
