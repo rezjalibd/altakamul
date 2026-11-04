@@ -1,0 +1,751 @@
+import os
+
+OUTPUT_HTML = "/opt/data/cache/scratch/altakamul-site/profile.html"
+OUTPUT_HTML_ALT = "/opt/data/cache/scratch/altakamul-site/company-profile.html"
+
+HTML_TEMPLATE = """<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الملف التعريفي المؤسسي ۲۰۲۶ | شركة التكامل للتجارة الدولية ش.ذ.م.م - سلطنة عُمان</title>
+    <meta name="description" content="الملف التعريفي المؤسسي الشامل لشركة التكامل للتجارة الدولية ش.ذ.م.م - سلطنة عُمان. القدرات التشغيلية، مصفوفة الخدمات التجارية، الامتثال القانوني، والبنية اللوجستية.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="الملف التعريفي المؤسسي ۲۰۲۶ | شركة التكامل للتجارة الدولية">
+    <meta property="og:description" content="الملف التعريفي المؤسسي والقدرات التشغيلية والتجارية لشركة التكامل للتجارة الدولية ش.ذ.م.م - مسقط، سلطنة عُمان.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_OM">
+    <meta property="og:image" content="./img/logo.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/profile.css?v=2.0">
+    <link rel="icon" type="image/png" href="./img/logo.png">
+</head>
+<body>
+
+    <!-- Executive Control Bar (Screen Only) -->
+    <header class="executive-control-bar no-print">
+        <div class="control-bar-inner">
+            <div class="control-brand-info">
+                <span class="control-doc-tag">DOC: TK-CORP-2026/V1</span>
+                <span class="control-meta-text">شركة التكامل للتجارة الدولية ش.ذ.م.م • مسقط، سلطنة عُمان</span>
+            </div>
+            <div class="control-actions">
+                <a href="./pdf/Al-Takamul-Company-Profile-2026.pdf" download="Al-Takamul-Company-Profile-2026.pdf" class="btn-ctrl btn-ctrl-primary" id="btn-download-pdf">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    <span>تحميل ملف PDF (نسخة A4 رسمية)</span>
+                </a>
+                <button type="button" onclick="window.print()" class="btn-ctrl btn-ctrl-outline">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                    <span>طباعة مباشرة</span>
+                </button>
+                <a href="./index.html" class="btn-ctrl btn-ctrl-outline">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    <span>العودة للرئيسية</span>
+                </a>
+                <button type="button" class="btn-theme-toggle" id="theme-toggle-btn" title="تبديل المظهر">
+                    ☾
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Master Document Flow (7 Pages) -->
+    <main class="profile-document-container" id="profile-doc">
+
+        <!-- ================= PAGE 1: LUXURY COVER ================= -->
+        <section class="profile-page page-cover" id="page-1">
+            <div class="cover-decor-ring"></div>
+            <div class="cover-decor-ring-inner"></div>
+            <div class="cover-decor-diamond"></div>
+
+            <div class="cover-header-top">
+                <div class="cover-badge">
+                    <span class="pulse-dot"></span>
+                    <span>وثيقة رسمية معتمدة ۲۰۲۶</span>
+                </div>
+                <div class="cover-logo-wrapper">
+                    <img src="./img/logo.png" alt="شعار شركة التكامل للتجارة الدولية" class="cover-logo-img">
+                </div>
+            </div>
+
+            <div class="cover-body-center">
+                <div class="cover-category-tag">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    <span>الملف التعريفي المؤسسي والقدرات التشغيلية والتجارية</span>
+                </div>
+                <h1 class="cover-title">
+                    شركة التكامل<br>
+                    <span>للتجارة الدولية ش.ذ.م.م</span>
+                </h1>
+                <p class="cover-desc">
+                    بيت التجارة الدولية والحلول التصديرية المتكاملة في سلطنة عُمان. بوابة استراتيجية لربط المصنعين الإقليميين بالأسواق الخليجية والعالمية عبر منظومة موانئ صحار وصلالة والدقم والممرات اللوجستية الحديثة.
+                </p>
+
+                <div class="cover-pillars-strip">
+                    <div class="cover-pillar-card">
+                        <h4>الامتثال والحوكمة</h4>
+                        <p>سجل تجاري موثق تحت إشراف وزارة التجارة والصناعة وترويج الاستثمار، وعضوية غرفة تجارة وصناعة عُمان.</p>
+                    </div>
+                    <div class="cover-pillar-card">
+                        <h4>الممر اللوجستي الاستراتيجي</h4>
+                        <p>إدارة سلاسل الإمداد، النقل المتعدد، التخليص الجمركي عبر نظام بيان، والاستفادة من اتفاقيات التجارة الحرة.</p>
+                    </div>
+                    <div class="cover-pillar-card">
+                        <h4>الوساطة التصديرية (EMC)</h4>
+                        <p>تمثيل المصانع والموردين، إدارة عقود الوكالات، وتوزيع السلع الغذائية ومواد البناء وفق معايير GSO المعتمدة.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cover-footer-meta">
+                <div class="cover-meta-item">
+                    <span class="cover-meta-lbl">رقم السجل التجاري (CR)</span>
+                    <span class="cover-meta-val">1389420</span>
+                </div>
+                <div class="cover-meta-item">
+                    <span class="cover-meta-lbl">المقر الرئيسي</span>
+                    <span class="cover-meta-val">محافظة مسقط، سلطنة عُمان</span>
+                </div>
+                <div class="cover-meta-item">
+                    <span class="cover-meta-lbl">رمز الوثيقة المرجعي</span>
+                    <span class="cover-meta-val">DOC: TK-CORP-2026/V1</span>
+                </div>
+                <div class="cover-meta-item">
+                    <span class="cover-meta-lbl">تاريخ الإصدار والاعتماد</span>
+                    <span class="cover-meta-val">جمادى الأولى ۱۴۴۸ هـ / ۲۰۲۶ م</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 2: IDENTITY & VISION 2040 ================= -->
+        <section class="profile-page" id="page-2">
+            <header class="page-running-header">
+                <div class="header-brand">
+                    <img src="./img/logo.png" alt="شعار التكامل" class="header-logo-icon">
+                    <span>شركة التكامل للتجارة الدولية ش.ذ.م.م</span>
+                </div>
+                <div class="header-doc-code">الفصل ۰۱: الهوية والاستراتيجية المؤسسية</div>
+            </header>
+
+            <div class="page-content-flow">
+                <div>
+                    <span class="section-chapter-chip">الهوية والرسالة الاستراتيجية</span>
+                    <h2 class="page-title">بوابة التجارة الإقليمية وحلول إدارة التصدير (EMC)</h2>
+                    <p class="page-subtitle">
+                        تأسست شركة التكامل للتجارة الدولية في سلطنة عُمان لتكون المحرك التجاري الموثوق للشركات والمصانع الساعية لاختراق وتوسيع حصصها في أسواق الشرق الأوسط، دول مجلس التعاون الخليجي، وشبه القارة الهندية. نوفر بيئة تشغيلية آمنة تتكفل بكافة تعقيدات سلاسل الإمداد والامتثال الجمركي والقانوني.
+                    </p>
+                </div>
+
+                <div class="card-grid-3">
+                    <div class="feature-box">
+                        <div class="feature-box-header">
+                            <div class="feature-icon-badge">◈</div>
+                            <h3 class="feature-box-title">رؤيتنا المستقبلية</h3>
+                        </div>
+                        <p class="feature-box-desc">
+                            أن نكون الشريك التجاري واللوجستي الأول في سلطنة عُمان للربط التجاري بين أسواق آسيا الوسطى، إيران، ودول مجلس التعاون الخليجي، مستندين إلى بيئة السلطنة الاستثمارية المستقرة.
+                        </p>
+                    </div>
+
+                    <div class="feature-box">
+                        <div class="feature-box-header">
+                            <div class="feature-icon-badge">❖</div>
+                            <h3 class="feature-box-title">رسالتنا التشغيلية</h3>
+                        </div>
+                        <p class="feature-box-desc">
+                            تقديم خدمات تجارية متكاملة تبدأ من مطابقة معايير الجودة والمواصفات الخليجية، مروراً بالشحن والتخليص الجمركي الذكي، وصولاً إلى التسليم النهائي وإدارة التدفقات المالية بأعلى موثوقية.
+                        </p>
+                    </div>
+
+                    <div class="feature-box featured-gold">
+                        <div class="feature-box-header">
+                            <div class="feature-icon-badge">★</div>
+                            <h3 class="feature-box-title">قيمنا المؤسسية</h3>
+                        </div>
+                        <p class="feature-box-desc">
+                            الشفافية المطلقة في العقود، الصرامة في الامتثال القانوني والمالي، السرعة في الإجراءات اللوجستية، وبناء شراكات تجارية مستدامة تضمن الربحية وحماية رأس المال لعملائنا.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="feature-box" style="margin-top: 6px;">
+                    <div class="feature-box-header">
+                        <div class="feature-icon-badge" style="background: rgba(197, 160, 89, 0.18); color: var(--color-accent);">✦</div>
+                        <h3 class="feature-box-title">مواءمة استراتيجية متكاملة مع "رؤية عُمان ۲۰۴۰"</h3>
+                    </div>
+                    <p class="feature-box-desc" style="margin-bottom: 10px;">
+                        تتماشى أهداف شركة التكامل للتجارة الدولية مع محاور التنويع الاقتصادي الوطني لسلطنة عُمان عبر تحويل السلطنة إلى مركز لوجستي عالمي من خلال:
+                    </p>
+                    <ul class="bullet-list-check" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                        <li>تعظيم الاستفادة من موانئ صحار، صلالة، والدقم كمحطات عبور دولية وإعادة تصدير.</li>
+                        <li>استثمار المزايا التفضيلية لاتفاقية التجارة الحرة (FTA) المبرمة بين سلطنة عُمان والولايات المتحدة.</li>
+                        <li>تسهيل تدفق السلع والمنتجات الأساسية وتوفير سلاسل إمداد مرنة وآمنة للقطاعين الصناعي والغذائي.</li>
+                        <li>تنمية المحتوى المحلي العُماني (ICV) وتوفير فرص استثمارية وشراكات تجارية عالية الجدوى.</li>
+                    </ul>
+                </div>
+
+                <div class="metrics-row-4">
+                    <div class="metric-stat-card">
+                        <div class="metric-val">+۱۵</div>
+                        <div class="metric-lbl">سوقاً تجارياً مستهدفاً</div>
+                    </div>
+                    <div class="metric-stat-card">
+                        <div class="metric-val">۱۰۰٪</div>
+                        <div class="metric-lbl">امتثال مصرفي وقانوني</div>
+                    </div>
+                    <div class="metric-stat-card">
+                        <div class="metric-val">۴</div>
+                        <div class="metric-lbl">موانئ ومناطق حرة شريكة</div>
+                    </div>
+                    <div class="metric-stat-card">
+                        <div class="metric-val">۲۴/۷</div>
+                        <div class="metric-lbl">متابعة لوجستية حية</div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="page-running-footer">
+                <span class="footer-cr">س.ت: 1389420 • مسقط، سلطنة عُمان</span>
+                <span class="footer-confidential">وثيقة مؤسسية سرية معتمدة للشركاء</span>
+                <span class="page-number">صفحة ۰۲ من ۰۷</span>
+            </footer>
+        </section>
+
+        <!-- ================= PAGE 3: GOVERNANCE & COMPLIANCE ================= -->
+        <section class="profile-page" id="page-3">
+            <header class="page-running-header">
+                <div class="header-brand">
+                    <img src="./img/logo.png" alt="شعار التكامل" class="header-logo-icon">
+                    <span>شركة التكامل للتجارة الدولية ش.ذ.م.م</span>
+                </div>
+                <div class="header-doc-code">الفصل ۰۲: الحوكمة المؤسسية والامتثال</div>
+            </header>
+
+            <div class="page-content-flow">
+                <div>
+                    <span class="section-chapter-chip">الأطر التنظيمية والمصرفية</span>
+                    <h2 class="page-title">الحوكمة الصارمة والامتثال المالي والتجاري</h2>
+                    <p class="page-subtitle">
+                        تلتزم شركة التكامل للتجارة الدولية بأعلى معايير الشفافية والنزاهة المؤسسية. تخضع كافة معاملاتنا التجارية والتعاقدية للقوانين التجارية واللوائح التنظيمية الصادرة عن وزارة التجارة والصناعة وترويج الاستثمار، وتوجيهات البنك المركزي العُماني.
+                    </p>
+                </div>
+
+                <div class="card-grid-2">
+                    <div class="feature-box">
+                        <div class="feature-box-header">
+                            <div class="feature-icon-badge">🏛</div>
+                            <h3 class="feature-box-title">التسجيل والاعتماد التجاري الرسمي</h3>
+                        </div>
+                        <p class="feature-box-desc">
+                            شركة ذات مسؤولية محدودة مسجلة رسمياً تحت السجل التجاري رقم <strong>1389420</strong>، وتحمل عضوية فعالة في <strong>غرفة تجارة وصناعة عُمان (OCCI)</strong>، ومرخصة لممارسة أنشطة الاستيراد، التصدير، والوساطة التجارية الدولية.
+                        </p>
+                    </div>
+
+                    <div class="feature-box">
+                        <div class="feature-box-header">
+                            <div class="feature-icon-badge">⚖</div>
+                            <h3 class="feature-box-title">الأطر التعاقدية الدولية (Incoterms 2020)</h3>
+                        </div>
+                        <p class="feature-box-desc">
+                            صياغة كافة العقود والاتفاقيات بالاعتماد على قواعد غرفة التجارة الدولية (ICC) وشروط التجارة الدولية (Incoterms 2020) مثل FOB و CIF و CFR و DDP، بما يحدد المسؤوليات بوضوح ويحمي حقوق كافة الأطراف.
+                        </p>
+                    </div>
+
+                    <div class="feature-box">
+                        <div class="feature-box-header">
+                            <div class="feature-icon-badge">🔒</div>
+                            <h3 class="feature-box-title">مكافحة غسل الأموال (AML/CFT)</h3>
+                        </div>
+                        <p class="feature-box-desc">
+                            تطبيق صارم لسياسات مكافحة غسل الأموال وتمويل الإرهاب طبقاً للمرسوم السلطاني رقم ۳۰/۲۰۱۶، مع تنفيذ إجراءات اعرف عميلك (KYC) والتحقق الدقيق من مصادر الأموال والمستفيد النهائي لجميع المعاملات.
+                        </p>
+                    </div>
+
+                    <div class="feature-box">
+                        <div class="feature-box-header">
+                            <div class="feature-icon-badge">💳</div>
+                            <h3 class="feature-box-title">الاعتمادات المصرفية والتحصيلات المستندية</h3>
+                        </div>
+                        <p class="feature-box-desc">
+                            إدارة العمليات التمويلية عبر الحسابات البنكية الرسمية في المصارف العُمانية الرائدة، مع التعامل بالاعتمادات المستندية غير القابلة للإلغاء المعززة (Irrevocable Confirmed L/C) وفق نشرة UCP 600 الصادرة عن ICC.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="legal-callout-notice">
+                    <strong>تنويه مصرفي وتنظيمي هام:</strong> تتم كافة التسويات المالية والتحويلات النقدية عبر القنوات المصرفية الرسمية الخاضعة لرقابة البنك المركزي العُماني وبالعملات الدولية المعتمدة (الريال العُماني OMR، الدرهم الإماراتي AED، اليورو EUR، أو اليوان الصيني CNY). لا تتعامل الشركة نهائياً بأي قنوات غير نظامية أو غير معتمدة رسمياً.
+                </div>
+
+                <div class="card-grid-2" style="margin-top: 6px;">
+                    <div class="feature-box">
+                        <h4 style="font-family: var(--font-heading); font-size: 0.95rem; color: var(--color-primary-dark); margin-bottom: 6px;">
+                            حماية وسرية البيانات (Data Privacy)
+                        </h4>
+                        <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.55;">
+                            الالتزام التام بقانون حماية البيانات الشخصية العُماني (المرسوم السلطاني ۶/۲۰۲۲)، واتفاقيات سرية المعلومات (NDA) المشددة لحماية خطط العملاء وبيانات التسعير والعملاء النهائيين.
+                        </p>
+                    </div>
+                    <div class="feature-box">
+                        <h4 style="font-family: var(--font-heading); font-size: 0.95rem; color: var(--color-primary-dark); margin-bottom: 6px;">
+                            فض المنازعات والتحكيم التجاري
+                        </h4>
+                        <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.55;">
+                            تخضع العقود لاختصاص القوانين العُمانية ومحاكم سلطنة عُمان التجارية، أو مركز عُمان للتحكيم التجاري (OAC) كمرجعية معتمدة للتحكيم والفصل في النزاعات التجارية بسرعة واحترافية.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="page-running-footer">
+                <span class="footer-cr">س.ت: 1389420 • مسقط، سلطنة عُمان</span>
+                <span class="footer-confidential">وثيقة مؤسسية سرية معتمدة للشركاء</span>
+                <span class="page-number">صفحة ۰۳ من ۰۷</span>
+            </footer>
+        </section>
+
+        <!-- ================= PAGE 4: SERVICES MATRIX ================= -->
+        <section class="profile-page" id="page-4">
+            <header class="page-running-header">
+                <div class="header-brand">
+                    <img src="./img/logo.png" alt="شعار التكامل" class="header-logo-icon">
+                    <span>شركة التكامل للتجارة الدولية ش.ذ.م.م</span>
+                </div>
+                <div class="header-doc-code">الفصل ۰۳: مصفوفة الخدمات التجارية</div>
+            </header>
+
+            <div class="page-content-flow">
+                <div>
+                    <span class="section-chapter-chip">القدرات والحلول التشغيلية</span>
+                    <h2 class="page-title">مصفوفة الخدمات التجارية واللوجستية الخمس</h2>
+                    <p class="page-subtitle">
+                        تقدم شركة التكامل للتجارة الدولية محفظة خدمات متكاملة ومتسلسلة تغطي الدورة التجارية بالكامل؛ من التمثيل الحصري ودراسات الأسواق إلى التخليص والتمويل والتسليم المستندي النهائي.
+                    </p>
+                </div>
+
+                <div class="services-matrix-list">
+                    <!-- Service 1 -->
+                    <div class="service-matrix-item">
+                        <div class="srv-code-badge">SRV-01</div>
+                        <div class="srv-name-col">
+                            <span class="srv-title">التمثيل التجاري ووكالات التصدير</span>
+                            <span class="srv-en-title">Export Management & Representation</span>
+                        </div>
+                        <div class="srv-scope-text">
+                            تمثيل المصانع والشركات العالمية كوكيل حصري أو ذراع تصديري في عُمان والخليج، صياغة اتفاقيات الوكالة، وتسجيل العلامات التجارية وحمايتها.
+                        </div>
+                        <div class="srv-deliverable-box">
+                            <strong>مخرجات الخدمة:</strong>
+                            عقود توزيع رسمية، شبكة موزعين معتمدة، وحماية قانونية للعلامة في الأسواق المستهدفة.
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="service-matrix-item">
+                        <div class="srv-code-badge">SRV-02</div>
+                        <div class="srv-name-col">
+                            <span class="srv-title">أبحاث الأسواق والفرص الاستثمارية</span>
+                            <span class="srv-en-title">Market Intelligence & Feasibility</span>
+                        </div>
+                        <div class="srv-scope-text">
+                            إجراء دراسات ميدانية وتحليل العرض والطلب والأسعار التنافسية للسلع، وتحديد القنوات البيعية الأكثر ربحية للمنتجات الصناعية والاستهلاكية.
+                        </div>
+                        <div class="srv-deliverable-box">
+                            <strong>مخرجات الخدمة:</strong>
+                            تقارير جدوى تفصيلية، تحليل الفجوات السعرية، وخطة دخول السوق (Go-To-Market Strategy).
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="service-matrix-item">
+                        <div class="srv-code-badge">SRV-03</div>
+                        <div class="srv-name-col">
+                            <span class="srv-title">إدارة سلاسل الإمداد والشحن المتعدد</span>
+                            <span class="srv-en-title">Multimodal Logistics & Supply Chain</span>
+                        </div>
+                        <div class="srv-scope-text">
+                            إدارة النقل البحري والبري والجوي، التخزين الجاف والمبرد، والتنسيق عبر موانئ صحار وصلالة والممرات البرية الخليجية.
+                        </div>
+                        <div class="srv-deliverable-box">
+                            <strong>مخرجات الخدمة:</strong>
+                            تخفيض تكاليف الشحن حتى ۲۰٪، تتبع الشحنات المباشر، وضمان سلامة الحاويات والطرود.
+                        </div>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="service-matrix-item">
+                        <div class="srv-code-badge">SRV-04</div>
+                        <div class="srv-name-col">
+                            <span class="srv-title">التخليص الجمركي الذكي (نظام بيان)</span>
+                            <span class="srv-en-title">Customs Clearance & Bayan Protocol</span>
+                        </div>
+                        <div class="srv-scope-text">
+                            استخراج أذونات الاستيراد، الإفراج الجمركي المسبق عبر نظام بيان، وفحص ومطابقة شهادات المنشأ والمواصفات القياسية الخليجية (GSO).
+                        </div>
+                        <div class="srv-deliverable-box">
+                            <strong>مخرجات الخدمة:</strong>
+                            إنهاء المعاملات في أقل من ۴۸ ساعة، تجنب غرامات التأخير (Demurrage)، ومطابقة نظامية ۱۰۰٪.
+                        </div>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="service-matrix-item">
+                        <div class="srv-code-badge">SRV-05</div>
+                        <div class="srv-name-col">
+                            <span class="srv-title">الاستشارات والوساطة في المعاملات الكبرى</span>
+                            <span class="srv-en-title">B2B Trade Mediation & Advisory</span>
+                        </div>
+                        <div class="srv-scope-text">
+                            هيكلة صفقات السلع التعدينية، مواد البناء، والمنتجات الغذائية الكبرى، التوفيق بين المشترين والموردين، وتأمين التمويل وضمانات الدفع.
+                        </div>
+                        <div class="srv-deliverable-box">
+                            <strong>مخرجات الخدمة:</strong>
+                            عقود متوازنة، حماية الملاءة المالية، وتنفيذ الصفقات بأعلى سرية واحترافية تجارية.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="page-running-footer">
+                <span class="footer-cr">س.ت: 1389420 • مسقط، سلطنة عُمان</span>
+                <span class="footer-confidential">وثيقة مؤسسية سرية معتمدة للشركاء</span>
+                <span class="page-number">صفحة ۰۴ من ۰۷</span>
+            </footer>
+        </section>
+
+        <!-- ================= PAGE 5: STRATEGIC HUBS ================= -->
+        <section class="profile-page" id="page-5">
+            <header class="page-running-header">
+                <div class="header-brand">
+                    <img src="./img/logo.png" alt="شعار التكامل" class="header-logo-icon">
+                    <span>شركة التكامل للتجارة الدولية ش.ذ.م.م</span>
+                </div>
+                <div class="header-doc-code">الفصل ۰۴: البنية التحتية والموانئ والمناطق الحرة</div>
+            </header>
+
+            <div class="page-content-flow">
+                <div>
+                    <span class="section-chapter-chip">الموقع الجغرافي والربط اللوجستي</span>
+                    <h2 class="page-title">محاور العبور الاستراتيجية والمناطق الاقتصادية</h2>
+                    <p class="page-subtitle">
+                        تستفيد شركة التكامل للتجارة الدولية من الموقع الجغرافي الاستثنائي لسلطنة عُمان الواقع خارج مضيق هرمز والمطل مباشرة على المحيط الهندي وبحر العرب، مما يضمن تدفقاً تجارياً مستمراً حتى أثناء الأزمات الجيوسياسية.
+                    </p>
+                </div>
+
+                <div class="card-grid-2">
+                    <div class="feature-box">
+                        <div class="feature-box-header">
+                            <div class="feature-icon-badge">⚓</div>
+                            <div>
+                                <h3 class="feature-box-title">ميناء والمنطقة الحرة بصحار</h3>
+                                <span style="font-size: 0.76rem; color: var(--color-primary); font-weight: 700;">بوابة التجارة مع الخليج والإمارات</span>
+                            </div>
+                        </div>
+                        <p class="feature-box-desc">
+                            أحد أسرع الموانئ نمواً في العالم، يرتبط بشبكة طرق سريعة حديثة تربط مباشرة بأسواق دولة الإمارات العربية المتحدة والمملكة العربية السعودية، مما يجعله المحور الأمثل لنقل البضائع الجافة والمبردة ومواد البناء.
+                        </p>
+                        <ul class="bullet-list-check">
+                            <li>إعفاء ضريبي وجمركي يصل إلى ۲۵ عاماً داخل المنطقة الحرة.</li>
+                            <li>ملكية أجنبية بنسبة ۱۰۰٪ مع سهولة استخراج الرخص.</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-box">
+                        <div class="feature-box-header">
+                            <div class="feature-icon-badge">🌊</div>
+                            <div>
+                                <h3 class="feature-box-title">ميناء صلالة للمياه العميقة</h3>
+                                <span style="font-size: 0.76rem; color: var(--color-primary); font-weight: 700;">محور الشحن العابر إلى إفريقيا واليمن</span>
+                            </div>
+                        </div>
+                        <p class="feature-box-desc">
+                            يقع مباشرة على خط التجارة الرئيسي الرابط بين أوروبا وآسيا، ويوفر أسرع وقت عبور إلى أسواق شرق إفريقيا والبحر الأحمر والمحيط الهندي، ومحطة رئيسية لحاويات الشحن الكبرى.
+                        </p>
+                        <ul class="bullet-list-check">
+                            <li>محطة حاويات عالمية بمعايير ومعدات تفريغ متطورة.</li>
+                            <li>ربط لوجستي بري مباشر مع محافظات جنوب اليمن.</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-box">
+                        <div class="feature-box-header">
+                            <div class="feature-icon-badge">🏗</div>
+                            <div>
+                                <h3 class="feature-box-title">المنطقة الاقتصادية الخاصة بالدقم</h3>
+                                <span style="font-size: 0.76rem; color: var(--color-primary); font-weight: 700;">المركز الصناعي والتعديني الأكبر</span>
+                            </div>
+                        </div>
+                        <p class="feature-box-desc">
+                            أكبر منطقة اقتصادية خاصة في الشرق الأوسط، تضم ميناء متعدد الأغراض وحوضاً جافاً لإصلاح السفن ومجمعات للصناعات الثقيلة والبتروكيماويات، وتوفر بيئة مثالية للمشاريع التصديرية الكبرى.
+                        </p>
+                        <ul class="bullet-list-check">
+                            <li>مساحات شاسعة للصناعات التحويلية ومخازن التبريد الكبرى.</li>
+                            <li>حوافز مالية وتسهيلات لوجستية حكومية استثنائية.</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-box">
+                        <div class="feature-box-header">
+                            <div class="feature-icon-badge">🚚</div>
+                            <div>
+                                <h3 class="feature-box-title">مدينة خزائن اللوجستية والمنطقة الحرة بالمزيونة</h3>
+                                <span style="font-size: 0.76rem; color: var(--color-primary); font-weight: 700;">الموانئ الجافة والمنافذ البرية</span>
+                            </div>
+                        </div>
+                        <p class="feature-box-desc">
+                            ميناء خزائن البري بالقرب من العاصمة مسقط لإعادة التوزيع السريع في السوق المحلي والإقليمي، إلى جانب المنطقة الحرة بالمزيونة كمنفذ بري تجاري حيوي يربط مباشرة مع السوق اليمني.
+                        </p>
+                        <ul class="bullet-list-check">
+                            <li>تخليص جمركي فوري وتخزين جاف ومبرد بمواصفات عالية.</li>
+                            <li>بوابة التصدير البري الأكبر لإعادة الإعمار والتبادل السلعي.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-box featured-gold" style="margin-top: 6px;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+                        <div>
+                            <h4 style="font-family: var(--font-heading); font-size: 1rem; color: var(--color-primary-dark); margin-bottom: 4px;">
+                                المزايا التنافسية للتصدير عبر سلطنة عُمان
+                            </h4>
+                            <p style="font-size: 0.84rem; color: var(--text-muted);">
+                                توفر سلطنة عُمان بوابة تجارية بدون قيود نقدية، وبدون ضرائب على الصادرات أو إعادة التصدير، مع استقرار تام للريال العُماني المربوط بالدولار الأمريكي.
+                            </p>
+                        </div>
+                        <div style="display: flex; gap: 8px;">
+                            <span class="section-chapter-chip" style="margin-bottom: 0; background: #FFFFFF;">صفر٪ رسوم جمركية مع دول الخليج</span>
+                            <span class="section-chapter-chip" style="margin-bottom: 0; background: #FFFFFF;">اتفاقية FTA مع أمريكا</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="page-running-footer">
+                <span class="footer-cr">س.ت: 1389420 • مسقط، سلطنة عُمان</span>
+                <span class="footer-confidential">وثيقة مؤسسية سرية معتمدة للشركاء</span>
+                <span class="page-number">صفحة ۰۵ من ۰۷</span>
+            </footer>
+        </section>
+
+        <!-- ================= PAGE 6: WORKFLOW PIPELINE ================= -->
+        <section class="profile-page" id="page-6">
+            <header class="page-running-header">
+                <div class="header-brand">
+                    <img src="./img/logo.png" alt="شعار التكامل" class="header-logo-icon">
+                    <span>شركة التكامل للتجارة الدولية ش.ذ.م.م</span>
+                </div>
+                <div class="header-doc-code">الفصل ۰۵: آلية العمل والمسار التنفيذي</div>
+            </header>
+
+            <div class="page-content-flow">
+                <div>
+                    <span class="section-chapter-chip">منهجية إدارة الصفقات</span>
+                    <h2 class="page-title">المسار التنفيذي لإدارة العمليات التصديرية (۶ مراحل)</h2>
+                    <p class="page-subtitle">
+                        تتبع شركة التكامل نموذج عمل صارم وممنهج يضمن انسيابية البضائع وسلامة المستندات والتحويلات المالية من لحظة توقيع الاتفاقية وحتى استلام الشحنة وإغلاق الصفقة رسمياً.
+                    </p>
+                </div>
+
+                <div class="pipeline-steps-grid">
+                    <div class="pipeline-step-card">
+                        <span class="step-phase-badge">المرحلة ۰۱</span>
+                        <h4 class="step-title">دراسة المنتج ومطابقة GSO</h4>
+                        <p class="step-desc">
+                            استلام المواصفات الفنية للسلعة، تحليل شهادات المنشأ والتحاليل المخبرية، والتأكد من توافقها التام مع متطلبات هيئة التقييس لدول مجلس التعاون الخليجي.
+                        </p>
+                    </div>
+
+                    <div class="pipeline-step-card">
+                        <span class="step-phase-badge">المرحلة ۰۲</span>
+                        <h4 class="step-title">العقد والاعتماد المستندي</h4>
+                        <p class="step-desc">
+                            صياغة عقود البيع الدولية (Incoterms 2020)، تحديد شروط السداد (L/C أو CAD)، وتفعيل الاتفاقيات المصرفية الرسمية بين البنوك المعتمدة.
+                        </p>
+                    </div>
+
+                    <div class="pipeline-step-card">
+                        <span class="step-phase-badge">المرحلة ۰۳</span>
+                        <h4 class="step-title">الشحن وحجز الحاويات</h4>
+                        <p class="step-desc">
+                            التنسيق مع كبرى الخطوط الملاحية والناقلين المعتمدين، حجز الحاويات (الجافة أو المبردة)، ومتابعة عمليات الشحن والتعبئة وشهادات الوزن.
+                        </p>
+                    </div>
+
+                    <div class="pipeline-step-card">
+                        <span class="step-phase-badge">المرحلة ۰۴</span>
+                        <h4 class="step-title">الإفراج المسبق عبر بيان</h4>
+                        <p class="step-desc">
+                            رفع البيانات والمنافست عبر نظام الإدارة الجمركية الإلكترونية (بيان)، ودفع الرسوم المقررة لضمان خروج البضائع فور وصولها للميناء دون تأخير.
+                        </p>
+                    </div>
+
+                    <div class="pipeline-step-card">
+                        <span class="step-phase-badge">المرحلة ۰۵</span>
+                        <h4 class="step-title">الفحص والرقابة النوعية</h4>
+                        <p class="step-desc">
+                            إجراء الفحص الظاهري والمخبري في الميناء بالتنسيق مع الجهات المختصة (وزارة الثروة الزراعية والسمكية وموارد المياه أو الهيئات الصناعية).
+                        </p>
+                    </div>
+
+                    <div class="pipeline-step-card">
+                        <span class="step-phase-badge">المرحلة ۰۶</span>
+                        <h4 class="step-title">التسليم والتسوية النهائية</h4>
+                        <p class="step-desc">
+                            نقل البضائع إلى مستودعات المشتري النهائي، تسليم المستندات الأصلية، تحصيل المبالغ المستحقة، وإصدار براءة الذمة التجارية للصفقة.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="feature-box" style="margin-top: 6px;">
+                    <div class="feature-box-header">
+                        <div class="feature-icon-badge">📋</div>
+                        <h3 class="feature-box-title">منظومة الوثائق والمستندات الإلزامية لكل صفقة</h3>
+                    </div>
+                    <p class="feature-box-desc" style="margin-bottom: 8px;">
+                        لضمان عدم حدوث أي عراقيل جمركية أو مصرفية، تشرف شركة التكامل على تدقيق وتجهيز حزمة الوثائق التجارية التالية:
+                    </p>
+                    <ul class="bullet-list-check" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+                        <li>الفاتورة التجارية الرسمية (Commercial Invoice) مصدقة ومبين بها شروط الشحن.</li>
+                        <li>بوليصة الشحن الأصلية (Bill of Lading / Sea Waybill) معتمدة من الناقل.</li>
+                        <li>شهادة المنشأ المعتمدة من الغرفة التجارية في بلد التصدير (Certificate of Origin).</li>
+                        <li>بيان التعبئة التفصيلي (Packing List) موضحاً الأوزان الصافية والإجمالية.</li>
+                        <li>الشهادات الصحية أو الزراعية والبيطرية للمنتجات الغذائية والاستهلاكية.</li>
+                        <li>شهادة الفحص والمطابقة النوعية الصادرة عن جهات تفتيش دولية معتمدة (SGS / Bureau Veritas).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <footer class="page-running-footer">
+                <span class="footer-cr">س.ت: 1389420 • مسقط، سلطنة عُمان</span>
+                <span class="footer-confidential">وثيقة مؤسسية سرية معتمدة للشركاء</span>
+                <span class="page-number">صفحة ۰۶ من ۰۷</span>
+            </footer>
+        </section>
+
+        <!-- ================= PAGE 7: CONTACTS & OFFICIAL SIGNATORY ================= -->
+        <section class="profile-page" id="page-7">
+            <header class="page-running-header">
+                <div class="header-brand">
+                    <img src="./img/logo.png" alt="شعار التكامل" class="header-logo-icon">
+                    <span>شركة التكامل للتجارة الدولية ش.ذ.م.م</span>
+                </div>
+                <div class="header-doc-code">الفصل ۰۶: قنوات الاتصال والاعتماد الرسمي</div>
+            </header>
+
+            <div class="page-content-flow">
+                <div>
+                    <span class="section-chapter-chip">قنوات التواصل المؤسسي</span>
+                    <h2 class="page-title">المقر الرئيسي وقنوات التواصل المباشر</h2>
+                    <p class="page-subtitle">
+                        يسر فريق الخبراء والاستشاريين في شركة التكامل للتجارة الدولية استقبال استفساراتكم وبناء شراكات تجارية وتصديرية مثمرة. نرحب بزيارتكم في مكاتبنا أو التواصل عبر القنوات المعتمدة أدناه.
+                    </p>
+                </div>
+
+                <div class="card-grid-2">
+                    <div class="feature-box">
+                        <div class="feature-box-header">
+                            <div class="feature-icon-badge">🏢</div>
+                            <h3 class="feature-box-title">المقر الرئيسي وبيانات التسجيل</h3>
+                        </div>
+                        <ul class="bullet-list-check" style="gap: 8px;">
+                            <li><strong>الموقع:</strong> سلطنة عُمان، محافظة مسقط، واحة المعرفة (KOM) / مجمع الأعمال.</li>
+                            <li><strong>السجل التجاري:</strong> رقم 1389420 (وزارة التجارة والصناعة وترويج الاستثمار).</li>
+                            <li><strong>الغرفة:</strong> عضوية نشطة في غرفة تجارة وصناعة عُمان (OCCI).</li>
+                            <li><strong>ساعات العمل:</strong> الأحد إلى الخميس: ۸:۳۰ صباحاً – ۴:۳۰ مساءً (توقيت مسقط GMT+4).</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-box">
+                        <div class="feature-box-header">
+                            <div class="feature-icon-badge">📞</div>
+                            <h3 class="feature-box-title">القنوات الرسمية للتواصل</h3>
+                        </div>
+                        <ul class="bullet-list-check" style="gap: 8px;">
+                            <li><strong>الهاتف المكتبي المباشر:</strong> 3153 6000 968+</li>
+                            <li><strong>الخط الساخن والواتساب التجاري:</strong> 1635 7108 968+</li>
+                            <li><strong>البريد الإلكتروني المعتمد:</strong> info@omantakamul.com</li>
+                            <li><strong>الموقع الإلكتروني الرسمي:</strong> www.omantakamul.com</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="legal-callout-notice" style="margin-top: 4px;">
+                    <strong>ملاحظة التنسيق المالي والمصرفي:</strong> للحصول على التفاصيل البنكية الرسمية وحسابات التسوية الدولية (IBAN / SWIFT)، يرجى توجيه طلب رسمي عبر البريد المؤسسي مرفقاً بالسجل التجاري وتفويض معتمد من المفوض بالتوقيع.
+                </div>
+
+                <!-- Clean Corporate Signatory & Accreditation Block (No fake stamps / No clutter) -->
+                <div class="accreditation-executive-grid">
+                    <div class="exec-endorsement-col">
+                        <div>
+                            <span class="section-chapter-chip" style="margin-bottom: 6px;">الاعتماد الإداري والقانوني</span>
+                            <h4 style="font-family: var(--font-heading); font-size: 1.05rem; color: var(--color-primary-dark); margin-bottom: 6px;">
+                                شركة التكامل للتجارة الدولية ش.ذ.م.م
+                            </h4>
+                            <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 12px;">
+                                صدر هذا الملف التعريفي المؤسسي لبيان القدرات التشغيلية والأنشطة التجارية المرخصة للشركة للعام ۲۰۲۶. وتعتبر كافة البيانات والسياسات الواردة فيه جزءاً من الإطار التعريفي العام المنظم لعلاقات العمل والشراكات الاستثمارية والتجارية.
+                            </p>
+                        </div>
+                        <div style="font-size: 0.82rem; color: var(--text-main); font-weight: 700; border-top: 1px solid var(--border-subtle); padding-top: 10px;">
+                            مجلس الإدارة والإدارة التنفيذية<br>
+                            <span style="font-size: 0.75rem; color: var(--text-dim); font-weight: normal;">مسقط، سلطنة عُمان • جمادى الأولى ۱۴۴۸ هـ / نوفمبر ۲۰۲۶ م</span>
+                        </div>
+                    </div>
+
+                    <!-- Clean Corporate Identity Verification Card -->
+                    <div class="corporate-verification-card">
+                        <img src="./img/logo.png" alt="شعار شركة التكامل للتجارة الدولية" class="verification-logo-img">
+                        <div>
+                            <div class="verification-company-ar">شركة التكامل للتجارة الدولية ش.ذ.م.م</div>
+                            <div class="verification-company-en">AL TAKAMUL INTERNATIONAL TRADING L.L.C</div>
+                        </div>
+                        <div class="verification-badges-row">
+                            <span class="verif-chip verif-chip-cr">س.ت: 1389420</span>
+                            <span class="verif-chip verif-chip-occi">غرفة عُمان OCCI</span>
+                        </div>
+                        <div class="verif-status-badge">
+                            <span>✓</span>
+                            <span>سجل تجاري نشط وموثق رسمياً</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="page-running-footer">
+                <span class="footer-cr">س.ت: 1389420 • مسقط، سلطنة عُمان</span>
+                <span class="footer-confidential">وثيقة مؤسسية سرية معتمدة للشركاء</span>
+                <span class="page-number">صفحة ۰۷ من ۰۷</span>
+            </footer>
+        </section>
+
+    </main>
+
+    <!-- Theme Toggle Script -->
+    <script>
+        const themeBtn = document.getElementById('theme-toggle-btn');
+        if (themeBtn) {
+            const currentTheme = localStorage.getItem('altakamul_profile_theme') || 'light';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            themeBtn.textContent = currentTheme === 'dark' ? '☀' : '☾';
+
+            themeBtn.addEventListener('click', () => {
+                const current = document.documentElement.getAttribute('data-theme');
+                const next = current === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', next);
+                localStorage.setItem('altakamul_profile_theme', next);
+                themeBtn.textContent = next === 'dark' ? '☀' : '☾';
+            });
+        }
+    </script>
+</body>
+</html>
+"""
+
+with open(OUTPUT_HTML, "w", encoding="utf-8") as f:
+    f.write(HTML_TEMPLATE)
+
+with open(OUTPUT_HTML_ALT, "w", encoding="utf-8") as f:
+    f.write(HTML_TEMPLATE)
+
+print("Generated clean HTML for profile.html and company-profile.html successfully.")
