@@ -2,120 +2,115 @@
 <html lang="ar" dir="rtl" data-theme="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title data-i18n="nav_home">الرئيسية | Al Takamul International Trading LLC</title>
-  <meta name="description" content="Al Takamul International Trading LLC ، Premier International Trading House in Muscat, Sultanate of Oman. Import, Export, Project Procurement, Trade Finance Advisory & Made in Oman Industrialization.">
-  <link rel="icon" type="image/png" href="./img/favicon.png">
-  <link rel="apple-touch-icon" href="./img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>شركة تكامل للتجارة الدولية | Al Takamul International Trading LLC</title>
+  <meta name="description" content="بيت التجارة الدولية وحلول سلاسل الإمداد وتوطين الصناعة في سلطنة عُمان. الاستيراد والتصدير، توريد المشاريع، الاستشارات المالية وهوية صُنع في عُمان.">
+  <link rel="icon" type="image/png" href="img/logo.png">
+  
+  <!-- Preload Typography -->
+  <link rel="preload" href="fonts/PeydaWebFaNum-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/IRANSansXFaNum-Regular.woff2" as="font" type="font/woff2" crossorigin>
 
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="الرئيسية | Al Takamul International Trading LLC">
-  <meta property="og:description" content="بيت التجارة الدولية وحلول سلاسل الإمداد وتوطين الصناعة في سلطنة عُمان.">
-  <meta property="og:image" content="./img/logo.png">
-
+  <!-- Google Fonts for English -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/style.css?v=3.0">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css?v=4.3">
+  
+  <!-- Synchronous In-Memory Locale Engine -->
+  <script src="js/translations_data.js"></script>
+  <script src="js/main.js?v=4.1"></script>
 </head>
 <body>
-  <!-- Ambient Backdrop -->
+
+  <!-- Ambient Animated Backdrop Mesh -->
   <div class="canvas-backdrop">
     <div class="shape-blob shape-1"></div>
     <div class="shape-blob shape-2"></div>
     <div class="shape-blob shape-3"></div>
   </div>
 
-  <!-- Sticky Header -->
+  <!-- Site Header -->
   <header class="site-header">
     <div class="header-container">
       <a href="./index.html" class="brand-link">
-        <img src="./img/logo.png" alt="Al Takamul International Trading Logo" class="brand-logo">
+        <img src="img/logo.png" alt="Al Takamul" class="brand-logo" width="42" height="42">
         <div class="brand-text-wrap">
-          <span class="brand-title" data-i18n="brand_name">تكامل للتجارة الدولية</span>
+          <span class="brand-title" data-i18n="brand_name">شركة تكامل للتجارة الدولية</span>
           <span class="brand-subtitle" data-i18n="brand_sub">Al Takamul International Trading LLC</span>
         </div>
       </a>
 
-      <!-- Desktop Navigation -->
+      <!-- Desktop Nav -->
       <nav class="main-nav">
         <a href="./index.html" class="nav-link" data-i18n="nav_home">الرئيسية</a>
-
+        <a href="./pages/about.html" class="nav-link" data-i18n="nav_about">من نحن</a>
+        
         <div class="nav-dropdown-wrapper">
           <a href="./pages/services.html" class="nav-link nav-dropdown-trigger">
             <span data-i18n="nav_services">خدماتنا</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </a>
           <div class="nav-dropdown-menu">
             <a href="./pages/international-trade.html" class="dropdown-item">
-              <span style="font-size:1.3rem;">🌐</span>
               <div>
                 <span class="dropdown-item-title" data-i18n="service_1_title">التجارة الدولية وبيت التجارة</span>
-                <span class="dropdown-item-desc">International Trading House</span>
+                <span class="dropdown-item-desc" data-i18n="service_1_desc">عقد الصفقات الكبرى والتمثيل التجاري</span>
               </div>
             </a>
             <a href="./pages/import-export.html" class="dropdown-item">
-              <span style="font-size:1.3rem;">🚢</span>
               <div>
                 <span class="dropdown-item-title" data-i18n="service_2_title">الاستيراد والتصدير وإعادة التصدير</span>
-                <span class="dropdown-item-desc">Import, Export & Re-Export</span>
+                <span class="dropdown-item-desc" data-i18n="service_2_desc">شحنات بحرية وجوية وتخليص جمركي</span>
               </div>
             </a>
             <a href="./pages/procurement.html" class="dropdown-item">
-              <span style="font-size:1.3rem;">⚙️</span>
               <div>
                 <span class="dropdown-item-title" data-i18n="service_3_title">توريد وتأمين احتياجات المشاريع</span>
-                <span class="dropdown-item-desc">Project Procurement & Sourcing</span>
+                <span class="dropdown-item-desc" data-i18n="service_3_desc">تأمين المواد الخام والآلات الكبرى</span>
               </div>
             </a>
             <a href="./pages/financial-advisory.html" class="dropdown-item">
-              <span style="font-size:1.3rem;">💼</span>
               <div>
                 <span class="dropdown-item-title" data-i18n="service_4_title">الاستشارات المالية والاعتمادات</span>
-                <span class="dropdown-item-desc">Trade & Financial Advisory</span>
+                <span class="dropdown-item-desc" data-i18n="service_4_desc">هندسة الدفع والاعتمادات المستندية</span>
               </div>
             </a>
             <a href="./pages/made-in-oman.html" class="dropdown-item">
-              <span style="font-size:1.3rem;">🏷️</span>
               <div>
                 <span class="dropdown-item-title" data-i18n="service_5_title">بنية التصنيع وهوية صُنع في عُمان</span>
-                <span class="dropdown-item-desc">Made in Oman Infrastructure</span>
+                <span class="dropdown-item-desc" data-i18n="service_5_desc">شهادة المنشأ والاستفادة من اتفاقيات FTA</span>
               </div>
             </a>
           </div>
         </div>
 
         <a href="./index.html#hubs" class="nav-link" data-i18n="nav_hubs">الموانئ والمناطق الحرة</a>
-        <a href="./pages/about.html" class="nav-link" data-i18n="nav_about">عن الشركة</a>
-        <a href="./pages/faq.html" class="nav-link" data-i18n="nav_faq">الأسئلة الشائعة</a>
+        <a href="./index.html#process" class="nav-link" data-i18n="nav_process">آلية العمل</a>
         <a href="./pages/contact.html" class="nav-link" data-i18n="nav_contact">اتصل بنا</a>
+        <a href="./pages/faq.html" class="nav-link" data-i18n="nav_faq">الأسئلة الشائعة</a>
       </nav>
 
       <!-- Header Controls -->
       <div class="header-actions">
-        <!-- 3-Language Dropdown -->
+        <!-- 3-Language Selector -->
         <div class="lang-dropdown-wrapper">
           <button class="lang-dropdown-btn" onclick="toggleLangMenu(event)" aria-label="Language Selector">
             <svg class="lang-globe-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
             <span class="current-lang-code">AR</span>
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </button>
-          <div id="langDropdownMenu" class="lang-dropdown-menu">
-            <button class="lang-option active" data-lang="ar" onclick="setLanguage('ar')">
-              <span>🇴🇲</span> <span>العربية</span>
-            </button>
-            <button class="lang-option" data-lang="en" onclick="setLanguage('en')">
-              <span>🇬🇧</span> <span>English</span>
-            </button>
-            <button class="lang-option" data-lang="fa" onclick="setLanguage('fa')">
-              <span>🇮🇷</span> <span>فارسی</span>
-            </button>
+          <div class="lang-dropdown-menu" id="langDropdownMenu">
+            <button class="lang-option active" data-lang="ar" onclick="setLanguage('ar')">العربية</button>
+            <button class="lang-option" data-lang="fa" onclick="setLanguage('fa')">فارسی</button>
+            <button class="lang-option" data-lang="en" onclick="setLanguage('en')">English</button>
           </div>
         </div>
 
-        <!-- Theme Toggle -->
-        <button class="btn-theme-toggle" aria-label="Toggle Color Scheme" title="تبديل النمط">
-          <svg class="theme-icon-sun" viewBox="0 0 24 24">
+        <!-- Theme Toggle Button -->
+        <button class="btn-theme-toggle" onclick="toggleTheme()" aria-label="Toggle Theme" title="تبديل النمط">
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -126,16 +121,17 @@
             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
           </svg>
-          <svg class="theme-icon-moon" viewBox="0 0 24 24" style="display:none;">
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
 
-        <a href="./pages/request.html" class="btn-cta" data-i18n="btn_request">طلب استشارة تجارية</a>
+        <!-- CTA Header Button (Desktop) -->
+        <a href="./pages/request.html" class="btn-cta" data-i18n="btn_request_short">طلب استشارة</a>
 
-        <!-- Mobile Drawer Toggle -->
-        <button class="mobile-toggle" onclick="toggleMobileMenu()" aria-label="Open Mobile Menu" title="قائمة التصفح">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <!-- Mobile Drawer Toggle Hamburger -->
+        <button class="mobile-toggle" onclick="toggleMobileMenu(event)" aria-label="Menu Toggle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -145,317 +141,350 @@
     </div>
   </header>
 
-  <!-- Mobile Drawer -->
-  <div class="mobile-drawer-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+  <!-- Mobile Drawer Overlay & Drawer -->
+  <div class="mobile-drawer-overlay" id="mobileDrawerOverlay" onclick="closeMobileMenu()"></div>
   <aside class="mobile-drawer" id="mobileDrawer">
     <div class="mobile-drawer-header">
-      <img src="./img/logo.png" alt="Al Takamul" style="height:32px;">
-      <button class="mobile-close-btn" onclick="closeMobileMenu()">✕</button>
+      <span style="font-weight:800; font-size:1.05rem;" data-i18n="brand_name">شركة تکامل</span>
+      <button class="mobile-close-btn" onclick="closeMobileMenu()" aria-label="Close">&times;</button>
     </div>
     <div class="mobile-nav-links">
       <a href="./index.html" class="mobile-nav-link" data-i18n="nav_home">الرئيسية</a>
-      <a href="./pages/services.html" class="mobile-nav-link" data-i18n="nav_services">خدماتنا</a>
-      <a href="./pages/international-trade.html" class="mobile-nav-link" data-i18n="service_1_title">التجارة الدولية</a>
-      <a href="./pages/import-export.html" class="mobile-nav-link" data-i18n="service_2_title">الاستيراد والتصدير</a>
-      <a href="./pages/procurement.html" class="mobile-nav-link" data-i18n="service_3_title">توريد المشاريع</a>
-      <a href="./pages/financial-advisory.html" class="mobile-nav-link" data-i18n="service_4_title">الاستشارات المالية</a>
-      <a href="./pages/made-in-oman.html" class="mobile-nav-link" data-i18n="service_5_title">صُنع في عُمان</a>
-      <a href="./pages/about.html" class="mobile-nav-link" data-i18n="nav_about">عن الشركة</a>
-      <a href="./pages/faq.html" class="mobile-nav-link" data-i18n="nav_faq">الأسئلة الشائعة</a>
+      <a href="./pages/about.html" class="mobile-nav-link" data-i18n="nav_about">من نحن</a>
+      <a href="./pages/services.html" class="mobile-nav-link" data-i18n="nav_services">دليل الخدمات</a>
+      <a href="./pages/international-trade.html" class="mobile-nav-link" style="padding-right:24px;" data-i18n="service_1_title">التجارة الدولية</a>
+      <a href="./pages/import-export.html" class="mobile-nav-link" style="padding-right:24px;" data-i18n="service_2_title">الاستيراد والتصدير</a>
+      <a href="./pages/procurement.html" class="mobile-nav-link" style="padding-right:24px;" data-i18n="service_3_title">توريد المشاريع</a>
+      <a href="./pages/financial-advisory.html" class="mobile-nav-link" style="padding-right:24px;" data-i18n="service_4_title">الاستشارات المالية</a>
+      <a href="./pages/made-in-oman.html" class="mobile-nav-link" style="padding-right:24px;" data-i18n="service_5_title">صُنع في عُمان</a>
+      <a href="./index.html#hubs" class="mobile-nav-link" data-i18n="nav_hubs">الموانئ والمناطق الحرة</a>
+      <a href="./index.html#process" class="mobile-nav-link" data-i18n="nav_process">آلية العمل</a>
       <a href="./pages/contact.html" class="mobile-nav-link" data-i18n="nav_contact">اتصل بنا</a>
-    </div>
-    <div style="margin-top:auto; padding-top:20px;">
-      <a href="./pages/request.html" class="btn-cta" style="width:100%; justify-content:center;" data-i18n="btn_request">طلب استشارة تجارية</a>
+      <a href="./pages/faq.html" class="mobile-nav-link" data-i18n="nav_faq">الأسئلة الشائعة</a>
+      <div style="margin-top:20px;">
+        <a href="./pages/request.html" class="btn-cta" style="width:100%; justify-content:center;" data-i18n="btn_request">طلب استشارة تجارية</a>
+      </div>
     </div>
   </aside>
 
   <main class="main-wrapper">
 
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="section-container" style="padding-top:20px; padding-bottom:30px;">
-      <div class="hero-grid">
-        <div>
-          <div class="hero-badge"><span class="beacon-pulse"></span><span data-i18n="hero_badge">بيت التجارة الدولية • مسقط، سلطنة عُمان</span></div>
-          <h1 class="hero-title">
-            <span data-i18n="hero_title">بوابتكم الاستراتيجية للتجارة العالمية</span>
-            <br>
-            <span class="gold-gradient-text" data-i18n="hero_title_highlight">وسلاسل الإمداد وتوطين الصناعة</span>
-          </h1>
-          <p class="hero-subtitle" data-i18n="hero_subtitle">
-            شركة تكامل للتجارة الدولية ش.م.م ، شريككم الموثوق في الاستيراد، التصدير، إدارة الصفقات الكبرى، وتمكين التصنيع بهوية «صُنع في عُمان» للنفاذ إلى الأسواق الإقليمية والدولية.
-          </p>
-          <div class="hero-buttons">
-            <a href="./pages/request.html" class="btn-cta" data-i18n="btn_request">طلب استشارة تجارية</a>
-            <a href="./pages/services.html" class="btn-secondary" data-i18n="btn_explore">استكشف خدماتنا</a>
-          </div>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="section-container" style="padding-top:20px; padding-bottom:30px; position:relative;">
+        <!-- Floating Geometric Shapes -->
+        <div class="floating-geo-shape geo-diamond" style="top:10%; left:2%;"></div>
+        <div class="floating-geo-shape geo-ring" style="bottom:12%; left:8%;"></div>
 
-          <div class="hero-stats">
-            <div>
-              <div class="stat-val">FTA 0%</div>
-              <div class="stat-label" data-i18n="stat_ftas">اتفاقيات تجارة حرة (FTA)</div>
-              <div class="stat-sub" data-i18n="stat_ftas_sub">أمريكا، EFTA والدول العربية</div>
+        <div class="hero-grid">
+          <div>
+            <div class="hero-badge">
+              <span class="beacon-pulse"></span>
+              <span data-i18n="hero_badge">بيت التجارة الدولية • مسقط، سلطنة عُمان</span>
             </div>
-            <div>
-              <div class="stat-val">3 Hubs</div>
-              <div class="stat-label" data-i18n="stat_ports">موانئ استراتيجية عالمية</div>
-              <div class="stat-sub" data-i18n="stat_ports_sub">صحار، صلالة والدقم</div>
-            </div>
-            <div>
-              <div class="stat-val">2B+</div>
-              <div class="stat-label" data-i18n="stat_customs">تعرفة جمركية تفضيلية</div>
-              <div class="stat-sub" data-i18n="stat_customs_sub">وصول لأسواق تفوق ملياري مستهلك</div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="hero-visual-card">
-            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; border-bottom:1px solid var(--border-color); padding-bottom:12px;">
-              <span style="font-weight:800; font-size:1.1rem; color:var(--primary-gold);">OMAN TRADE CORRIDOR</span>
-              <span style="padding:4px 10px; background:rgba(37,211,102,0.15); color:#25D366; border-radius:12px; font-size:0.75rem; font-weight:700;">ACTIVE DESK</span>
-            </div>
-            <p style="color:var(--text-secondary); font-size:0.92rem; line-height:1.7; margin-bottom:20px;" data-i18n="tagline">
-              بيت التجارة الدولية وحلول سلاسل الإمداد وتوطين الصناعة في سلطنة عُمان
+            <h1 class="hero-title">
+              <span data-i18n="hero_title">بوابتكم الاستراتيجية للتجارة العالمية</span>
+              <br>
+              <span class="gold-gradient-text" data-i18n="hero_title_highlight">وسلاسل الإمداد وتوطين الصناعة</span>
+            </h1>
+            <p class="hero-subtitle" data-i18n="hero_subtitle">
+              شركة تكامل للتجارة الدولية ش.م.م ، شريككم الموثوق في الاستيراد، التصدير، إدارة الصفقات الكبرى، وتمكين التصنيع بهوية «صُنع في عُمان» للنفاذ إلى الأسواق الإقليمية والدولية.
             </p>
-            <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:24px;">
-              <div style="display:flex; align-items:center; gap:10px; font-size:0.88rem; color:var(--text-primary);">
-                <span style="color:var(--primary-gold);">✔</span> <span data-i18n="why_1_title">كيان عماني مرخص ومعتمد</span>
+            <div class="hero-buttons">
+              <a href="./pages/request.html" class="btn-cta" data-i18n="btn_request">طلب استشارة تجارية</a>
+              <a href="./pages/services.html" class="btn-secondary" data-i18n="btn_explore">استكشف خدماتنا</a>
+            </div>
+
+            <div class="hero-stats">
+              <div>
+                <div class="stat-val">FTA 0%</div>
+                <div class="stat-label" data-i18n="stat_ftas">اتفاقيات تجارة حرة (FTA)</div>
+                <div class="stat-sub" data-i18n="stat_ftas_sub">أمريكا، EFTA والدول العربية</div>
               </div>
-              <div style="display:flex; align-items:center; gap:10px; font-size:0.88rem; color:var(--text-primary);">
-                <span style="color:var(--primary-gold);">✔</span> <span data-i18n="why_2_title">شبكة إمداد وموانئ عالمية</span>
+              <div>
+                <div class="stat-val">3 Hubs</div>
+                <div class="stat-label" data-i18n="stat_ports">موانئ استراتيجية عالمية</div>
+                <div class="stat-sub" data-i18n="stat_ports_sub">صحار، صلالة والدقم</div>
               </div>
-              <div style="display:flex; align-items:center; gap:10px; font-size:0.88rem; color:var(--text-primary);">
-                <span style="color:var(--primary-gold);">✔</span> <span data-i18n="why_3_title">تمكين هوية صُنع في عُمان</span>
-              </div>
-              <div style="display:flex; align-items:center; gap:10px; font-size:0.88rem; color:var(--text-primary);">
-                <span style="color:var(--primary-gold);">✔</span> <span data-i18n="why_4_title">استشارات ائتمانية ومصرفية</span>
+              <div>
+                <div class="stat-val">100%</div>
+                <div class="stat-label" data-i18n="stat_ownership">ملكية أجنبية 100%</div>
+                <div class="stat-sub" data-i18n="stat_ownership_sub">إعفاءات ضريبية وجمركية</div>
               </div>
             </div>
-            <a href="./pages/request.html" class="btn-cta" style="width:100%; justify-content:center;" data-i18n="btn_submit_request">إرسال الطلب التجاري</a>
+          </div>
+
+          <!-- Hero Visual Card with Animated Radar -->
+          <div class="hero-visual-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+              <span style="font-weight:800; font-size:0.92rem; color:var(--primary-gold);" data-i18n="radar_title">رادار الملاحة والمسارات الحية</span>
+              <span style="font-size:0.75rem; color:var(--text-muted); background:var(--bg-surface-elevated); padding:3px 8px; border-radius:12px; border:1px solid var(--border-color);">
+                <span class="beacon-pulse" style="width:6px; height:6px;"></span> LIVE DESK
+              </span>
+            </div>
+
+            <!-- Radar Component -->
+            <div class="radar-container">
+              <div class="radar-grid-ring radar-ring-1"></div>
+              <div class="radar-grid-ring radar-ring-2"></div>
+              <div class="radar-grid-ring radar-ring-3"></div>
+              <div class="radar-crosshair-h"></div>
+              <div class="radar-crosshair-v"></div>
+              <div class="radar-sweep"></div>
+              
+              <!-- Radar Blips -->
+              <div class="radar-blip blip-muscat" title="Muscat HQ">
+                <span class="radar-blip-label" data-i18n="radar_muscat">مسقط • المقر الرئيسي</span>
+              </div>
+              <div class="radar-blip blip-sohar" title="Sohar Port">
+                <span class="radar-blip-label" data-i18n="radar_sohar">صحار • هاب لوجستي</span>
+              </div>
+              <div class="radar-blip blip-salalah" title="Salalah Port">
+                <span class="radar-blip-label" data-i18n="radar_salalah">صلالة • ترانزيت</span>
+              </div>
+              <div class="radar-blip blip-duqm" title="Duqm SEZAD">
+                <span class="radar-blip-label" data-i18n="radar_duqm">الدقم • حوض جاف</span>
+              </div>
+            </div>
+
+            <div style="background:var(--bg-surface-elevated); border-radius:14px; padding:16px; border:1px solid var(--border-color);">
+              <div style="display:flex; justify-content:space-between; font-size:0.84rem; margin-bottom:8px;">
+                <span style="color:var(--text-muted);">OMAN CORRIDOR:</span>
+                <span style="color:var(--primary-gold); font-weight:700;" data-i18n="radar_status">نشط 24/7</span>
+              </div>
+              <div style="font-size:0.8rem; color:var(--text-secondary); line-height:1.6;" data-i18n="footer_about">
+                بيت التجارة الدولية الرائد في مسقط لتقديم خدمات التجارة العابرة للحدود، سلاسل الإمداد المتطورة، وتوطين الصناعات.
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 5 Pillars Section -->
-  <section class="section-container" id="services">
-    <div class="section-header">
-      <span class="section-tag" data-i18n="nav_services">أركان الخدمات</span>
-      <h2 class="section-title" data-i18n="services_heading">أركان الخدمات التجارية المتكاملة</h2>
-      <p class="section-sub" data-i18n="services_sub">حلول تنفيذية شاملة تغطي كافة مراحل التجارة وسلاسل الإمداد والاستشارات المتخصصة</p>
-    </div>
+    <!-- Services Section -->
+    <section class="section-container" id="services" style="position:relative;">
+      <div class="floating-geo-shape geo-diamond" style="top:20%; right:3%;"></div>
 
-    <div class="cards-grid-3">
-      <!-- Pillar 1 -->
-      <div class="service-card">
-        <div class="service-icon">🌐</div>
-        <h3 class="service-card-title" data-i18n="service_1_title">التجارة الدولية وبيت التجارة</h3>
-        <p class="service-card-desc" data-i18n="service_1_desc">إدارة الصفقات والوساطة التجارية، تمثيل الشركات الأجنبية، التفاوض مع الموردين، وإدارة العقود وفق شروط الإنكوترمز العالمية (International Trading House).</p>
-        <a href="./pages/international-trade.html" class="btn-secondary" style="margin-top:auto;" data-i18n="btn_details">تفاصيل الخدمة &larr;</a>
+      <div class="section-header">
+        <span class="section-tag" data-i18n="tag_services">حلول تجارية متكاملة</span>
+        <h2 class="section-title" data-i18n="services_title">الأركان الخمسة لمنظومة تكامل</h2>
+        <p class="section-sub" data-i18n="services_sub">خدمات مؤسسية متكاملة مصممة لتمكين المستثمرين، المصنعين، والتجار من إدارة صفقاتهم بكفاءة وموثوقية عالية.</p>
       </div>
 
-      <!-- Pillar 2 -->
-      <div class="service-card">
-        <div class="service-icon">🚢</div>
-        <h3 class="service-card-title" data-i18n="service_2_title">الاستيراد والتصدير وإعادة التصدير</h3>
-        <p class="service-card-desc" data-i18n="service_2_desc">تسهيل عمليات دخول وخروج البضائع من وإلى سلطنة عُمان، شحنات الترانزيت وإعادة التصدير نحو دول مجلس التعاون، وإدارة المستندات الجمركية.</p>
-        <a href="./pages/import-export.html" class="btn-secondary" style="margin-top:auto;" data-i18n="btn_details">تفاصيل الخدمة &larr;</a>
+      <div class="cards-grid-3">
+        <!-- Pillar 1 -->
+        <div class="service-card">
+          <div class="service-icon">🌐</div>
+          <h3 class="service-card-title" data-i18n="service_1_title">التجارة الدولية وبيت التجارة</h3>
+          <p class="service-card-desc" data-i18n="service_1_desc">عقد الصفقات الكبرى، التمثيل التجاري الحصري، وإدارة المعاملات الدولية وفق شروط الإنكوترمز مع الامتثال التجاري الكامل.</p>
+          <a href="./pages/international-trade.html" class="btn-secondary" style="margin-top:auto;" data-i18n="btn_details">تفاصيل الخدمة ←</a>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="service-card">
+          <div class="service-icon">🚢</div>
+          <h3 class="service-card-title" data-i18n="service_2_title">الاستيراد والتصدير وإعادة التصدير</h3>
+          <p class="service-card-desc" data-i18n="service_2_desc">إدارة سلاسل الإمداد العالمية، المناولة المينائية، التخليص الجمركي وإعادة التصدير بدون رسوم جمركية عبر المناطق الحرة.</p>
+          <a href="./pages/import-export.html" class="btn-secondary" style="margin-top:auto;" data-i18n="btn_details">تفاصيل الخدمة ←</a>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="service-card">
+          <div class="service-icon">🏗️</div>
+          <h3 class="service-card-title" data-i18n="service_3_title">توريد وتأمين احتياجات المشاريع</h3>
+          <p class="service-card-desc" data-i18n="service_3_desc">تأمين المواد الخام، الآلات وخطوط الإنتاج للقطاعات الحيوية مع فحص الجودة وتنسيق الشحن حتى مواقع العمل.</p>
+          <a href="./pages/procurement.html" class="btn-secondary" style="margin-top:auto;" data-i18n="btn_details">تفاصيل الخدمة ←</a>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="service-card">
+          <div class="service-icon">📑</div>
+          <h3 class="service-card-title" data-i18n="service_4_title">الاستشارات المالية والاعتمادات</h3>
+          <p class="service-card-desc" data-i18n="service_4_desc">هيكلة أدوات الدفع التجاري والاعتمادات المستندية (LC) وخطابات الضمان (LG) لتأمين المعاملات والسيولة الدولية.</p>
+          <a href="./pages/financial-advisory.html" class="btn-secondary" style="margin-top:auto;" data-i18n="btn_details">تفاصيل الخدمة ←</a>
+        </div>
+
+        <!-- Pillar 5 -->
+        <div class="service-card">
+          <div class="service-icon">🏭</div>
+          <h3 class="service-card-title" data-i18n="service_5_title">بنية التصنيع وهوية صُنع في عُمان</h3>
+          <p class="service-card-desc" data-i18n="service_5_desc">تأسيس وتشغيل خطوط الإنتاج، إصدار شهادات المنشأ الوطنية، والاستفادة من اتفاقيات التجارة الحرة والإعفاءات الجمركية.</p>
+          <a href="./pages/made-in-oman.html" class="btn-secondary" style="margin-top:auto;" data-i18n="btn_details">تفاصيل الخدمة ←</a>
+        </div>
+
+        <!-- Matrix Card -->
+        <div class="service-card" style="background:linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-surface-elevated) 100%); border-color:var(--border-gold);">
+          <div class="service-icon">📊</div>
+          <h3 class="service-card-title" style="color:var(--primary-gold);" data-i18n="btn_matrix">مصفوفة الخدمات المتكاملة</h3>
+          <p class="service-card-desc" data-i18n="services_sub">استعرض مصفوفة التعاقد ودليل الخدمات التفصيلي مع متطلبات كل قطاع تجاري وصناعي في سلطنة عمان.</p>
+          <a href="./pages/services.html" class="btn-cta" style="margin-top:auto;" data-i18n="btn_matrix">استعراض مصفوفة الخدمات ←</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Strategic Hubs Section with Flowing Route Lines -->
+    <section class="section-container" id="hubs" style="position:relative;">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="tag_hubs">الموانئ والمناطق الحرة</span>
+        <h2 class="section-title" data-i18n="hubs_title">المحاور اللوجستية لسلطنة عُمان</h2>
+        <p class="section-sub" data-i18n="hubs_sub">موقع جغرافي فريد يربط الشرق بالغرب خارج مضيق هرمز مع اتصال مباشر بأكبر خطوط الملاحة البحرية العالمية.</p>
       </div>
 
-      <!-- Pillar 3 -->
-      <div class="service-card">
-        <div class="service-icon">⚙️</div>
-        <h3 class="service-card-title" data-i18n="service_3_title">توريد وتأمين احتياجات المشاريع</h3>
-        <p class="service-card-desc" data-i18n="service_3_desc">حلول التوريد الشامل (Procurement) للمشاريع الإنشائية والصناعية، المعدات والآلات، المواد الخام، وقطع الغيار بنموذج الشراء المباشر أو بالعمولة.</p>
-        <a href="./pages/procurement.html" class="btn-secondary" style="margin-top:auto;" data-i18n="btn_details">تفاصيل الخدمة &larr;</a>
+      <!-- Animated SVG Route Connector -->
+      <svg class="route-connector-svg" viewBox="0 0 900 40">
+        <path class="route-connector-line" d="M 50 20 Q 250 5 450 20 T 850 20" />
+      </svg>
+
+      <div class="cards-grid-3">
+        <div class="hub-card">
+          <div style="font-size:2rem; margin-bottom:14px;">⚓</div>
+          <h3 class="hub-card-title" data-i18n="hub_1_title">ميناء وصناعية صحار</h3>
+          <p style="font-size:0.92rem; color:var(--text-secondary); line-height:1.75;" data-i18n="hub_1_desc">
+            المركز الصناعي واللوجستي الأسرع نمواً في الشرق الأوسط، يقع بالقرب من أسواق الإمارات ودول الخليج، ويتميز باتصال مباشر بشبكة الطرق الإقليمية.
+          </p>
+        </div>
+
+        <div class="hub-card">
+          <div style="font-size:2rem; margin-bottom:14px;">🌊</div>
+          <h3 class="hub-card-title" data-i18n="hub_2_title">ميناء صلالة الاستراتيجي</h3>
+          <p style="font-size:0.92rem; color:var(--text-secondary); line-height:1.75;" data-i18n="hub_2_desc">
+            هاب إعادة شحن حاويات رئيسي على خط الملاحة بين آسيا وأوروبا، يربط مباشرة بشرق أفريقيا والمحيط الهندي دون الحاجة لدخول مياه الخليج.
+          </p>
+        </div>
+
+        <div class="hub-card">
+          <div style="font-size:2rem; margin-bottom:14px;">🏗️</div>
+          <h3 class="hub-card-title" data-i18n="hub_3_title">المنطقة الاقتصادية بالدقم</h3>
+          <p style="font-size:0.92rem; color:var(--text-secondary); line-height:1.75;" data-i18n="hub_3_desc">
+            أكبر منطقة اقتصادية خاصة في الشرق الأوسط وشمال أفريقيا، مجهزة بحوض جاف، مصفاة بتروكيماويات، ومناطق صناعية وتعدينية شاسعة.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Execution Workflow Section with Rotating Rings -->
+    <section class="section-container" id="process" style="position:relative;">
+      <div class="floating-geo-shape geo-ring" style="top:15%; right:5%;"></div>
+
+      <div class="section-header">
+        <span class="section-tag" data-i18n="tag_workflow">منظومة الإنجاز</span>
+        <h2 class="section-title" data-i18n="workflow_title">آلية تنفيذ العمليات والصفقات</h2>
+        <p class="section-sub" data-i18n="workflow_sub">منهجية دقيقة ومنظمة تضمن الأمان القانوني والمالي وسرعة تدفق البضائع عبر الحدود.</p>
       </div>
 
-      <!-- Pillar 4 -->
-      <div class="service-card">
-        <div class="service-icon">💼</div>
-        <h3 class="service-card-title" data-i18n="service_4_title">الاستشارات المالية والاعتمادات</h3>
-        <p class="service-card-desc" data-i18n="service_4_desc">استشارات هيكلة الدفع التجاري، دراسات الملاءة والائتمان التجاري، صيغ الاعتمادات المستندية (L/C) والضمانات، والتنسيق مع المؤسسات المالية المرخصة.</p>
-        <a href="./pages/financial-advisory.html" class="btn-secondary" style="margin-top:auto;" data-i18n="btn_details">تفاصيل الخدمة &larr;</a>
+      <div class="process-grid">
+        <div class="process-step-card">
+          <div class="step-num-badge" data-i18n="step_1_num">١</div>
+          <h3 style="font-size:1.15rem; font-weight:800; margin-bottom:10px;" data-i18n="step_1_title">التشخيص ودراسة المتطلبات</h3>
+          <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.7;" data-i18n="step_1_desc">تحليل دقيق للبضاعة، الأسواق المستهدفة، التكاليف الجمركية والاتفاقيات التجارية المتاحة.</p>
+        </div>
+
+        <div class="process-step-card">
+          <div class="step-num-badge" data-i18n="step_2_num">٢</div>
+          <h3 style="font-size:1.15rem; font-weight:800; margin-bottom:10px;" data-i18n="step_2_title">هندسة الصفقة والتعاقد</h3>
+          <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.7;" data-i18n="step_2_desc">صياغة العقود المتوافقة مع القانون التجاري العماني والدولي وضمان حقوق الأطراف.</p>
+        </div>
+
+        <div class="process-step-card">
+          <div class="step-num-badge" data-i18n="step_3_num">٣</div>
+          <h3 style="font-size:1.15rem; font-weight:800; margin-bottom:10px;" data-i18n="step_3_title">التنفيذ والشحن والتخليص</h3>
+          <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.7;" data-i18n="step_3_desc">إدارة المستندات، الشحن البحري أو الجوي، وإجراءات التخليص الجمركي الصارمة.</p>
+        </div>
+
+        <div class="process-step-card">
+          <div class="step-num-badge" data-i18n="step_4_num">٤</div>
+          <h3 style="font-size:1.15rem; font-weight:800; margin-bottom:10px;" data-i18n="step_4_title">التسليم والدعم المستمر</h3>
+          <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.7;" data-i18n="step_4_desc">وصول البضاعة للمستودعات أو موانئ الوصول وتقديم المتابعة والتقارير الدورية.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Advantages Section -->
+    <section class="section-container" style="position:relative;">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="tag_advantages">القيمة المضافة</span>
+        <h2 class="section-title" data-i18n="adv_title">لماذا تختار شركة تكامل؟</h2>
+        <p class="section-sub" data-i18n="adv_sub">حلول متقدمة تجمع بين الخبرة الميدانية العمیقة والشبكة الواسعة في سلطنة عُمان والأسواق العالمية.</p>
       </div>
 
-      <!-- Pillar 5 -->
-      <div class="service-card" style="border-color:var(--border-gold);">
-        <div class="service-icon">🏷️</div>
-        <h3 class="service-card-title" data-i18n="service_5_title">بنية التصنيع وهوية «صُنع في عُمان»</h3>
-        <p class="service-card-desc" data-i18n="service_5_desc">تمكين التصنيع التعاقدي، خطوط التجميع والتعبئة في عُمان، تحقيق القيمة المحلية المضافة (ICV) والاستفادة من اتفاقيات التجارة الحرة الدولية.</p>
-        <a href="./pages/made-in-oman.html" class="btn-secondary" style="margin-top:auto;" data-i18n="btn_details">تفاصيل الخدمة &larr;</a>
+      <div class="cards-grid-3">
+        <div class="service-card">
+          <div class="service-icon">⚖️</div>
+          <h3 class="service-card-title" data-i18n="adv_1_title">امتثال قانوني ومصرفي صارم</h3>
+          <p class="service-card-desc" data-i18n="adv_1_desc">تطبيق أعلى معايير الشفافية والتوافق مع اللوائح المصرفية وغرف التجارة الدولية.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🌐</div>
+          <h3 class="service-card-title" data-i18n="adv_2_title">شبكة إمداد عالمية موثوقة</h3>
+          <p class="service-card-desc" data-i18n="adv_2_desc">ارتباط مباشر مع كبرى خطوط الشحن، المصانع المعتمدة، والموردين الاستراتيجيين.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🏷️</div>
+          <h3 class="service-card-title" data-i18n="adv_3_title">استفادة قصوى من اتفاقيات FTA</h3>
+          <p class="service-card-desc" data-i18n="adv_3_desc">تخفيض التكاليف الجمركية إلى الصفر للمنتجات المؤهلة بشهادة المنشأ العمانية.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spaced FAQ Accordion -->
+    <section class="section-container" id="faq">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="nav_faq">الأسئلة الشائعة</span>
+        <h2 class="section-title" data-i18n="faq_heading">الأسئلة الشائعة</h2>
+        <p class="section-sub" data-i18n="faq_sub">إجابات وافية حول آليات العمل، التعرفة الجمركية، والشراكة التجارية مع شركة تكامل.</p>
       </div>
 
-      <!-- General Overview Card -->
-      <div class="service-card" style="background:var(--brand-gradient); border:none;">
-        <div class="service-icon">📊</div>
-        <h3 class="service-card-title" style="color:#FFFFFF;" data-i18n="service_matrix_title">دليل الخدمات الشامل والتعاقد</h3>
-        <p class="service-card-desc" style="color:#E2E8F0;" data-i18n="service_matrix_desc">تعرف على أطر التعاقد القانونية، نماذج العمولة والشراء المباشر، ومسار التوريد والتخليص في بيئة تجارية آمنة.</p>
-        <a href="./pages/services.html" class="btn-cta" style="margin-top:auto;" data-i18n="btn_matrix">استعراض مصفوفة الخدمات &larr;</a>
+      <div class="faq-grid">
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q" data-i18n="faq_1_q">ما هي المزايا الاستراتيجية للتجارة عبر سلطنة عُمان؟</div>
+          <div class="faq-a" data-i18n="faq_1_a">تتمتع سلطنة عُمان بموقع استراتيجي خارج مضيق هرمز على خطوط الملاحة الدولية، مع اتفاقية تجارة حرة (FTA) مع الولايات المتحدة الأمريكية تمنح إعفاءً جمركياً كاملاً للمنتجات الوطنية، بالإضافة إلى بنية تحتية فائقة ومناطق حرة توفر تملكاً أجنبياً بنسبة 100% وإعفاءات ضريبية واسعة.</div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q" data-i18n="faq_2_q">كيف تدعم شركة تكامل مشاريع وسم «صُنع في عُمان»؟</div>
+          <div class="faq-a" data-i18n="faq_2_a">نساعد الشركات في تقييم الجدوى الصناعية، استيفاء معايير القيمة المحلية المضافة (ICV)، الحصول على التراخيص والموافقات من وزارة التجارة والصناعة وترويج الاستثمار، وإصدار شهادات المنشأ الوطنية للاستفادة من المزايا التصديرية المعفاة جمركياً.</div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q" data-i18n="faq_3_q">هل تقدم شركة تكامل تمويلاً مباشراً أو قروضاً؟</div>
+          <div class="faq-a" data-i18n="faq_3_a">لا. شركة تكامل ليست مؤسسة مصرفية أو مانحة للقروض. نحن نقدم استشارات متخصصة في هندسة الدفع التجاري، إدارة الاعتمادات المستندية (LC) وخطابات الضمان (LG) بالتعاون مع البنوك المعتمدة لتأمين المعاملات والسيولة.</div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q" data-i18n="faq_4_q">ما هي شروط الإنكوترمز التي تديرونها في صفقاتكم؟</div>
+          <div class="faq-a" data-i18n="faq_4_a">ندير كافة شروط التسليم الدولية بما في ذلك FOB، CIF، CFR، DAP، وDDP، ونتولى التنسيق اللوجستي، التأمين، والتخليص الجمركي وفق أعلى المعايير المهنية المعتمدة دولياً.</div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q" data-i18n="faq_5_q">هل تشترطون نوعاً محدداً من البضائع أو السلع؟</div>
+          <div class="faq-a" data-i18n="faq_5_a">نطاق عملنا كبيت تجارة دولية يغطي معظم السلع الصناعية، المواد الخام، المواد الغذائية، والمعدات الكبرى، مع اشتراط توافق البضائع الكامل مع القوانين واللوائح العمانية والدولية المعمول بها.</div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q" data-i18n="faq_6_q">كيف تضمنون سرية معلومات الشركاء والموردين؟</div>
+          <div class="faq-a" data-i18n="faq_6_a">نوقع اتفاقيات سرية معلومات ملزمة قانوناً (NDA) قبل بدء أي محادثات تجارية، ونلتزم بأعلى معايير الحوكمة لحماية بيانات الشركاء واستراتيجياتهم التجارية.</div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Hubs & Freezones Section -->
-  <section class="section-container" id="hubs" style="background:var(--bg-surface-alt); border-radius:32px; margin-top:20px;">
-    <div class="section-header">
-      <span class="section-tag" data-i18n="nav_hubs">الموانئ والمناطق الاقتصادية</span>
-      <h2 class="section-title" data-i18n="hubs_heading">الموانئ والمناطق الحرة بسلطنة عُمان</h2>
-      <p class="section-sub" data-i18n="hubs_sub">موقع جغرافي فريد يربط ممرات الملاحة بين آسيا، أوروبا وأفريقيا خارج مضيق هرمز</p>
-    </div>
-
-    <div class="cards-grid-3">
-      <div class="hub-card">
-        <h3 class="hub-card-title" data-i18n="hub_sohar_title">ميناء ومنطقة صحار الحرة</h3>
-        <p style="font-size:0.92rem; color:var(--text-secondary); line-height:1.7; margin-bottom:16px;" data-i18n="hub_sohar_desc">
-          المركز الصناعي واللوجستي الأسرع نمواً في الشرق الأوسط، يقع بالقرب من أسواق الإمارات ودول الخليج، ويتميز باتصال مباشر بشبكة الطرق الإقليمية.
-        </p>
+    <!-- Consultation CTA Banner -->
+    <section class="section-container" style="padding-top:20px;">
+      <div style="background:linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-surface-elevated) 100%); border:1px solid var(--border-gold); border-radius:24px; padding:45px 30px; text-align:center; box-shadow:var(--shadow-md); position:relative; overflow:hidden;">
+        <div class="floating-geo-shape geo-diamond" style="top:10%; right:8%;"></div>
+        <h2 style="font-size:2rem; font-weight:800; margin-bottom:14px;" data-i18n="cta_box_title">جاهزون لتوسيع تجارتكم وتأسيس حضوركم في سلطنة عُمان؟</h2>
+        <p style="font-size:1.05rem; color:var(--text-secondary); max-width:700px; margin:0 auto 28px;" data-i18n="cta_box_sub">تواصلوا مع فريقنا التجاري المتخصص لدراسة صفقتكم المقبلة أو مناقشة تأسيس خطوط الإنتاج.</p>
+        <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+          <a href="./pages/request.html" class="btn-cta" data-i18n="btn_request">طلب استشارة تجارية</a>
+          <a href="https://wa.me/96871081635" target="_blank" rel="noopener" class="btn-secondary">تواصل عبر واتساب</a>
+        </div>
       </div>
-
-      <div class="hub-card">
-        <h3 class="hub-card-title" data-i18n="hub_salalah_title">ميناء ومنطقة صلالة الحرة</h3>
-        <p style="font-size:0.92rem; color:var(--text-secondary); line-height:1.7; margin-bottom:16px;" data-i18n="hub_salalah_desc">
-          هاب إعادة شحن حاويات رئيسي على خط الملاحة بين آسيا وأوروبا، يربط مباشرة بشرق أفريقيا والمحيط الهندي دون الحاجة لدخول مياه الخليج.
-        </p>
-      </div>
-
-      <div class="hub-card">
-        <h3 class="hub-card-title" data-i18n="hub_duqm_title">المنطقة الاقتصادية الخاصة بالدقم</h3>
-        <p style="font-size:0.92rem; color:var(--text-secondary); line-height:1.7; margin-bottom:16px;" data-i18n="hub_duqm_desc">
-          أكبر منطقة اقتصادية خاصة في الشرق الأوسط وشمال أفريقيا، مجهزة بحوض جاف، مصفاة بتروكيماويات، ومناطق صناعية وتعدينية شاسعة.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Process Workflow Section -->
-  <section class="section-container" id="process">
-    <div class="section-header">
-      <span class="section-tag">منظومة الإنجاز</span>
-      <h2 class="section-title" data-i18n="process_heading">منهجية العمل وإدارة المعاملات</h2>
-      <p class="section-sub" data-i18n="process_sub">خطوات محكمة تضمن الشفافية والامتثال القانوني وكفاءة التكاليف في كل مرحلة</p>
-    </div>
-
-    <div class="process-grid">
-      <div class="process-step-card">
-        <span class="step-num-badge">١</span>
-        <h3 style="font-size:1.1rem; font-weight:800; color:var(--text-primary); margin-bottom:10px;" data-i18n="step_1_title">١. دراسة الطلب والجدوى</h3>
-        <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.65;" data-i18n="step_1_desc">تحليل المواصفات الفنية، شروط الإنكوترمز، ومسار التوريد الأنسب جمركياً ومالياً.</p>
-      </div>
-
-      <div class="process-step-card">
-        <span class="step-num-badge">٢</span>
-        <h3 style="font-size:1.1rem; font-weight:800; color:var(--text-primary); margin-bottom:10px;" data-i18n="step_2_title">٢. هيكلة التعاقد والضمانات</h3>
-        <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.65;" data-i18n="step_2_desc">صياغة العقود التجارية الرسمية ووضع آليات الدفع المعتمدة وفق الأنظمة المصرفية.</p>
-      </div>
-
-      <div class="process-step-card">
-        <span class="step-num-badge">٣</span>
-        <h3 style="font-size:1.1rem; font-weight:800; color:var(--text-primary); margin-bottom:10px;" data-i18n="step_3_title">٣. التنفيذ والعمليات اللوجستية</h3>
-        <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.65;" data-i18n="step_3_desc">إدارة الشحن، الفحص قبل التوريد، التخليص الجمركي وإصدار وثائق المنشأ.</p>
-      </div>
-
-      <div class="process-step-card">
-        <span class="step-num-badge">٤</span>
-        <h3 style="font-size:1.1rem; font-weight:800; color:var(--text-primary); margin-bottom:10px;" data-i18n="step_4_title">٤. التسليم وإغلاق الصفقة</h3>
-        <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.65;" data-i18n="step_4_desc">تسليم البضائع وفق شروط التسليم المعتمدة وتقديم التقارير النهائية المكتملة.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Al Takamul Section -->
-  <section class="section-container" style="background:var(--bg-surface); border-radius:32px;">
-    <div class="section-header">
-      <span class="section-tag">القيمة المضافة</span>
-      <h2 class="section-title" data-i18n="why_heading">لماذا تختار شركة تكامل؟</h2>
-      <p class="section-sub" data-i18n="why_sub">مزايا استراتيجية تمنح شركاءنا تفوقاً تنافسياً وأماناً تشغيلياً مستداماً</p>
-    </div>
-
-    <div class="cards-grid-3">
-      <div style="padding:16px;">
-        <h3 style="font-size:1.15rem; font-weight:800; color:var(--primary-gold); margin-bottom:10px;" data-i18n="why_1_title">كيان عماني مرخص ومعتمد</h3>
-        <p style="font-size:0.92rem; color:var(--text-secondary); line-height:1.7;" data-i18n="why_1_desc">شركة مسجلة رسمياً بسلطنة عُمان تضمن لكم التعامل المباشر بعقود قانونية ملزمة وحسابات مصرفية نظامية.</p>
-      </div>
-
-      <div style="padding:16px;">
-        <h3 style="font-size:1.15rem; font-weight:800; color:var(--primary-gold); margin-bottom:10px;" data-i18n="why_2_title">شبكة إمداد وموانئ عالمية</h3>
-        <p style="font-size:0.92rem; color:var(--text-secondary); line-height:1.7;" data-i18n="why_2_desc">وجود تشغيلي في أهم الموانئ الحيوية (صحار، صلالة والدقم) بما يتيح سرعة المناولة وإعادة التصدير.</p>
-      </div>
-
-      <div style="padding:16px;">
-        <h3 style="font-size:1.15rem; font-weight:800; color:var(--primary-gold); margin-bottom:10px;" data-i18n="why_3_title">تمكين هوية صُنع في عُمان</h3>
-        <p style="font-size:0.92rem; color:var(--text-secondary); line-height:1.7;" data-i18n="why_3_desc">خبرة متقدمة في التصنيع التعاقدي، خطوط التجميع ونقل التكنولوجيا لتحقيق القيمة المحلية المضافة (ICV).</p>
-      </div>
-
-      <div style="padding:16px;">
-        <h3 style="font-size:1.15rem; font-weight:800; color:var(--primary-gold); margin-bottom:10px;" data-i18n="why_4_title">استشارات ائتمانية ومصرفية</h3>
-        <p style="font-size:0.92rem; color:var(--text-secondary); line-height:1.7;" data-i18n="why_4_desc">تأمين المعاملات بهياكل دفع احترافية (اعتمادات مستندية وضمانات بنكية) دون الدخول في مخاطر غير محسوبة.</p>
-      </div>
-
-      <div style="padding:16px;">
-        <h3 style="font-size:1.15rem; font-weight:800; color:var(--primary-gold); margin-bottom:10px;" data-i18n="why_5_title">مرونة كاملة في أصناف البضائع</h3>
-        <p style="font-size:0.92rem; color:var(--text-secondary); line-height:1.7;" data-i18n="why_5_desc">لا نقتصر على منتج محدد؛ نلبي احتياجات مشاريع البناء، التعدين، الأغذية، المواد الكيميائية والمعدات الصناعية.</p>
-      </div>
-
-      <div style="padding:16px;">
-        <h3 style="font-size:1.15rem; font-weight:800; color:var(--primary-gold); margin-bottom:10px;" data-i18n="why_6_title">التزام تام بالسرية التجارية (NDA)</h3>
-        <p style="font-size:0.92rem; color:var(--text-secondary); line-height:1.7;" data-i18n="why_6_desc">حماية تامة لقوائم الموردين والمشترين وأسرار التسعير وفق أعلى معايير الحوكمة التجارية الدولية.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section (Spaced Out Standard Grid) -->
-  <section class="section-container" id="faq">
-    <div class="section-header">
-      <span class="section-tag" data-i18n="nav_faq">الأسئلة الشائعة</span>
-      <h2 class="section-title" data-i18n="faq_heading">الأسئلة الشائعة</h2>
-      <p class="section-sub" data-i18n="faq_sub">إجابات وافية حول آليات العمل، التعرفة الجمركية والخدمات التجارية</p>
-    </div>
-
-    <div class="faq-grid">
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q" data-i18n="faq_1_q">ما هي المزايا الاستراتيجية للتجارة عبر سلطنة عُمان؟</div>
-        <div class="faq-a" data-i18n="faq_1_a">تتمتع سلطنة عُمان بموقع استراتيجي خارج مضيق هرمز مفتوح على المحيط الهندي، وترتبط باتفاقيات تجارة حرة (FTA) مع الولايات المتحدة وسنغافورة ودول EFTA، بالإضافة إلى منظومة موانئ ومناطق حرة حديثة بإعفاءات ضريبية وجمركية تصل إلى 100%.</div>
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q" data-i18n="faq_2_q">كيف تدعم شركة تكامل مشاريع وسم «صُنع في عُمان»؟</div>
-        <div class="faq-a" data-i18n="faq_2_a">نساعد الشركات في تقييم الجدوى الصناعية، التعاقد مع مصانع وورش معتمدة في عُمان (التصنيع التعاقدي)، استيراد المواد الخام والآلات، وتحقيق نسب القيمة المحلية المضافة (ICV) المطلوبة للحصول على الهوية الوطنية العمانية.</div>
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q" data-i18n="faq_3_q">هل تقدم شركة تكامل تمويلاً مباشراً أو قروضاً؟</div>
-        <div class="faq-a" data-i18n="faq_3_a">لا. شركة تكامل ليست مؤسسة مصرفية أو مانحة للقروض؛ نحن نقدم استشارات تجارية ومالية متخصصة لهيكلة شروط الدفع، فحص الجدارة الائتمانية للأطراف، صياغة شروط الاعتمادات المستندية (L/C) والتنسيق مع المؤسسات المالية المرخصة.</div>
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q" data-i18n="faq_4_q">ما هي شروط الإنكوترمز التي تديرونها في صفقات التوريد؟</div>
-        <div class="faq-a" data-i18n="faq_4_a">ندير كافة شروط التسليم الدولية بما في ذلك EXW, FOB, CFR, CIF, DAP و DDP بحسب الاتفاق التجاري وطبيعة المنشأ والوجهة النهائية.</div>
-      </div>
-    </div>
-    
-    <div style="text-align:center; margin-top:35px;">
-      <a href="./pages/faq.html" class="btn-secondary" data-i18n="nav_faq">استعراض كافة الأسئلة الشائعة &larr;</a>
-    </div>
-  </section>
+    </section>
 
   </main>
 
-  <!-- Floating Actions (WhatsApp & Back to Top) -->
-  <a href="https://wa.me/96871081635" target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn" title="WhatsApp Direct Line" aria-label="WhatsApp">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7.02 8.48 7.02 9.69C7.02 10.9 7.9 12.06 8.02 12.23C8.14 12.4 9.74 14.88 12.19 15.94C12.78 16.19 13.23 16.34 13.59 16.46C14.18 16.65 14.72 16.62 15.15 16.56C15.63 16.49 16.63 15.95 16.84 15.37C17.05 14.79 17.05 14.3 16.99 14.2C16.93 14.1 16.76 14.04 16.51 13.92C16.26 13.8 15.03 13.19 14.8 13.11C14.57 13.03 14.4 12.99 14.23 13.24C14.06 13.49 13.57 14.1 13.42 14.27C13.27 14.44 13.12 14.46 12.87 14.34C12.62 14.22 11.81 13.95 10.86 13.11C10.12 12.45 9.62 11.64 9.47 11.39C9.32 11.14 9.45 11 9.58 10.88C9.69 10.77 9.83 10.59 9.95 10.45C10.07 10.31 10.11 10.21 10.19 10.05C10.27 9.89 10.23 9.75 10.17 9.63C10.11 9.51 9.62 8.31 9.41 7.82C9.21 7.34 9.01 7.4 8.86 7.39C8.72 7.38 8.55 7.38 8.53 7.33Z"/>
-    </svg>
-  </a>
-
-  <button id="backToTopBtn" class="back-to-top-btn" aria-label="Back to top" title="إلى الأعلى">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
-  </button>
-
   <!-- Mobile Sticky CTA Bar -->
-    <!-- Mobile Sticky CTA Bar -->
   <div class="mobile-sticky-cta">
     <div class="mobile-sticky-info">
       <div class="mobile-sticky-title" data-i18n="brand_name">شركة تكامل للتجارة الدولية</div>
@@ -469,66 +498,68 @@
     </div>
   </div>
 
-  <!-- Symmetrical Corporate Footer -->
+  <!-- Corporate Footer -->
   <footer class="site-footer">
     <div class="footer-grid">
       <div>
-        <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
-          <img src="./img/logo.png" alt="Al Takamul LLC Logo" style="height:42px;">
-          <span style="font-size:1.1rem; font-weight:800; color:var(--text-primary);" data-i18n="brand_name">تكامل للتجارة الدولية</span>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+          <img src="img/logo.png" alt="Al Takamul" style="height:36px; width:auto;">
+          <span style="font-weight:800; font-size:1.1rem; color:var(--text-primary);" data-i18n="brand_name">شركة تكامل للتجارة الدولية</span>
         </div>
-        <p style="color:var(--text-secondary); font-size:0.9rem; line-height:1.7; margin-bottom:16px; max-width:340px;" data-i18n="footer_about">
+        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.75; margin-bottom:16px;" data-i18n="footer_about">
           بيت التجارة الدولية الرائد في مسقط لتقديم خدمات التجارة العابرة للحدود، سلاسل الإمداد المتطورة، وتوطين الصناعات.
         </p>
-        <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.9;">
-          <span data-i18n="footer_hq_label">📍 مسقط، سلطنة عُمان - واحة المعرفة / مجمع الأعمال</span><br>
-          <span data-i18n="footer_contact_label">📞 +968 7108 1635 | ✉️ info@omantakamul.com</span>
-        </p>
+        <div style="font-size:0.82rem; color:var(--primary-gold);" data-i18n="footer_cr">CR 1389420 / مسقط، سلطنة عُمان</div>
       </div>
 
-      <!-- Column 1: Services (5 items) -->
       <div>
-        <h4 class="footer-col-title" data-i18n="footer_col_services">خدماتنا الأساسية</h4>
+        <div class="footer-col-title" data-i18n="footer_col_services">خدماتنا الأساسية</div>
         <ul class="footer-links-list">
-          <li><a href="./pages/international-trade.html" class="footer-link" data-i18n="service_1_title">التجارة الدولية وبيت التجارة</a></li>
-          <li><a href="./pages/import-export.html" class="footer-link" data-i18n="service_2_title">الاستيراد والتصدير وإعادة التصدير</a></li>
-          <li><a href="./pages/procurement.html" class="footer-link" data-i18n="service_3_title">توريد احتياجات المشاريع</a></li>
-          <li><a href="./pages/financial-advisory.html" class="footer-link" data-i18n="service_4_title">الاستشارات المالية والتجارية</a></li>
-          <li><a href="./pages/made-in-oman.html" class="footer-link" data-i18n="service_5_title">بنية وهوية صُنع في عُمان</a></li>
+          <li><a href="./pages/international-trade.html" class="footer-link" data-i18n="service_1_title">التجارة الدولية</a></li>
+          <li><a href="./pages/import-export.html" class="footer-link" data-i18n="service_2_title">الاستيراد والتصدير</a></li>
+          <li><a href="./pages/procurement.html" class="footer-link" data-i18n="service_3_title">توريد المشاريع</a></li>
+          <li><a href="./pages/financial-advisory.html" class="footer-link" data-i18n="service_4_title">الاستشارات المالية</a></li>
+          <li><a href="./pages/made-in-oman.html" class="footer-link" data-i18n="service_5_title">صُنع في عُمان</a></li>
         </ul>
       </div>
 
-      <!-- Column 2: Hubs & Governance (5 items) -->
       <div>
-        <h4 class="footer-col-title" data-i18n="footer_col_company">الشركة والشفافية</h4>
+        <div class="footer-col-title" data-i18n="footer_col_company">الشركة والشفافية</div>
         <ul class="footer-links-list">
-          <li><a href="./pages/about.html" class="footer-link" data-i18n="nav_about">عن الشركة ورؤيتنا</a></li>
-          <li><a href="./index.html#hubs" class="footer-link" data-i18n="nav_hubs">الموانئ والمناطق الحرة</a></li>
-          <li><a href="./pages/services.html" class="footer-link" data-i18n="service_matrix_title">نماذج الشراكة والتعاقد</a></li>
-          <li><a href="./pages/terms.html" class="footer-link">الشروط والأحكام والإنكوترمز</a></li>
-          <li><a href="./pages/privacy.html" class="footer-link">سياسة الخصوصية وسرية البيانات</a></li>
-        </ul>
-      </div>
-
-      <!-- Column 3: Contact & Request (5 items) -->
-      <div>
-        <h4 class="footer-col-title" data-i18n="footer_col_contact">الاتصال والتسجيل</h4>
-        <ul class="footer-links-list">
-          <li><a href="./pages/request.html" class="footer-link" data-i18n="nav_request">بوابة طلب الاستشارة</a></li>
-          <li><a href="./pages/contact.html" class="footer-link" data-i18n="nav_contact">الاتصال المباشر بمسقط</a></li>
+          <li><a href="./pages/about.html" class="footer-link" data-i18n="nav_about">من نحن ورؤيتنا</a></li>
+          <li><a href="./pages/services.html" class="footer-link" data-i18n="nav_services">مصفوفة الخدمات</a></li>
           <li><a href="./pages/faq.html" class="footer-link" data-i18n="nav_faq">الأسئلة الشائعة</a></li>
-          <li><a href="https://wa.me/96871081635" target="_blank" class="footer-link">المحادثة الفورية عبر واتساب</a></li>
-          <li><a href="./index.html#process" class="footer-link">آلية تنفيذ الصفقات</a></li>
+          <li><a href="./pages/privacy.html" class="footer-link" data-i18n="footer_privacy">سياسة الخصوصية</a></li>
+          <li><a href="./pages/terms.html" class="footer-link" data-i18n="footer_terms">الشروط والأحكام</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title" data-i18n="footer_col_contact">معلومات الاتصال</div>
+        <ul class="footer-links-list">
+          <li style="font-size:0.88rem; color:var(--text-secondary);" data-i18n="footer_hq_label">📍 مسقط، سلطنة عُمان - واحة المعرفة / مجمع الأعمال التجاري</li>
+          <li style="font-size:0.88rem; color:var(--text-secondary);">📞 +968 7108 1635 / +968 3153 6000</li>
+          <li style="font-size:0.88rem; color:var(--text-secondary);">✉️ info@omantakamul.com</li>
+          <li style="margin-top:10px;">
+            <a href="https://wa.me/96871081635" target="_blank" rel="noopener" class="btn-secondary" style="padding:6px 14px; font-size:0.82rem;">WhatsApp Desk</a>
+          </li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <span data-i18n="footer_copy">جميع الحقوق محفوظة © ٢٠٢٦ شركة تكامل للتجارة الدولية ش.م.م | مسقط، سلطنة عُمان</span>
-      <span data-i18n="footer_cr">CR 1389420 / Sultanate of Oman</span>
+      <div data-i18n="footer_copy">جميع الحقوق محفوظة © ٢٠٢٦ شركة تكامل للتجارة الدولية ش.م.م</div>
+      <div style="display:flex; gap:16px;">
+        <a href="./pages/privacy.html" class="footer-link" data-i18n="footer_privacy">الخصوصية</a>
+        <a href="./pages/terms.html" class="footer-link" data-i18n="footer_terms">الشروط</a>
+      </div>
     </div>
   </footer>
 
-  <script src="./js/main.js?v=2.0"></script>
+  <!-- Floating Back to Top Button -->
+  <button id="backToTopBtn" class="back-to-top-btn" aria-label="Back to Top" title="إلى الأعلى">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
 </body>
 </html>

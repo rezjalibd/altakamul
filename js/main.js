@@ -1,24 +1,18 @@
 /**
- * Al Takamul International Trading LLC — Sovereign Corporate Engine
- * Persian / Arabic / English Real-Time State Controller
- * Zero-Flash Theme & Locale Hydration
- * Native Mobile Touch & Responsive Architecture
+ * Al Takamul International Trading LLC — Sovereign Corporate Platform
+ * Instant Hydration Multi-Language Controller (Arabic, Persian, English)
+ * Dynamic Dual-Theme & Touch Mobile Engine
  */
 
 (function () {
   'use strict';
 
-  // Read current language & theme from localStorage with safe defaults
+  // Read stored preferences with robust defaults
   let currentLang = localStorage.getItem('altakamul_lang') || 'ar';
   let currentTheme = localStorage.getItem('altakamul_theme') || 'dark';
-  let translations = {};
 
-  function getBasePath() {
-    return (window.location.pathname.match(/\/pages\//) ? '../' : './');
-  }
-
-  // Theme Initializer
-  function initTheme() {
+  // 1. Theme Controller
+  window.initTheme = function () {
     document.documentElement.setAttribute('data-theme', currentTheme);
     const sunIcons = document.querySelectorAll('.theme-icon-sun');
     const moonIcons = document.querySelectorAll('.theme-icon-moon');
@@ -30,32 +24,19 @@
       sunIcons.forEach(el => el.style.display = 'none');
       moonIcons.forEach(el => el.style.display = 'inline-block');
     }
-  }
-
-  window.toggleTheme = function () {
-    currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    localStorage.setItem('altakamul_theme', currentTheme);
-    initTheme();
   };
 
-  // Translations Loader & Engine
-  async function loadTranslations() {
-    try {
-      const res = await fetch(getBasePath() + 'translations.json');
-      if (res.ok) {
-        translations = await res.json();
-        applyTranslations(currentLang);
-      }
-    } catch (e) {
-      console.warn('Could not load translations.json', e);
-    }
-  }
+  window.toggleTheme = function () {
+    currentTheme = (currentTheme === 'dark' ? 'light' : 'dark');
+    localStorage.setItem('altakamul_theme', currentTheme);
+    window.initTheme();
+  };
 
-  function applyTranslations(lang) {
-    if (!translations || !translations[lang]) return;
-    const dict = translations[lang];
+  // 2. Multilingual Engine
+  window.applyTranslations = function (lang) {
+    const dict = (window.ALT_TRANSLATIONS && window.ALT_TRANSLATIONS[lang]) ? window.ALT_TRANSLATIONS[lang] : null;
+    if (!dict) return;
 
-    // Direction & HTML Lang Attribute
     const dir = dict.direction || (lang === 'en' ? 'ltr' : 'rtl');
     document.documentElement.setAttribute('lang', lang);
     document.documentElement.setAttribute('dir', dir);
@@ -85,18 +66,28 @@
     document.querySelectorAll('.lang-option').forEach(btn => {
       btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
     });
-  }
+
+    // Update document title dynamically
+    const brandName = dict.brand_name || 'Al Takamul';
+    const heroTitle = dict.hero_title || '';
+    if (document.querySelector('title')) {
+      document.title = brandName + ' | ' + (heroTitle ? heroTitle : 'International Trading House');
+    }
+  };
 
   window.setLanguage = function (lang) {
     currentLang = lang;
     localStorage.setItem('altakamul_lang', lang);
-    applyTranslations(lang);
+    window.applyTranslations(lang);
     const menu = document.getElementById('langDropdownMenu');
     if (menu) menu.classList.remove('active');
   };
 
   window.toggleLangMenu = function (e) {
-    if (e) e.stopPropagation();
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     const menu = document.getElementById('langDropdownMenu');
     if (menu) menu.classList.toggle('active');
   };
@@ -110,34 +101,37 @@
     }
   });
 
-  // Sticky Header with Glass Blur
-  function initStickyHeader() {
-    const header = document.querySelector('.site-header');
-    if (!header) return;
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 20) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    }, { passive: true });
+  // 3. Mobile Navigation Drawer Controller
+  function ensureDrawerOverlay() {
+    let overlay = document.getElementById('mobileDrawerOverlay');
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.id = 'mobileDrawerOverlay';
+      overlay.className = 'mobile-drawer-overlay';
+      overlay.onclick = window.closeMobileMenu;
+      document.body.appendChild(overlay);
+    }
+    return overlay;
   }
 
-  // Mobile Drawer Toggle
-  window.toggleMobileMenu = function () {
+  window.toggleMobileMenu = function (e) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     const drawer = document.getElementById('mobileDrawer');
-    const overlay = document.getElementById('mobileDrawerOverlay');
-    if (drawer && overlay) {
-      const isOpen = drawer.classList.contains('active');
-      if (isOpen) {
-        drawer.classList.remove('active');
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-      } else {
-        drawer.classList.add('active');
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
+    const overlay = ensureDrawerOverlay();
+    if (!drawer) return;
+
+    const isOpen = drawer.classList.contains('active');
+    if (isOpen) {
+      drawer.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    } else {
+      drawer.classList.add('active');
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
     }
   };
 
@@ -149,7 +143,7 @@
     document.body.style.overflow = '';
   };
 
-  // FAQ Accordion
+  // 4. FAQ Accordion
   window.toggleFaq = function (el) {
     const item = el.closest('.faq-item');
     if (item) {
@@ -157,7 +151,7 @@
     }
   };
 
-  // Back to Top Button
+  // 5. Back to Top Button
   function initBackToTop() {
     const btn = document.getElementById('backToTopBtn');
     if (!btn) return;
@@ -174,7 +168,20 @@
     });
   }
 
-  // Lead Form Submission Simulation
+  // 6. Header Scrolled State
+  function initStickyHeader() {
+    const header = document.querySelector('.site-header');
+    if (!header) return;
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }, { passive: true });
+  }
+
+  // 7. Lead Form Submission Handler
   window.handleTradeRequest = function (e) {
     e.preventDefault();
     const btn = e.target.querySelector('button[type="submit"]');
@@ -183,7 +190,12 @@
       btn.innerHTML = '...';
       btn.disabled = true;
       setTimeout(() => {
-        alert(currentLang === 'fa' ? 'درخواست شما با موفقیت ثبت شد. کارشناسان ما به زودی با شما تماس خواهند گرفت.' : (currentLang === 'ar' ? 'تم استلام طلبكم بنجاح. سيتواصل معكم مستشارنا التجاري في أقرب وقت.' : 'Your trade consultation request has been received. Our advisors will contact you shortly.'));
+        const msg = (currentLang === 'fa')
+          ? 'درخواست شما با موفقیت ثبت شد. مشاوران بازرگانی ما به زودی با شما تماس خواهند گرفت.'
+          : (currentLang === 'ar'
+            ? 'تم استلام طلبكم بنجاح. سيتواصل معكم مستشارنا التجاري في أقرب وقت.'
+            : 'Your trade consultation request has been received. Our advisors will contact you shortly.');
+        alert(msg);
         e.target.reset();
         btn.innerHTML = origText;
         btn.disabled = false;
@@ -191,11 +203,13 @@
     }
   };
 
-  // Boot sequence
+  // 8. Synchronous Immediate Execution & DOM Setup
+  window.initTheme();
   document.addEventListener('DOMContentLoaded', () => {
-    initTheme();
-    loadTranslations();
+    window.initTheme();
+    window.applyTranslations(currentLang);
     initStickyHeader();
     initBackToTop();
+    ensureDrawerOverlay();
   });
 })();
