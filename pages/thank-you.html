@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>تم استلام طلبكم بنجاح | Thank You | Al Takamul International Trading LLC</title>
-  <meta name="description" content="Al Takamul International Trading LLC — Premier International Trading House in Muscat, Sultanate of Oman. Import, Export, Project Procurement, Trade Finance Advisory & Made in Oman Industrialization.">
+  <meta name="description" content="Al Takamul International Trading LLC ، Premier International Trading House in Muscat, Sultanate of Oman. Import, Export, Project Procurement, Trade Finance Advisory & Made in Oman Industrialization.">
   <link rel="icon" type="image/png" href="../img/favicon.png">
   <link rel="apple-touch-icon" href="../img/favicon.png">
 
@@ -16,13 +16,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css?v=1.0">
+  <link rel="stylesheet" href="../css/style.css?v=3.0">
 </head>
 <body>
   <!-- Ambient Backdrop -->
   <div class="canvas-backdrop">
     <div class="shape-blob shape-1"></div>
     <div class="shape-blob shape-2"></div>
+    <div class="shape-blob shape-3"></div>
   </div>
 
   <!-- Sticky Header -->
@@ -95,7 +96,7 @@
         <!-- 3-Language Dropdown -->
         <div class="lang-dropdown-wrapper">
           <button class="lang-dropdown-btn" onclick="toggleLangMenu(event)" aria-label="Language Selector">
-            <span class="current-lang-flag">🇴🇲</span>
+            <svg class="lang-globe-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
             <span class="current-lang-code">AR</span>
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </button>
@@ -198,9 +199,18 @@
   </button>
 
   <!-- Mobile Sticky CTA Bar -->
+    <!-- Mobile Sticky CTA Bar -->
   <div class="mobile-sticky-cta">
-    <span style="font-weight:700; font-size:0.85rem;" data-i18n="brand_name">تكامل للتجارة الدولية</span>
-    <a href="../pages/request.html" class="btn-cta" style="padding:8px 16px; font-size:0.82rem;" data-i18n="mobile_sticky_cta">طلب استشارة تجارية</a>
+    <div class="mobile-sticky-info">
+      <div class="mobile-sticky-title" data-i18n="brand_name">شركة تكامل للتجارة الدولية</div>
+      <div class="mobile-sticky-tag" data-i18n="hero_badge_clean">مسقط • سلطنة عمان</div>
+    </div>
+    <div class="mobile-sticky-actions">
+      <a href="https://wa.me/96871081635" target="_blank" rel="noopener" class="mobile-sticky-wa-btn" aria-label="WhatsApp">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+      </a>
+      <a href="./request.html" class="btn-cta btn-compact" data-i18n="btn_request_short">طلب استشارة</a>
+    </div>
   </div>
 
   <!-- Symmetrical Corporate Footer -->

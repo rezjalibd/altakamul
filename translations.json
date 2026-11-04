@@ -24,7 +24,7 @@
     "hero_badge": "بيت التجارة الدولية • مسقط، سلطنة عُمان",
     "hero_title": "بوابتكم الاستراتيجية للتجارة العالمية",
     "hero_title_highlight": "وسلاسل الإمداد وتوطين الصناعة",
-    "hero_subtitle": "شركة تكامل للتجارة الدولية ش.م.م — شريككم الموثوق في الاستيراد، التصدير، إدارة الصفقات الكبرى، وتمكين التصنيع بهوية «صُنع في عُمان» للنفاذ إلى الأسواق الإقليمية والدولية.",
+    "hero_subtitle": "شركة تكامل للتجارة الدولية ش.م.م ، شريككم الموثوق في الاستيراد، التصدير، إدارة الصفقات الكبرى، وتمكين التصنيع بهوية «صُنع في عُمان» للنفاذ إلى الأسواق الإقليمية والدولية.",
     "stat_ftas": "اتفاقيات تجارة حرة (FTA)",
     "stat_ftas_sub": "أمريكا، EFTA والدول العربية",
     "stat_ports": "موانئ استراتيجية عالمية",
@@ -110,7 +110,9 @@
     "faq_6_a": "نوقع اتفاقيات سرية معلومات ملزمة قانوناً (Non-Disclosure Agreements - NDA) قبل بدء تبادل البيانات التسعيرية أو قوائم الموردين والعملاء.",
     "footer_hq_label": "📍 مسقط، سلطنة عُمان - واحة المعرفة / مجمع الأعمال",
     "footer_contact_label": "📞 +968 7108 1635 | ✉️ info@omantakamul.com",
-    "footer_cr": "CR 1389420 / سلطنة عُمان"
+    "footer_cr": "CR 1389420 / سلطنة عُمان",
+    "hero_badge_clean": "مسقط • سلطنة عُمان",
+    "btn_request_short": "طلب استشارة"
   },
   "en": {
     "lang_code": "en",
@@ -137,7 +139,7 @@
     "hero_badge": "International Trading House • Muscat, Sultanate of Oman",
     "hero_title": "Your Strategic Gateway to Global Commerce",
     "hero_title_highlight": "& Made in Oman Industrialization",
-    "hero_subtitle": "Al Takamul International Trading LLC — Your premier execution partner for import, export, project procurement, trade risk advisory, and localized manufacturing across GCC and global markets.",
+    "hero_subtitle": "Al Takamul International Trading LLC ، Your premier execution partner for import, export, project procurement, trade risk advisory, and localized manufacturing across GCC and global markets.",
     "stat_ftas": "Free Trade Agreements (FTA)",
     "stat_ftas_sub": "USA, EFTA, GCC & Arab League",
     "stat_ports": "World-Class Deep Ports",
@@ -223,7 +225,9 @@
     "faq_6_a": "We execute legally binding Non-Disclosure Agreements (NDA) prior to exchanging confidential trade pricing, supplier networks, or buyer specifications.",
     "footer_hq_label": "📍 Knowledge Oasis Muscat (KOM), Sultanate of Oman",
     "footer_contact_label": "📞 +968 7108 1635 | ✉️ info@omantakamul.com",
-    "footer_cr": "CR 1389420 / Sultanate of Oman"
+    "footer_cr": "CR 1389420 / Sultanate of Oman",
+    "hero_badge_clean": "Muscat • Oman",
+    "btn_request_short": "Consult Now"
   },
   "fa": {
     "lang_code": "fa",
@@ -250,7 +254,7 @@
     "hero_badge": "خانه تجارت بین‌الملل • مسقط، سلطنت عمان",
     "hero_title": "دروازه استراتژیک تجارت بین‌الملل",
     "hero_title_highlight": "و توسعه برند ساخت عمان (Made in Oman)",
-    "hero_subtitle": "شرکت بازرگانی بین‌المللی تکامل (Al Takamul LLC) — شریک اجرایی و امین شما در واردات، صادرات، ترانزیت مجدد، تأمین پروژه‌ای و ایجاد زیرساخت تولید و بومی‌سازی کالا در بازارهای خلیج فارس و جهان.",
+    "hero_subtitle": "شرکت بازرگانی بین‌المللی تکامل (Al Takamul LLC) ، شریک اجرایی و امین شما در واردات، صادرات، ترانزیت مجدد، تأمین پروژه‌ای و ایجاد زیرساخت تولید و بومی‌سازی کالا در بازارهای خلیج فارس و جهان.",
     "stat_ftas": "توافق‌نامه‌های تجارت آزاد (FTA)",
     "stat_ftas_sub": "آمریکا، EFTA، اتحادیه عرب و GCC",
     "stat_ports": "بنادر اقیانوسی کلاس جهانی",
@@ -336,6 +340,8 @@
     "faq_6_a": "پیش از تبادل اسناد مالی و مشخصات تأمین‌کنندگان، قرارداد الزام‌آور محرمانگی تجاری (NDA) میان طرفین امضا می‌شود.",
     "footer_hq_label": "📍 مسقط، سلطنت عمان - واحه المعرفة (KOM)، مجمع کسب‌وکار",
     "footer_contact_label": "📞 +968 7108 1635 | ✉️ info@omantakamul.com",
-    "footer_cr": "CR 1389420 / سلطنت عمان"
+    "footer_cr": "CR 1389420 / سلطنت عمان",
+    "hero_badge_clean": "مسقط • عمان",
+    "btn_request_short": "مشاوره تجاری"
   }
 }
