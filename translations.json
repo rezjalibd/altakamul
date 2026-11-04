@@ -573,7 +573,8 @@
     "doc_insp_title": "شهادات المعاينة والمطابقة الفنية (SGS / BV)",
     "doc_insp_desc": "تقارير مختبرية مستقلة تؤكد سلامة البضائع ومطابقتها للمواصفات الخليجية القياسية المعتمدة من وزارة التجارة والصناعة.",
     "hubs_sec2_tag": "خدمات تكامل الميدانية",
-    "hubs_sec2_title": "حلول عملياتية متكاملة داخل الموانئ والمناطق الحرة"
+    "hubs_sec2_title": "حلول عملياتية متكاملة داخل الموانئ والمناطق الحرة",
+    "footer_profile": "الملف التعريفي المؤسسي (PDF)"
   },
   "fa": {
     "direction": "rtl",
@@ -1149,7 +1150,8 @@
     "doc_insp_title": "گواهی‌های بازرسی فنی و انطباق کیفی (SGS / BV)",
     "doc_insp_desc": "گزارش‌های آزمایشگاهی مستقل جهت تأیید سلامت کالا و انطباق با استانداردهای استانداردسازی خلیج فارس (GSO).",
     "hubs_sec2_tag": "خدمات میدانی و عملیاتی تکامل",
-    "hubs_sec2_title": "راهکارهای یکپارچه عملیاتی در بنادر و مناطق آزاد"
+    "hubs_sec2_title": "راهکارهای یکپارچه عملیاتی در بنادر و مناطق آزاد",
+    "footer_profile": "پروفایل شرکتی و داسیر سازمانی (PDF)"
   },
   "en": {
     "direction": "ltr",
@@ -1725,6 +1727,7 @@
     "doc_insp_title": "Technical Inspection & Conformity Certificates (SGS / BV)",
     "doc_insp_desc": "Independent laboratory surveys verifying cargo integrity and conformity with mandatory GCC Standardization Organization specifications.",
     "hubs_sec2_tag": "Al Takamul On-Ground Operations",
-    "hubs_sec2_title": "Integrated Operational Solutions Inside Ports & Free Zones"
+    "hubs_sec2_title": "Integrated Operational Solutions Inside Ports & Free Zones",
+    "footer_profile": "Company Profile & Dossier (PDF)"
   }
 }
